@@ -10,4 +10,7 @@
   .dark{
     @apply text-[#74728D]
   }
+  .scrollbar::-webkit-scrollbar{
+    @apply hidden
+  }
 }

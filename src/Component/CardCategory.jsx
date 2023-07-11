@@ -32,7 +32,7 @@ const CardCategory = () => {
                     Categories
                 </h1>
             </div>
-            <NavLink className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 max-sm:place-items-center max-sm:gap-4'>
+            <NavLink className='flex flex-wrap gap-8 max-2xl:justify-center sm:justify-between'>
                 {
                     categories.map((item, index) => {
                         return <div key={index}><Card image={item.image} title={item.title}/></div>
