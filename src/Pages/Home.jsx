@@ -11,11 +11,11 @@ const Home = () => {
   return (
     <div>
         <div className='font-inter '>
-            <div className='hero ' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
+            <div className='hero  ' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
                 <Navbar/>
-                <div className='flex items-center justify-center h-[425px]' >
+                <div className='flex justify-center pt-14 h-[300px] sm:h-[425px]' >
                     <div className=' '>
-                        <h1 className='text-center text-white text-[26px] font-satoshi  sm:text-[32px] font-bold md:leading-[42px] mb-7 '>Seek and Find<br/> your Ideal property</h1>
+                        <h1 className='text-center text-white text-[26px] font-satoshi  sm:text-[48px] font-bold md:leading-[42px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
                         <div className='flex flex-row items-center justify-start bg-white md:w-[512px] sm:pl-6 sm:gap-3 rounded-xl sm:mb-5'>
                             <button className='text-[24px] dark'>
                                 <MdSearch/>
@@ -94,8 +94,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='content h-[400px] flex justify-center lg:py-16' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
-                    <h4>Contact Us</h4>
+                <div className='content h-[400px] flex flex-col items-center justify-center lg:py-16 rounded-bl-lg rounded-br-[210px] rounded-tl-[210px] rounded-tr-lg text-white ' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
+                    <h4 className='font-satoshi text-[24px] font-normal'>Contact Us</h4>
+                    <h1 className='font-satoshi text-[48px] font-bold'>Get Started With Your New Furniture.</h1>
+                    <p className=' font-inter font-normal'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
                 </div>
             </div>
         </div>
