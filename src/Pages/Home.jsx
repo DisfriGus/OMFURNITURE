@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Component/Navbar'
+import BackgroundImage from "../Assets/Background2.jpg"
 import { MdSearch, MdArrowBack, MdArrowForward } from 'react-icons/md'
 import Layout from '../Component/Layout'
 import FurnitureImage1 from '../Assets/no-revisions-p0MoUugYbvk-unsplash.jpg'
@@ -10,7 +11,7 @@ const Home = () => {
   return (
     <div>
         <div className='font-inter '>
-            <div className='hero '>
+            <div className='hero ' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
                 <Navbar/>
                 <div className='flex items-center justify-center h-[425px]' >
                     <div className=' '>
@@ -90,9 +91,11 @@ const Home = () => {
                                 <li>Managed Properties</li>
                                 <li>Known in local area</li>
                             </ul>
-
                         </div>
                     </div>
+                </div>
+                <div className='content h-[400px] flex justify-center lg:py-16' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
+                    <h4>Contact Us</h4>
                 </div>
             </div>
         </div>
