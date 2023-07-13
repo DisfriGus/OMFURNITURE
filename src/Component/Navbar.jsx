@@ -1,12 +1,11 @@
 import React from 'react'
-import Logo from '../Assets/logo.png'
+import Logo from '../Assets/logo.svg'
 import { NavLink } from 'react-router-dom'
 const Navbar = () => {
   return (
       <div className='font-inter flex items-center justify-between px-2 md:px-[80px] xl:px-[240px]  py-3 xl:py-[26px] max-lg:fixed max-lg:w-full  bg-white xl:bg-transparent'>
-        <NavLink to="/" className='flex items-center gap-4   '>
-          <img className='w-9 h-9' src={Logo} alt="" />
-          <h1 className='text-[20px] font-semibold text-white max-xl:text-black'>Om Property</h1>
+        <NavLink to="/" className='  '>
+          <img className='w-[157px] h-[29px] fill-black ' src={Logo} alt="" />
         </NavLink>
         <div className='flex pl-7 gap-[20px] text-[16px] text-white font-normal max-lg:hidden'>
           <NavLink to='/Dijual'>Buy</NavLink>
