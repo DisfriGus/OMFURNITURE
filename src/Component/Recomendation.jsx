@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 const Recomendation = ({src, price, title, luas,bed, bath}) => {
   return (
-    <div className='w-[300px] h-[400px]'>
+    <div className='w-[300px] h-[320px]'>
         <NavLink className="font-inter">
             <img src={src} className='w-[336px] h-[120px] rounded-xl mb-6 object-cover object-center'/>
             <h2 className='text-[#493EC7] mb-3 text-[22px] font-medium'>$ {price}</h2>

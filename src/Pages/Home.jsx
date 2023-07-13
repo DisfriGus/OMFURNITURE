@@ -33,7 +33,7 @@ const Home = () => {
                         <h3 className='text-[18px] text-[#1659E6]'>Popular Choice</h3>
                         <h1 className='text-[30px] font-medium'>Best Property Just For You</h1>
                     </div>
-                    <div className='flex items-center gap-4'>
+                    <div className='flex items-center gap-4 max-sm:hidden'>
                         <button className='text-[26px]'>
                             <MdArrowBack/>
                         </button>
@@ -42,7 +42,7 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-                <div className='sm:whitespace-nowrap sm:overflow-x-auto sm:flex gap-[32px] h-[500px] mb-[100px]'>
+                <div className='whitespace-nowrap overflow-x-auto flex  gap-[32px] h-[350px] mb-[100px]'>
                     {Recomendations.recomendation.map((val)=>(
                         <Recomendation 
                             key={val.id}
@@ -56,14 +56,14 @@ const Home = () => {
                         />
                     ))}
                 </div>
-                <div className='flex mb-[100px] items-center gap-9'>
-                    <div className='w-[720px] h-[420px]'>
+                <div className='flex mb-[100px] max-2xl:flex-col items-center sm:gap-9 md:gap-16'>
+                    <div className='sm:w-[720px] sm:h-[420px]'>
                         <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl' src={HouseImage1} alt="" />
                     </div>
-                    <div className='w-[684px]'>
+                    <div className='sm:w-[684px]'>
                         <h3 className='text-[18px] mb-2'>Our Values</h3>
                         <h1 className='text-[48px] font-bold font-satoshi leading-[56px] tracking-[-0.96px] mb-8'>Comfort is our Top<br/>priority for you<span className='text-[#E67D31]'>.</span> </h1>
-                        <div className='flex flex-col w-[560px] gap-5'>
+                        <div className='flex flex-col sm:w-[560px] gap-5'>
                             <p className='text-[#425379] text-[16px] font-normal leading-[28px]'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
                             <ul className='list-disc flex gap-9 gap-y-3 flex-wrap pl-6 text-[18px] font-normal tracking-[-0.09px]'>
                                 <li>Premium Quality Only</li>
@@ -75,11 +75,11 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex mb-[100px] items-center gap-9'>
-                    <div className='w-[684px]'>
+                <div className='flex mb-[100px] items-center sm:gap-9 md:gap-16 max-2xl:flex-col-reverse'>
+                    <div className='sm:w-[684px]'>
                         <h3 className='text-[18px] mb-2'>Our Values</h3>
                         <h1 className='text-[48px] font-bold font-satoshi leading-[56px] tracking-[-0.96px] mb-8'>Comfort is our Top<br/>priority for you<span className='text-[#E67D31]'>.</span> </h1>
-                        <div className='flex flex-col w-[560px] gap-5'>
+                        <div className='flex flex-col sm:w-[560px] gap-5'>
                             <p className='text-[#425379] text-[16px] font-normal leading-[28px]'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
                             <ul className='list-disc flex gap-9 gap-y-3 flex-wrap pl-6 text-[18px] font-normal tracking-[-0.09px]'>
                                 <li>Premium Quality Only</li>
@@ -90,7 +90,7 @@ const Home = () => {
 
                         </div>
                     </div>
-                    <div className='w-[720px] h-[420px]'>
+                    <div className='sm:w-[720px] sm:h-[420px]'>
                         <img className='rounded-t-[210px] rounded-tr-xl rounded-bl-xl rounded-br-[210px]' src={HouseImage1} alt="" />
                     </div>
                 </div>
