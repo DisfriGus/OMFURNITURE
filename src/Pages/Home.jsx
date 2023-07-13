@@ -60,13 +60,13 @@ const Home = () => {
                 </div>
                 <div className='flex mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
                     <div className=''>
-                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl h-[420px] w-[720px] object-cover' src={FurnitureImage1} alt="" />
+                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl h-[420px] w-[720px] max-sm:rounded-lg object-cover' src={FurnitureImage1} alt="" />
                     </div>
                     <div className='2xl:w-[684px]'>
                         <h3 className='text-[18px] mb-2'>Our Values</h3>
-                        <h1 className='text-[48px] font-bold font-satoshi leading-[56px] tracking-[-0.96px] mb-8'>Comfort is our Top<br/>priority for you<span className='text-[#E67D31]'>.</span> </h1>
-                        <div className='flex flex-col w-[240px] sm:w-[480px] xl:w-[720px] 2xl:w-[560px]  gap-5'>
-                            <p className='text-[#425379] text-[16px] font-normal leading-[28px]'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
+                        <h1 className='text-[36px] sm:text-[48px] max-sm:text-center font-bold font-satoshi sm:leading-[56px] sm:tracking-[-0.96px] sm:mb-8'>Comfort is our Top<br/>priority for you<span className='text-[#E67D31]'>.</span> </h1>
+                        <div className='flex flex-col w-full xl:w-[720px] 2xl:w-[560px] gap-5'>
+                            <p className='text-[#425379] text-[16px] font-normal leading-[28px] max-sm:text-center'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
                             <ul className='list-disc marker:text-[#1659E6] grid sm:grid-cols-2 pl-6 text-[18px] font-normal tracking-[-0.09px]'>
                                 <li>Premium Quality Only</li>
                                 <li>No obligation valuations</li>
@@ -77,27 +77,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-row-reverse mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
-                    <div className=''>
-                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl h-[420px] w-[720px] object-cover ' src={FurnitureImage2} alt="" />
-                    </div>
-                    <div className='2xl:w-[684px]'>
-                        <h3 className='text-[18px] mb-2'>Our Values</h3>
-                        <h1 className='text-[48px] font-bold font-satoshi leading-[56px] tracking-[-0.96px] mb-8'>Comfort is our Top<br/>priority for you<span className='text-[#E67D31]'>.</span> </h1>
-                        <div className='flex flex-col w-[240px] sm:w-[480px] xl:w-[720px] 2xl:w-[560px]  gap-5'>
-                            <p className='text-[#425379] text-[16px] font-normal leading-[28px]'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
-                            <ul className='list-disc marker:text-[#1659E6] grid  sm:grid-cols-2 pl-6 text-[18px] font-normal tracking-[-0.09px]'>
-                                <li>Premium Quality Only</li>
-                                <li>No obligation valuations</li>
-                                <li>Managed Properties</li>
-                                <li>Known in local area</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className='content h-[400px] flex flex-col items-center justify-center lg:py-16 rounded-bl-lg rounded-br-[210px] rounded-tl-[210px] rounded-tr-lg text-white ' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
+                <div className='content h-[400px] flex flex-col items-center justify-center lg:py-16 rounded-bl-lg rounded-br-[210px] rounded-tl-[210px] rounded-tr-lg max-sm:rounded-lg text-white sm:bg-[length:100%_268%] sm:bg-[center_bottom_-10rem]  max-sm:bg-cover max-sm:bg-center'>
                     <h4 className='font-satoshi text-[24px] font-normal mb-2'>Contact Us</h4>
-                    <h1 className='font-satoshi text-[48px] font-bold mb-6'>Get Started With Your New Furniture.</h1>
+                    <h1 className='font-satoshi text-[48px] font-bold mb-6 max-xl:text-center max-sm:text-[28px]'>Get Started With Your New Furniture.</h1>
                     <p className=' font-inter font-normal sm:w-[560px] mb-[18px] text-center'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
                     <button className='bg-[#E67D31] py-[10px] px-9 rounded-[24px]'>
                         Get Started
@@ -105,7 +87,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        <div className='sm:mt-[120px] '>
+        <div className='mt-[60px] sm:mt-[120px] '>
             <Footer/>
         </div>
     </div>
