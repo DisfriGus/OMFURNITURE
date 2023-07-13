@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../Component/Navbar'
-import BackgroundImage from "../Assets/breno-assis-r3WAWU5Fi5Q-unsplash.png"
+import BackgroundImage from "../Assets/Background2.jpg"
 import { MdSearch, MdArrowBack, MdArrowForward } from 'react-icons/md'
 import Layout from '../Component/Layout'
 import HouseImage1 from '../Assets/r-architecture-2gDwlIim3Uw-unsplash.jpg'
@@ -10,9 +10,9 @@ const Home = () => {
   return (
     <div>
         <div className='font-inter '>
-            <div className='hero '>
+            <div className='hero ' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
                 <Navbar/>
-                <div className='flex items-center justify-center h-[400px]' >
+                <div className='flex items-center justify-center h-[425px]' >
                     <div className=' '>
                         <h1 className='text-center text-white text-[26px] font-satoshi  sm:text-[32px] font-bold md:leading-[42px] mb-7 '>Seek and Find<br/> your Ideal property</h1>
                         <div className='flex flex-row items-center justify-start bg-white md:w-[512px] sm:pl-6 sm:gap-3 rounded-xl sm:mb-5'>
@@ -90,9 +90,11 @@ const Home = () => {
                                 <li>Managed Properties</li>
                                 <li>Known in local area</li>
                             </ul>
-
                         </div>
                     </div>
+                </div>
+                <div className='content h-[400px] flex justify-center lg:py-16' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
+                    <h4>Contact Us</h4>
                 </div>
             </div>
         </div>
