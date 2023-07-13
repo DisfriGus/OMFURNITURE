@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from '../Component/Navbar'
-import BackgroundImage from "../Assets/breno-assis-r3WAWU5Fi5Q-unsplash.png"
 import { MdSearch, MdArrowBack, MdArrowForward } from 'react-icons/md'
 import Layout from '../Component/Layout'
-import HouseImage1 from '../Assets/r-architecture-2gDwlIim3Uw-unsplash.jpg'
+import FurnitureImage1 from '../Assets/no-revisions-p0MoUugYbvk-unsplash.jpg'
+import FurnitureImage2 from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
 import Recomendations from '../Data/Recomendation.json'
 import Recomendation from '../Component/Recomendation'
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
         <div className='font-inter '>
             <div className='hero '>
                 <Navbar/>
-                <div className='flex items-center justify-center h-[400px]' >
+                <div className='flex items-center justify-center h-[425px]' >
                     <div className=' '>
                         <h1 className='text-center text-white text-[26px] font-satoshi  sm:text-[32px] font-bold md:leading-[42px] mb-7 '>Seek and Find<br/> your Ideal property</h1>
                         <div className='flex flex-row items-center justify-start bg-white md:w-[512px] sm:pl-6 sm:gap-3 rounded-xl sm:mb-5'>
@@ -57,8 +57,8 @@ const Home = () => {
                     ))}
                 </div>
                 <div className='flex mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
-                    <div className='w-[360px] sm:w-[480px] xl:w-[720px] '>
-                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl' src={HouseImage1} alt="" />
+                    <div className=''>
+                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl h-[420px] w-[720px] object-cover' src={FurnitureImage1} alt="" />
                     </div>
                     <div className='2xl:w-[684px]'>
                         <h3 className='text-[18px] mb-2'>Our Values</h3>
@@ -76,8 +76,8 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='flex flex-row-reverse mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
-                    <div className='w-[360px] sm:w-[480px] xl:w-[720px] '>
-                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl' src={HouseImage1} alt="" />
+                    <div className=''>
+                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl h-[420px] w-[720px] object-cover ' src={FurnitureImage2} alt="" />
                     </div>
                     <div className='2xl:w-[684px]'>
                         <h3 className='text-[18px] mb-2'>Our Values</h3>
