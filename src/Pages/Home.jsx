@@ -4,7 +4,8 @@ import BackgroundImage from "../Assets/Background2.jpg"
 import { MdSearch, MdArrowBack, MdArrowForward } from 'react-icons/md'
 import Layout from '../Component/Layout'
 import FurnitureImage1 from '../Assets/no-revisions-p0MoUugYbvk-unsplash.jpg'
-import FurnitureImage2 from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
+import Logo1 from '../Assets/logo1.svg'
+import Logo2 from '../Assets/logo2.svg'
 import Recomendations from '../Data/Recomendation.json'
 import Recomendation from '../Component/Recomendation'
 import Footer from '../Component/Footer'
@@ -13,7 +14,8 @@ const Home = () => {
     <div>
         <div className='font-inter '>
             <div className='hero  ' style={{ backgroundPosition: `0px -523.686px`, backgroundSize:`100% 268.657%`}}>
-                <Navbar/>
+                <Navbar logo={Logo1} style={`max-2xl:hidden`}/>
+                <Navbar logo={Logo2} style={`2xl:hidden`}/>
                 <div className='flex justify-center pt-14 h-[300px] sm:h-[425px]' >
                     <div className=' '>
                         <h1 className='text-center text-white text-[26px] font-satoshi  sm:text-[48px] font-bold md:leading-[42px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
