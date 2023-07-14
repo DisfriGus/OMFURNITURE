@@ -14,9 +14,10 @@ const Navbar = ({logo, style}) => {
           <NavLink to="/PropertyBaru">Sell</NavLink>
           <NavLink to="/DetailPage">Find Broker</NavLink>
         </div>
-        <div className='flex gap-3 font-normal max-xl:hidden text-white items-center'>
-          <NavLink className={`py-2 px-6  `}>Login</NavLink>
-          <NavLink className={`py-2 px-6 bg-[#1659E6] rounded-md `}>Sign Up</NavLink>
+        <div className={`md:hidden text-[18px] font-medium flex flex-col gap-10 pt-4 absolute top-12 duration-200 bg-white w-full h-[800px] z-20 items-center  ${open ? 'translate-x-[1000px]':'translate-x-0'}`}>
+            <NavLink to='/Article '>Article</NavLink>
+            <NavLink to='/Destination'>Destination</NavLink>
+            <NavLink to='/YourOrders'>Your Orders</NavLink>
         </div>
         <div className='xl:hidden'>
           <button onClick={()=>{
