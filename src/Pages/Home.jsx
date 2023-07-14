@@ -16,14 +16,14 @@ const Home = () => {
             <div className='hero xl:bg-[length:100%_268.657%] xl:bg-[center_bottom_-20rem]  max-2xl:bg-cover max-2xl:bg-center  '>
                 <Navbar logo={Logo1} style={`max-lg:hidden`}/>
                 <Navbar logo={Logo2} style={`lg:hidden`}/>
-                <div className='flex justify-center pt-14 h-[300px] sm:h-[425px]' >
+                <div className='flex justify-center pt-20 lg:pt-14 lg:h-[425px]' >
                     <div className=' '>
-                        <h1 className='text-center text-white text-[26px] font-satoshi  sm:text-[48px] font-bold md:leading-[42px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
-                        <div className='flex flex-row items-center justify-start bg-white md:w-[512px] sm:pl-6 sm:gap-3 rounded-xl sm:mb-5'>
+                        <h1 className='text-center text-white text-[26px] font-satoshi  lg:text-[48px] font-bold md:leading-[42px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
+                        <div className='flex flex-row items-center justify-start bg-white sm:w-[512px] lg:pl-6 lg:gap-3 rounded-xl sm:mb-5'>
                             <button className='text-[24px] dark'>
                                 <MdSearch/>
                             </button>
-                            <input className='py-4 sm:py-[18px] w-full text-[16px] max-sm:text-[12px] outline-none bg-transparent' type="text" placeholder='Masukkan kata kunci atau Lokasi' />
+                            <input className='py-4 xl:py-[18px] w-full xl:text-[16px] text-[12px] outline-none bg-transparent' type="text" placeholder='Masukkan kata kunci atau Lokasi' />
                         </div>
                         <div className='text-white max-sm:text-[12px]'>
                             <p>Popular Search: </p>
