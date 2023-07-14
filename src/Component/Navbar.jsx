@@ -5,7 +5,7 @@ const Navbar = ({logo, style}) => {
   const [open, setOpen] = useState(true)
   return (
       
-      <div className={`font-inter flex items-center justify-between px-2 md:px-[80px] xl:px-[240px]  py-3 xl:py-[26px] max-lg:fixed max-lg:w-full   bg-white lg:bg-transparent ${style}`} >
+      <div className={`font-inter flex items-center justify-between px-5 lg:px-[80px] 2xl:px-[240px]  py-3 xl:py-[26px] max-lg:fixed max-lg:w-full   bg-white lg:bg-transparent ${style}`} >
         <NavLink to="/" className=''>
           <img className='w-[157px] h-[29px] ' src={logo} alt="" />
         </NavLink>
