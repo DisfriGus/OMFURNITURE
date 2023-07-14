@@ -5,6 +5,7 @@ import Dijual from "./Pages/Dijual";
 import Disewa from "./Pages/Disewa";
 import PropertyBaru from "./Pages/PropertyBaru";
 import Panduan from "./Pages/Panduan";
+import DetailPage from "./Pages/DetailPage";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,8 @@ function App() {
         <Route path="/Disewa" element={<Disewa/>}/>
         <Route path="/PropertyBaru" element={<PropertyBaru/>}/>
         <Route path="/Panduan" element={<Panduan/>}/>
+        <Route path="/DetailPage" element={<DetailPage/>}/>
+
 
       </Routes>
     </BrowserRouter>
