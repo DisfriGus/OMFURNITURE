@@ -26,14 +26,14 @@ const Banner = () => {
   return (
     <div className='w-full h-fit  bg-gradient-to-r from-blue-600 to-blue-900 flex flex-col-reverse max-sm:gap-5 md:flex-row justify-between px-16 py-12 rounded-lg'>
       <div className='left flex flex-col items-start justify-center gap-3 md:gap-10'>
-        <div className='banner-heading text-white font-bold text-2xl sm:text-3xl md:text-5xl'>
+        <div className='banner-heading text-white font-bold text-3xl sm:text-3xl md:text-5xl'>
           <h1>Furniture <br />
             Wonderland Awaits
           </h1>
         </div>
         <div className='banner-subheading text-white font-normal text:md md:text-lg'>
           <p>Transform Your Home with Stunning Furniture Pieces <br />
-            Tailored to Your Style</p>
+            Tailored to Your Style</p> 
         </div>
         <Button />
 

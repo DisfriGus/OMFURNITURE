@@ -15,7 +15,7 @@ const FeaturedProductsSlider = () => {
 
 
     const sliderSettings = {
-        440: {
+        150: {
             slidesPerView: 1,
             spaceBetween: 30,
             grid: {

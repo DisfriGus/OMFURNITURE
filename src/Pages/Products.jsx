@@ -8,6 +8,8 @@ import SliderComponent from '../Component/ProductsPage/SliderComp'
 import FeaturedProductsCard from '../Component/ProductsPage/FeaturedProductsCard'
 import FeaturedProductsSlider from '../Component/ProductsPage/FeaturedProductsSlider'
 import Footer from '../Component/Footer'
+import Services from '../Component/ProductsPage/Services'
+import TourBanner from '../Component/ProductsPage/TourBanner'
 
 const Products = () => (
     <>
@@ -18,7 +20,8 @@ const Products = () => (
             {/* banner */}
             <TopPickSlider />
             <FeaturedProductsSlider />
-
+            <Services />
+            <TourBanner />
 
         </Layout>
         <br />
