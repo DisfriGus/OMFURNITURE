@@ -11,6 +11,8 @@ import Footer from '../Component/Footer'
 import Services from '../Component/ProductsPage/Services'
 import TourBanner from '../Component/ProductsPage/TourBanner'
 import Logo from '../Assets/logo2.svg' 
+import FurnituresSlider from '../Component/ProductsPage/FurnituresSlider'
+import InspirationSets from '../Component/ProductsPage/InspirationSets'
 
 const Products = () => (
     <>
@@ -21,6 +23,8 @@ const Products = () => (
             {/* banner */}
             <TopPickSlider />
             <FeaturedProductsSlider />
+            <InspirationSets />
+            <FurnituresSlider />
             <Services />
             <TourBanner />
 

@@ -24,7 +24,7 @@ const Banner = () => {
 
 
   return (
-    <div className='w-full h-fit  bg-gradient-to-r from-blue-600 to-blue-900 flex flex-col-reverse max-sm:gap-5 md:flex-row justify-between px-16 py-12 rounded-lg'>
+    <div className='w-full h-fit max-lg:pt-32 bg-gradient-to-r from-blue-600 to-blue-900 flex flex-col-reverse max-sm:gap-5 md:flex-row justify-between px-16 py-12 rounded-lg'>
       <div className='left flex flex-col items-start justify-center gap-3 md:gap-10'>
         <div className='banner-heading text-white font-bold text-3xl sm:text-3xl md:text-5xl'>
           <h1>Furniture <br />

@@ -9,7 +9,8 @@ import standing from '../Assets/standingdesk.png'
 import bed from '../Assets/bed.png'
 import caspian from '../Assets/caspian.png'
 import outdoor from '../Assets/outdoorsofa.png'
-
+import dining from '../Assets/diningtable.png'
+import wayne from '../Assets/waynelamps.png'
 
 export const featuredProducts = [
     {
@@ -21,7 +22,7 @@ export const featuredProducts = [
     },
     {
         title: 'Standing Desk Ivory',
-        price: '$ $ 1,389',
+        price: '$ 1,389',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(10)',
         image: standing
@@ -41,13 +42,6 @@ export const featuredProducts = [
         image: caspian
     },
     {
-        title: 'Outdoor Sofa',
-        price: '$ 3,789',
-        subtitle: 'Smoke and accented finishing cabinet',
-        sold: '(120)',
-        image: outdoor
-    },
-    {
         title: 'Naomi Cabinet',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -55,11 +49,53 @@ export const featuredProducts = [
         image: cabinet
     },
     {
+        title: 'Outdoor Sofa',
+        price: '$ 3,789',
+        subtitle: 'Smoke and accented finishing cabinet',
+        sold: '(120)',
+        image: outdoor
+    },
+    {
         title: 'Standing Desk Ivory',
         price: '$ $ 1,389',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
         image: standing
+    },
+    {
+        title: 'Caracole Nite Bed',
+        price: '$ 3,589',
+        subtitle: 'Smoke and accented finishing cabinet',
+        sold: '(120)',
+        image: bed
+    },
+    {
+        title: 'Caspian Coffee Table',
+        price: '$ 3,789',
+        subtitle: 'Smoke and accented finishing cabinet',
+        sold: '(120)',
+        image: caspian
+    },
+    {
+        title: 'Outdoor Sofa',
+        price: '$ 3,789',
+        subtitle: 'Smoke and accented finishing cabinet',
+        sold: '(120)',
+        image: outdoor
+    },
+    {
+        title: 'Dining Table',
+        price: '$ 8,789',
+        subtitle: 'Smoke and accented finishing cabinet',
+        sold: '(92)',
+        image: dining
+    },
+    {
+        title: 'Wayne Lamps',
+        price: '$ 879',
+        subtitle: 'Smoke and accented finishing cabinet',
+        sold: '(442)',
+        image: wayne
     },
     {
         title: 'Caracole Nite Bed',
@@ -91,42 +127,7 @@ export const featuredProducts = [
     },
     {
         title: 'Standing Desk Ivory',
-        price: '$ 1,389',
-        subtitle: 'Smoke and accented finishing cabinet',
-        sold: '(120)',
-        image: standing
-    },
-    {
-        title: 'Caracole Nite Bed',
-        price: '$ 3,589',
-        subtitle: 'Smoke and accented finishing cabinet',
-        sold: '(120)',
-        image: bed
-    },
-    {
-        title: 'Caspian Coffee Table',
-        price: '$ 3,789',
-        subtitle: 'Smoke and accented finishing cabinet',
-        sold: '(120)',
-        image: caspian
-    },
-    {
-        title: 'Outdoor Sofa',
-        price: '$ 3,789',
-        subtitle: 'Smoke and accented finishing cabinet',
-        sold: '(120)',
-        image: outdoor
-    },
-    {
-        title: 'Naomi Cabinet',
-        price: '$ 3,789',
-        subtitle: 'Smoke and accented finishing cabinet',
-        sold: '(120)',
-        image: cabinet
-    },
-    {
-        title: 'Standing Desk Ivory',
-        price: '$ $ 1,389',
+        price: '$ ss1,389',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
         image: standing
