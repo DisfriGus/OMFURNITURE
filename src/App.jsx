@@ -5,17 +5,18 @@ import Dijual from "./Pages/Dijual";
 import Disewa from "./Pages/Disewa";
 import PropertyBaru from "./Pages/PropertyBaru";
 import Panduan from "./Pages/Panduan";
-import Products from "./Pages/Products";
+import DetailPage from "./Pages/DetailPage";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Dijual" element={<Dijual />} />
-        <Route path="/Disewa" element={<Disewa />} />
-        <Route path="/PropertyBaru" element={<PropertyBaru />} />
-        <Route path="/Panduan" element={<Panduan />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Dijual" element={<Dijual/>}/>
+        <Route path="/Disewa" element={<Disewa/>}/>
+        <Route path="/PropertyBaru" element={<PropertyBaru/>}/>
+        <Route path="/Panduan" element={<Panduan/>}/>
+        <Route path="/DetailPage" element={<DetailPage/>}/>
+
 
       </Routes>
     </BrowserRouter>
