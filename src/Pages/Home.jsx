@@ -1,55 +1,16 @@
 import React from 'react'
 import Navbar from '../Component/Navbar'
 import BackgroundImage from "../Assets/Background2.jpg"
-import { MdSearch, MdArrowBack, MdArrowForward } from 'react-icons/md'
-import Layout from '../Component/Layout'
+import { MdSearch, MdArrowBack, MdArrowForward, MdChat, MdEmail } from 'react-icons/md'
 import FurnitureImage1 from '../Assets/no-revisions-p0MoUugYbvk-unsplash.jpg'
 import Logo1 from '../Assets/logo1.svg'
 import Logo2 from '../Assets/logo2.svg'
 import Recomendations from '../Data/Recomendation.json'
 import Recomendation from '../Component/Recomendation'
 import Footer from '../Component/Footer'
-import CardCategory from '../Component/CardCategory'
+import {MdCall} from 'react-icons/md'
 const Home = () => {
-    // return (
-    //     <div>
-    //         <Navbar />
-    //         <div className='font-inter'>
-    //             <div className='py-[60px] max-sm:w-full flex lg:w-full lg:h-[400px] bg-no-repeat bg-cover max-md:justify-center' style={{ backgroundImage: `url(${BackgroundImage})` }}>
-    //                 <Layout>
-    //                     <div className='h-fit'>
-    //                         <h1 className='max-md:text-center text-white text-[26px] sm:text-[32px] font-bold md:leading-[42px] mb-7 '>Seek and Find<br /> your Ideal property</h1>
-    //                         <div className='flex flex-row items-center justify-start bg-white md:w-[512px] sm:pl-6 sm:gap-3 rounded-xl sm:mb-5'>
-    //                             <button className='text-[24px] dark'>
-    //                                 <MdSearch />
-    //                             </button>
-    //                             <input className='py-4 sm:py-[18px] w-full text-[16px] max-sm:text-[12px] outline-none bg-transparent' type="text" placeholder='Masukkan kata kunci atau Lokasi' />
-    //                         </div>
-    //                         <div className='text-white max-sm:text-[12px]'>
-    //                             <p>Popular Search: </p>
-    //                         </div>
-    //                     </div>
-    //                 </Layout>
-    //             </div>
-    //             <div>
-    //                 {/* <CardCategory /> */}
-    //             </div>
-
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <br />
-
-    //         </div>
-    //     </div>
-    // )
+    
   return (
     <div>
         <div className='font-inter '>
@@ -105,7 +66,7 @@ const Home = () => {
                         <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl h-[420px] w-[720px] max-sm:rounded-lg object-cover' src={FurnitureImage1} alt="" />
                     </div>
                     <div className='2xl:w-[684px]'>
-                        <h3 className='text-[18px] mb-2'>Our Values</h3>
+                        <h3 className='text-[18px] mb-2 text-[#1659E6]'>Our Values</h3>
                         <h1 className='text-[36px] sm:text-[48px] max-sm:text-center font-bold font-satoshi sm:leading-[56px] sm:tracking-[-0.96px] sm:mb-8'>Comfort is our Top<br/>priority for you<span className='text-[#E67D31]'>.</span> </h1>
                         <div className='flex flex-col w-full xl:w-[720px] 2xl:w-[560px] gap-5'>
                             <p className='text-[#425379] text-[16px] font-normal leading-[28px] max-sm:text-center'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
@@ -115,7 +76,47 @@ const Home = () => {
                                 <li>Managed Properties</li>
                                 <li>Known in local area</li>
                             </ul>
-
+                        </div>
+                    </div>
+                </div>
+                <div className='flex flex-row-reverse mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
+                    <div className=''>
+                        <img className='rounded-t-xl rounded-tr-[210px] rounded-bl-[210px] rounded-br-xl h-[420px] w-[720px] max-sm:rounded-lg object-cover' src={FurnitureImage1} alt="" />
+                    </div>
+                    <div className='2xl:w-[684px]'>
+                        <h3 className='text-[18px] mb-2 text-[#1659E6]'>Contact Us</h3>
+                        <h1 className='text-[36px] sm:text-[48px] max-sm:text-center font-bold font-satoshi sm:leading-[56px] sm:tracking-[-0.96px] sm:mb-8'>Connect with us!</h1>
+                        <div className='flex flex-col w-full xl:w-[720px] 2xl:w-[560px] gap-5'>
+                            <p className='text-[#425379] text-[16px] font-normal leading-[28px] max-sm:text-center'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
+                            <ul className='grid sm:grid-cols-2 pl-6 text-[18px] font-normal tracking-[-0.09px] gap-y-8  '>
+                                <div className='flex items-center gap-4'>
+                                    <div className='rounded-lg p-[6px] bg-[#C5D7FF] text-[24px] text-[#1659E6]'>
+                                        <MdCall className=' '/>
+                                    </div>
+                                    <div>
+                                        <h4 className='text-[24px] font-satoshi font-medium'>Call</h4>
+                                        <p className='text-[16px]'>+62 889-9819-9812</p>
+                                    </div>
+                                </div>
+                                <div className='flex items-center gap-4'>
+                                    <div className='rounded-lg p-[6px] bg-[#C5D7FF] text-[24px] text-[#1659E6]'>
+                                        <MdChat className=' '/>
+                                    </div>
+                                    <div>
+                                        <h4 className='text-[24px] font-satoshi font-medium'>Chat</h4>
+                                        <p className='text-[16px]'>+62 880-9800-9900</p>
+                                    </div>
+                                </div>
+                                <div className='flex items-center gap-4'>
+                                    <div className='rounded-lg p-[6px] bg-[#C5D7FF] text-[24px] text-[#1659E6]'>
+                                        <MdEmail className=' '/>
+                                    </div>
+                                    <div>
+                                        <h4 className='text-[24px] font-satoshi font-medium'>Email</h4>
+                                        <p className='text-[16px]'>contact@omfurniture.com</p>
+                                    </div>
+                                </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
