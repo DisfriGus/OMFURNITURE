@@ -16,7 +16,7 @@ const CardCategory = () => {
             title: "Apartment"
         },
         {
-            image:Office,
+            image: Office,
             title: 'Office'
         },
         {
@@ -24,25 +24,29 @@ const CardCategory = () => {
             title: "Penthouse"
         }
     ]
-  return (
-    <div>
-        <div className='lg:mx-[240px] md:mx-[80px] mx-[12px] mt-9 font-inter font-medium max-sm:w-full max-sm:mx-1'> 
-            <div>
-                <h1 className='text-[21px] mb-4'>
-                    Categories
-                </h1>
-            </div>
-            <NavLink className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 max-sm:place-items-center max-sm:gap-4'>
-                {
-                    categories.map((item, index) => {
-                        return <div key={index}><Card image={item.image} title={item.title}/></div>
-                    })
-                }
+    return (
+        <div>
+            <div className='md:mx-[80px] mx-[12px] mt-9 font-inter font-medium max-sm:w-full max-sm:mx-1'>
+                <div>
+                    <h1 className='text-[21px] mb-4'>
+                        Categories
+                    </h1>
+                </div>
+                <NavLink className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 sm:grid-cols-2 max-sm:place-items-center max-sm:gap-4'>
+                    {
+                        categories.map((item, index) => {
+                            return (
+                                <div key={index}>
+                                    <Card image={item.image} title={item.title} />
+                                </div>
+                            )
+                        })
+                    }
 
-            </NavLink>
+                </NavLink>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default CardCategory
