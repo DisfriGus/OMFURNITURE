@@ -1,4 +1,3 @@
-import Card from '../Card';
 import TopPickCard from './TopPickCard';
 import furniture2 from '../../Assets/furniture2.png'
 
@@ -110,7 +109,9 @@ const TopPickSlider = () => {
                         onBeforeInit={(swiper) => {
                             swiperRef.current = swiper;
                         }}
+                        
                         >
+                            
                         {cardData.map((card, index) => {
                             return (
                                 <SwiperSlide key={index}>

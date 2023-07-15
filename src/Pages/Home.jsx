@@ -9,6 +9,7 @@ import Logo2 from '../Assets/logo2.svg'
 import Recomendations from '../Data/Recomendation.json'
 import Recomendation from '../Component/Recomendation'
 import Footer from '../Component/Footer'
+import CardCategory from '../Component/CardCategory'
 const Home = () => {
     return (
         <div>
@@ -31,7 +32,7 @@ const Home = () => {
                     </Layout>
                 </div>
                 <div>
-                    <CardCategory />
+                    {/* <CardCategory /> */}
                 </div>
 
                 <br />
