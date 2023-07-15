@@ -8,10 +8,11 @@ import SliderComponent from '../Component/ProductsPage/SliderComp'
 import FeaturedProductsCard from '../Component/ProductsPage/FeaturedProductsCard'
 import FeaturedProductsSlider from '../Component/ProductsPage/FeaturedProductsSlider'
 import Footer from '../Component/Footer'
+import Logo from '../Assets/logo2.svg' 
 
 const Products = () => (
     <>
-        <Navbar />
+        <Navbar logo={Logo} signup={'text-white'}  />
         <Layout>
             {/* banner */}
             <Banner />

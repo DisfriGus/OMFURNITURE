@@ -15,7 +15,7 @@ const Home = () => {
     <div>
         <div className='font-inter '>
             <div className='hero xl:bg-[length:100%_268.657%] xl:bg-[center_bottom_-20rem]  max-2xl:bg-cover max-2xl:bg-center  '>
-                <Navbar logo={Logo1} style={`max-lg:hidden`}/>
+                <Navbar logo={Logo1} style={`max-lg:hidden`} user={'text-white'}/>
                 <Navbar logo={Logo2} style={`lg:hidden`}/>
                 <div className='flex justify-center pt-20 lg:pt-14 lg:h-[425px]' >
                     <div className=' '>

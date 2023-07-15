@@ -1,10 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Dijual from "./Pages/Dijual";
-import Disewa from "./Pages/Disewa";
-import PropertyBaru from "./Pages/PropertyBaru";
-import Panduan from "./Pages/Panduan";
 import DetailPage from "./Pages/DetailPage";
 import Products from "./Pages/Products";
 function App() {
@@ -12,12 +8,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/Dijual" element={<Dijual/>}/>
-        <Route path="/Disewa" element={<Disewa/>}/>
-        <Route path="/PropertyBaru" element={<PropertyBaru/>}/>
-        <Route path="/Panduan" element={<Panduan/>}/>
-        <Route path="/DetailPage" element={<DetailPage/>}/>
+        <Route path="/Category" element={<Products/>}/>
         <Route path="/products" element={<Products /> }/>
+        <Route path="/Rooms" element={<Products/>}/>
+        <Route path="/Dormitory" element={<Products/>}/>
+        <Route path="/DetailPage" element={<DetailPage/>}/>
         
 
 
