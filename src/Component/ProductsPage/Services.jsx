@@ -64,7 +64,9 @@ const Services = () => {
 
                 {data.map((item, index) => {
                     return (
-                        <ServicesCard data={item} />
+                        <div key={index}>
+                            <ServicesCard data={item} />
+                        </div>
                     )
                 })}
 
