@@ -28,7 +28,7 @@ const InspirationSets = () => {
                 <div className='flex flex-col'>
                     <h1 className='font-inter text-[#031C32] font-medium text-3xl overflow-ellipsis py-4'>{data.title}</h1>
                     <h1 className='text-[#425379] font-inter font-normal text-lg overflow-ellipsis'>Our experts will guide you through the process, sharing expert tips on selecting the finest materials and incorporating stylish accents.</h1>
-                    <div className='flex flex-row gap-1 mt-8'>
+                    <div className='flex flex-row gap-1 mt-8 cursor-pointer'>
                         <h1 className='text-[#031C32] font-inter underline'>See inspiration</h1>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <mask id="mask0_280_911" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
