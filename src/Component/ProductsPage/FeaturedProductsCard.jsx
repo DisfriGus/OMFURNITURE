@@ -19,9 +19,10 @@ const FeaturedProductsCard = () => {
     const stars = Array.from({ length: 5 }, (v, i) => i + 1);
 
     return (
-        <div className="bg-white w-[336px] h-[160px]">
+        <div className="bg-white w-[336px] h-full max-sm:mx-auto">
             <div className="image rounded-md">
                 <img src={cabinet} alt="" />
+                {/* <img src="../../Assets/cabinet.png" alt="" /> */}
             </div>
             <div className="title flex flex-col gap-3 rounded-md">
                 <div className="flex flex-row justify-between text-[#031C32] font-bold text-2xl text-ellipsis">
@@ -31,7 +32,7 @@ const FeaturedProductsCard = () => {
                 <div className="subtitle font-inter text-xl font-medium text-[#425379]">
                     <h1>Smoke and accented finishing cabinet</h1>
                 </div>
-                <div className='flex flex-row justify-start items-center'>
+                <div className='flex flex-row justify-start items-center gap-1'>
                     <div className="star flex flex-row justify-start items-center">
                         {stars.map((index) => (
                             <div key={index}>{starSvg}</div>
@@ -42,7 +43,7 @@ const FeaturedProductsCard = () => {
                     </div>
                 </div>
                 <button className="w-fit py-[12px] px-[36px] rounded-[27px] border-slate-400 border-[1px] hover:border-none text-black hover:bg-[#031C32] hover:text-white text-lg">
-                    Buy Now
+                    Add to Cart
                 </button>
             </div>
         </div>

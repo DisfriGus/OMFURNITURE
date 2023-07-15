@@ -1,6 +1,5 @@
 import React from 'react'
-import sofa from '../../Assets/sofa.svg'
-import sofa2 from '../../Assets/sofa.png'
+import sofakocak from '../../Assets/sofakocak.png'
 
 
 const Banner = () => {
@@ -40,7 +39,7 @@ const Banner = () => {
 
       </div>
       <div className='right w-[80%] xl:w-fit flex items-center justify-center'>
-        <img src={sofa2} alt="" />
+        <img src={sofakocak} alt="" />
       </div>
 
     </div>

@@ -1,14 +1,18 @@
-import TopPickCard from './TopPickCard';
-import { cardData } from '../../Data/Products';
-import React, { useRef } from "react";
+import React, { useRef } from 'react'
+import { featuredProducts } from '../../Data/Products';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Grid, Pagination } from 'swiper/modules';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+import FeaturedProductsCard from './FeaturedProductsCard';
 
 
-const TopPickSlider = () => {
+const FeaturedProductsSlider = () => {
+
     const swiperRef = useRef();
 
-   
+
 
     const sliderSettings = {
         440: {
@@ -24,21 +28,23 @@ const TopPickSlider = () => {
             spaceBetween: 30,
         },
         1200: {
-            slidesPerView: 5,
+            slidesPerView: 3,
             spaceBetween: 30,
         },
         1500: {
-            slidesPerView: 6,
+            slidesPerView: 4,
             spaceBetween: 30,
         },
     };
 
+
+
     return (
-        <div className='pick-of-the-week'>
+        <div className='featured-products-slider'>
             <div className='header-pick-of-the-week flex flex-row justify-between my-8'>
                 <div className='flex flex-col gap-1 '>
-                    <h3 className='text-[#1659E6] font-inter font-medium text-lg'>Pick of the week</h3>
-                    <h1 className='text-[#031C32] font-inter font-semibold text-3xl '>Our Top Pick Just For You</h1>
+                    <h3 className='text-[#1659E6] font-inter font-medium text-lg'>Featured Products</h3>
+                    <h1 className='text-[#031C32] font-inter font-semibold text-3xl '>A Product for You!</h1>
                 </div>
                 <div className='navigation-arrow flex flex-row-reverse gap-2 items-end'>
 
@@ -64,32 +70,40 @@ const TopPickSlider = () => {
                             </g>
                         </svg>
                     </div>
-
                 </div>
             </div>
+
+
             <div>
-                <div>
-                    <Swiper
-                        breakpoints={sliderSettings}
-                        onBeforeInit={(swiper) => {
-                            swiperRef.current = swiper;
-                        }}
-                        
-                        >
-                            
-                        {cardData.map((card, index) => {
-                            return (
-                                <SwiperSlide key={index}>
-                                    <TopPickCard data={card} />
-                                </SwiperSlide>
-                            )
-                        })}
-                    </Swiper>
+                <Swiper
+                    slidesPerView={4}
+                    grid={{
+                        rows: 2,
+                        fill: "row",
+                    }}
+                    breakpoints={sliderSettings}
+                    onBeforeInit={(swiper) => {
+                        swiperRef.current = swiper;
+                    }}
 
-                </div>
+                    modules={[Grid]}
+                    spaceBetween={32}
+                    className="mySwiper"
+                >
+                    {featuredProducts.map((product, index) => {
+                        return (
+                            <SwiperSlide key={index}>
+                                <FeaturedProductsCard />
+                                {/* <h1>tes</h1> */}
+                            </SwiperSlide>
+                        )
+                    })}
+                </Swiper>
             </div>
+
+
         </div>
     )
 }
 
-export default TopPickSlider
+export default FeaturedProductsSlider

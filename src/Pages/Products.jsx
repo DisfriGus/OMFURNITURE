@@ -6,6 +6,7 @@ import TopPickCard from '../Component/ProductsPage/TopPickCard'
 import TopPickSlider from '../Component/ProductsPage/TopPickSlider'
 import SliderComponent from '../Component/ProductsPage/SliderComp'
 import FeaturedProductsCard from '../Component/ProductsPage/FeaturedProductsCard'
+import FeaturedProductsSlider from '../Component/ProductsPage/FeaturedProductsSlider'
 
 const Products = () => (
     <>
@@ -28,8 +29,7 @@ const Products = () => (
             <br />
             <br />
 
-
-            <FeaturedProductsCard />
+            <FeaturedProductsSlider />
             <br />
             <br />
             <br />
@@ -49,7 +49,7 @@ const Products = () => (
             <br />
             <br />
 
-            <SliderComponent />
+            {/* <SliderComponent /> */}
 
         </Layout>
     </>
