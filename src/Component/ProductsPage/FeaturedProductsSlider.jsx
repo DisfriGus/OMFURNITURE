@@ -18,22 +18,42 @@ const FeaturedProductsSlider = () => {
         440: {
             slidesPerView: 1,
             spaceBetween: 30,
+            grid: {
+                rows: 2,
+                fill: "row"
+            }
         },
         550: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 30,
+            grid: {
+                rows: 2,
+                fill: "row"
+            }
         },
         800: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 30,
+            grid: {
+                rows: 2,
+                fill: "row"
+            }
         },
         1200: {
             slidesPerView: 3,
             spaceBetween: 30,
+            grid: {
+                rows: 2,
+                fill: "row"
+            }
         },
         1500: {
             slidesPerView: 4,
             spaceBetween: 30,
+            grid: {
+                rows: 2,
+                fill: "row"
+            }
         },
     };
 
@@ -93,7 +113,7 @@ const FeaturedProductsSlider = () => {
                     {featuredProducts.map((product, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <FeaturedProductsCard />
+                                <FeaturedProductsCard data={product} />
                                 {/* <h1>tes</h1> */}
                             </SwiperSlide>
                         )

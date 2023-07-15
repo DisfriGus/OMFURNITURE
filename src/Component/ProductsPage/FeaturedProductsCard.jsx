@@ -2,7 +2,11 @@ import React from 'react';
 import furniture2 from '../../Assets/furniture2.png';
 import cabinet from '../../Assets/cabinet.png'
 
-const FeaturedProductsCard = () => {
+const FeaturedProductsCard = ({data}) => {
+
+
+    console.log(data);
+
     const starSvg = (
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <g clipPath="url(#clip0_257_747)">
@@ -19,18 +23,18 @@ const FeaturedProductsCard = () => {
     const stars = Array.from({ length: 5 }, (v, i) => i + 1);
 
     return (
-        <div className="bg-white w-[336px] h-full max-sm:mx-auto">
+        <div className="bg-white w-[336px] h-full max-sm:mx-auto font-satoshi">
             <div className="image rounded-md">
-                <img src={cabinet} alt="" />
+                <img src={data.image} alt="" />
                 {/* <img src="../../Assets/cabinet.png" alt="" /> */}
             </div>
             <div className="title flex flex-col gap-3 rounded-md">
                 <div className="flex flex-row justify-between text-[#031C32] font-bold text-2xl text-ellipsis">
-                    <h1>Naomi Cabet</h1>
-                    <h1>$ 3,789</h1>
+                    <h1>{data.title}</h1>
+                    <h1>{data.price}</h1>
                 </div>
                 <div className="subtitle font-inter text-xl font-medium text-[#425379]">
-                    <h1>Smoke and accented finishing cabinet</h1>
+                    <h1>{data.subtitle}</h1>
                 </div>
                 <div className='flex flex-row justify-start items-center gap-1'>
                     <div className="star flex flex-row justify-start items-center">
@@ -39,7 +43,7 @@ const FeaturedProductsCard = () => {
                         ))}
                     </div>
                     <div>
-                        <h1>(120)</h1>
+                        <h1>{data.sold}</h1>
                     </div>
                 </div>
                 <button className="w-fit py-[12px] px-[36px] rounded-[27px] border-slate-400 border-[1px] hover:border-none text-black hover:bg-[#031C32] hover:text-white text-lg">

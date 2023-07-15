@@ -7,51 +7,28 @@ import TopPickSlider from '../Component/ProductsPage/TopPickSlider'
 import SliderComponent from '../Component/ProductsPage/SliderComp'
 import FeaturedProductsCard from '../Component/ProductsPage/FeaturedProductsCard'
 import FeaturedProductsSlider from '../Component/ProductsPage/FeaturedProductsSlider'
+import Footer from '../Component/Footer'
 
 const Products = () => (
     <>
         <Navbar />
-        <Layout> 
+        <Layout>
             {/* banner */}
             <Banner />
             {/* banner */}
             <TopPickSlider />
-
-
-
-            
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-
             <FeaturedProductsSlider />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
 
-            {/* <SliderComponent /> */}
 
         </Layout>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <Footer />
+
     </>
 )
 
