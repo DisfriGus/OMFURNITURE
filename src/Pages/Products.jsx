@@ -10,10 +10,11 @@ import FeaturedProductsSlider from '../Component/ProductsPage/FeaturedProductsSl
 import Footer from '../Component/Footer'
 import Services from '../Component/ProductsPage/Services'
 import TourBanner from '../Component/ProductsPage/TourBanner'
+import Logo from '../Assets/logo2.svg' 
 
 const Products = () => (
     <>
-        <Navbar />
+        <Navbar logo={Logo} signup={'text-white'}  />
         <Layout>
             {/* banner */}
             <Banner />
