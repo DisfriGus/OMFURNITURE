@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdMenu, MdClose } from 'react-icons/md';
+import ShopingCart from '../Assets/shoppingCart.svg'
+import Person from '../Assets/Person.svg'
 
 const Navbar = ({ logo, style, user, signup }) => {
   const [open, setOpen] = useState(true);
@@ -52,10 +54,17 @@ const Navbar = ({ logo, style, user, signup }) => {
               <NavLink to="/Dormitory">Dormitory</NavLink>
             </div>
           </div>
-          <div>
+          <div className='flex gap-9 items-center'>
             <input type="text" />
-            <span>Welcome, User</span>
-            <button onClick={handleLogout}>Logout</button>
+            <div className='flex gap-4 items-center'>
+              <NavLink to='/cart'>
+                <img src={ShopingCart} alt="" /> 
+              </NavLink>
+              <NavLink className={`bg-[#F2F2F2] p-2 rounded-full`}>
+                <img src={Person} alt="" />
+              </NavLink>
+            </div>
+            {/* <button onClick={handleLogout}>Logout</button> */}
           </div>
         </div>
       ) : (
