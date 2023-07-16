@@ -3,9 +3,11 @@ import Navbar from '../Component/Navbar'
 import { useNavigate, useParams } from 'react-router-dom'
 import Profile from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
 import Logo from '../Assets/logo2.svg'
+import Delivery from '../Assets/Local_shipping.svg'
+import Box from '../Assets/box.svg'
 const DetailPage = () => {
     const [place, setPlace] = useState(null)
-    const {id} = useParams()
+    const {title} = useParams()
     const navigate = useNavigate()
     const [count, setCount] = useState(0)
 
@@ -52,17 +54,96 @@ const DetailPage = () => {
                 </div>
             </div>
             <div className='flex gap-[18px] mb-[50px]'>
-                <button className='px-[56px] py-3 rounded-[27px] bg-[#031C32] text-white'>Buy Now</button>
-                <button className='px-[56px] py-3 rounded-[27px] '>Add Cart</button>
+                <button className='px-[56px] py-3 rounded-[27px] bg-[#031C32] text-white max-sm:text-[12px]'>Buy Now</button>
+                <button className='px-[56px] py-3 rounded-[27px] max-sm:text-[12px]'>Add Cart</button>
             </div>
             <div>
-                <div className='py-[14px] w-[520px]'>
-                    <h4>Free Delivery</h4>
-                    <p className='pl-[40px]'>Enter</p>
+                <div className=' flex gap-3  py-[14px] w-[520px]'>
+                    <div className='w-[24px] h-[24px]'>
+                        <img src={Delivery} alt="" />
+                    </div>
+                    <div>
+                        <h4 className='text-[16px] font-semibold text-[#031C32]'>Free Delivery</h4>
+                        <p className='font-normal underline text-[#031C32]'>Enter your postal code for delivery availability</p>
+                    </div>
                 </div>
-                <div className='py-[14px] w-[520px]'>
-                    <h4>Return Policy</h4>
-                    <p className='pl-[40px]'>Free</p>
+                <div className='flex py-[14px] w-[520px]'>
+                    <div>
+                        <img src={Box} alt="" />
+                    </div>
+                    <div>
+                        <h4 className='text-[16px] font-semibold text-[#031C32]'>Return Policy</h4>
+                        <p className='font-normal text-[#031C32]'>Free 60-days delivery return. <span className='underline'>Details</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div className='px-4 lg:px-[240px] '>
+        <h1 className='text-[24px] font-bold text-[#031C32]'>Product Spesification</h1>
+        <div className='flex flex-wrap gap-6'>
+            <div className='lg:w-[680px]'>
+                <div className='border bg-[#F5F5F7] py-4 px-3'>
+                    <h3 className='mb-4 font-medium'>General Spesification</h3>
+                    <div className='bg-white flex justify-between py-3'>
+                        <h4>Material</h4>
+                        <h4>Tweed, Wood</h4>
+                    </div>
+                    <div className='flex justify-between py-3'>
+                        <h4>Overall</h4>
+                        <h4>H: 33 in, W: 55 in, D:31.5 in</h4>
+                    </div>
+                    <div className='bg-white flex justify-between py-3'>
+                        <h4>Manufacture Date</h4>
+                        <h4>21 July 2023</h4>
+                    </div>
+                    <div className='flex justify-between py-3'>
+                        <h4>Primary Finish</h4>
+                        <h4>Platinum Tweed</h4>
+                    </div>
+                    <div className='bg-white flex justify-between py-3 max-sm:flex-col max-sm:gap-2'>
+                        <h4>Fabric Content</h4>
+                        <h4>56% Polyester, 22% Cotton, 18% Acryclic, 4% Polyethylene</h4>
+                    </div>
+                    <div className='flex justify-between py-3'>
+                        <h4>Overall</h4>
+                        <h4>H: 33 in, W: 55 in, D:31.5 in</h4>
+                    </div>
+                </div>
+            </div>
+            <div className='lg:w-[680px]'>
+                <div className='border bg-[#F5F5F7] py-4 px-3'>
+                    <h3 className='mb-4 font-medium'>Product Detail</h3>
+                    <div className='bg-white flex justify-between py-3'>
+                        <h4>Material</h4>
+                        <h4>Tweed, Wood</h4>
+                    </div>
+                    <div className='flex justify-between py-3'>
+                        <h4>Overall</h4>
+                        <h4>H: 33 in, W: 55 in, D:31.5 in</h4>
+                    </div>
+                    <div className='bg-white flex justify-between py-3'>
+                        <h4>Manufacture Date</h4>
+                        <h4>21 July 2023</h4>
+                    </div>
+                    <div className='flex justify-between py-3'>
+                        <h4>Primary Finish</h4>
+                        <h4>Platinum Tweed</h4>
+                    </div>
+                    <div className='bg-white flex justify-between py-3 max-sm:flex-col max-sm:gap-2'>
+                        <h4>Fabric Content</h4>
+                        <h4>56% Polyester, 22% Cotton, 18% Acryclic, 4% Polyethylene</h4>
+                    </div>
+                    <div className='flex justify-between py-3'>
+                        <h4>Overall</h4>
+                        <h4>H: 33 in, W: 55 in, D:31.5 in</h4>
+                    </div>
+                </div>
+            </div>
+            <div className='w-full lg:w-[680px]'>
+                <div className='border py-4 px-3'>
+                    <h3 className='mb-4 font-medium'>Reviews (173)</h3>
+                    
                 </div>
             </div>
         </div>
