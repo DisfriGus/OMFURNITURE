@@ -30,7 +30,7 @@ const DetailPage = () => {
         return extractedNumber;
     };
   return (
-    <div className='relative'>
+    <div>
       <Navbar logo={Logo} />
       <div className='py-16 lg:py-11 lg:px-[240px] flex max-2xl:flex-col  gap-11 items-center font-inter'>
         <div className="  lg:w-[720px]  max-sm:py-10 max-sm:px-6 ">
@@ -93,7 +93,7 @@ const DetailPage = () => {
       </div>
       <div className='px-4 lg:px-[240px] font-inter '>
         <h1 className='text-[24px] font-bold text-[#031C32]'>Product Spesification</h1>
-        <div className='flex max-lg:flex-col gap-6 mb-9'>
+        <div className='flex flex-col 2xl:flex-row gap-6 mb-9'>
             <div className='lg:w-[680px]'>
                 <div className='border bg-[#F5F5F7] py-4 px-3'>
                     <h3 className='mb-4 font-medium'>General Spesification</h3>

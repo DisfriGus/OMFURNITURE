@@ -67,9 +67,9 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
             </div>
           </div>
           <div className='flex gap-9 items-center'>
-            <div className={`flex text-[#757575] w-[435px] py-4 px-6 gap-4 items-center bg-[#F6F6F6] rounded-[32px] ${inputStyle}`}>
+            <div className={`flex text-[#757575] xl:w-[435px] py-4 px-6 gap-4 items-center bg-[#F6F6F6] rounded-[32px] ${inputStyle}`}>
               <MdSearch className='text-[24px]' />
-              <input type="text" className={`outline-none w-[400px] bg-[#F6F6F6] `} />
+              <input type="text" className={`outline-none w-[120px] xl:w-[400px] bg-[#F6F6F6] `} />
               <button onClick={handleShowUpload}>
                 <MdCenterFocusWeak className='text-[24px]' />
               </button>
