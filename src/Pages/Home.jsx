@@ -18,7 +18,7 @@ const Home = () => {
             <div className='hero xl:bg-[length:100%_338.824%] xl:bg-[center_bottom_-20rem]  max-2xl:bg-cover max-2xl:bg-center  '>
                 <Navbar logo={Logo1} style={`max-lg:hidden`} inputStyle={'hidden'} user={'text-white'}/>
                 <Navbar logo={Logo2} style={`lg:hidden`} />
-                <div className='flex justify-center pt-20 h-[280px] lg:h-[425px]' >
+                <div className='flex justify-center pt-20 h-[280px] sm:h-[350px] lg:h-[425px]' >
                     <div className=''>
                         <h1 className='text-center text-white text-[26px] font-satoshi  lg:text-[48px] font-bold md:leading-[56px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
                         <div className='flex flex-row items-center justify-start bg-white sm:w-[512px] lg:w-[659px] lg:pl-6 lg:gap-3 rounded-xl  sm:mb-5'>
@@ -57,14 +57,14 @@ const Home = () => {
                 </div>
                 <div className='flex flex-row-reverse mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
                     <div className=''>
-                        <img className='rounded-tl-[48px] rounded-tr-[6px] rounded-br-[48px] rounded-bl-[6px] md:rounded-tr-xl md:rounded-tl-[210px] md:rounded-br-[210px] md:rounded-bl-xl h-[140px] w-[345px] md:h-[420px] md:w-[720px] object-cover object-[0px_-125.823px]' src={FurnitureImage2} alt="" />
+                        <img className='rounded-tl-[48px] rounded-tr-[6px] rounded-br-[48px] rounded-bl-[6px] md:rounded-tr-xl md:rounded-tl-[210px] md:rounded-br-[210px] md:rounded-bl-xl h-[140px] w-[345px] sm:h-[420px] sm:w-[720px] object-cover object-[0px_-125.823px]' src={FurnitureImage2} alt="" />
                     </div>
                     <div className='2xl:w-[684px]'>
                         <h3 className='text-[18px] mb-2 text-[#1659E6]'>Contact Us</h3>
                         <h1 className='text-[24px] sm:text-[48px]  font-bold font-satoshi sm:leading-[56px] sm:tracking-[-0.96px] sm:mb-8'>Connect with us!</h1>
                         <div className='flex flex-col w-full xl:w-[720px] 2xl:w-[560px] gap-5'>
                             <p className='text-[#425379] text-[16px] font-normal leading-[28px] '>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
-                            <ul className='grid sm:grid-cols-2 pl-6 text-[18px] font-normal tracking-[-0.09px] gap-y-8  '>
+                            <ul className='grid grid-cols-1 sm:grid-cols-2 md:pl-6 text-[18px] font-normal tracking-[-0.09px] gap-y-8  '>
                                 <div className='flex items-center gap-4'>
                                     <div className='rounded-lg p-[6px] bg-[#C5D7FF] text-[24px] text-[#1659E6]'>
                                         <MdCall className=' '/>
