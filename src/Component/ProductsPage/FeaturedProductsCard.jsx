@@ -7,7 +7,7 @@ const FeaturedProductsCard = ({ data }) => {
 
     const navigate = useNavigate();
     const navigateToDetailPage = () => {
-        navigate('/DetailPage/:title', { state: { data } });
+        navigate(`/DetailPage/${data.title}`, { state: { data } });
       };
 
 
