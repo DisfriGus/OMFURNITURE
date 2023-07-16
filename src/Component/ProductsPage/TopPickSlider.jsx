@@ -12,8 +12,9 @@ const TopPickSlider = () => {
 
     const sliderSettings = {
         440: {
-            slidesPerView: 1,
-            spaceBetween: 30,
+            slidesPerView: 2,
+            spaceBetween: 80,
+            freeMode: true,
         },
         550: {
             slidesPerView: 2,
