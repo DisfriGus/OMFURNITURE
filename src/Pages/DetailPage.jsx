@@ -3,6 +3,7 @@ import Navbar from '../Component/Navbar'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Profile from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
 import Logo from '../Assets/logo2.svg'
+
 import Delivery from '../Assets/Local_shipping.svg'
 import Box from '../Assets/box.svg'
 import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md'
@@ -13,8 +14,8 @@ const DetailPage = () => {
 
 
     const location = useLocation();
-    const { data } = location.state;
-    console.log(data);
+    const { data } = location.state || {};
+    console.log(data.image);
     const navigate = useNavigate()
     const [count, setCount] = useState(0)
     const [expand,setExpand] = useState(false)
@@ -25,13 +26,13 @@ const DetailPage = () => {
         
     }
     const slidePrice = (price) => {
-        const extractedNumber = price.replace(/[^0-9,]/g, ''); // Remove all non-digit and non-comma characters
+        const extractedNumber =  price.replace(/[^0-9,]/g, ''); // Remove all non-digit and non-comma characters
         return extractedNumber;
     };
   return (
     <div className='relative'>
       <Navbar logo={Logo} />
-      <div className='py-11 lg:px-[240px] flex max-lg:flex-col  gap-11 items-center font-inter'>
+      <div className='py-16 lg:py-11 lg:px-[240px] flex max-2xl:flex-col  gap-11 items-center font-inter'>
         <div className="  lg:w-[720px]  max-sm:py-10 max-sm:px-6 ">
             <div className="flex flex-row w-full items-center gap-2 mb-4">
             <button onClick={() => navigate(-1)} className="bg-[#F7F8FB] w-[50px] h-[50px] flex items-center justify-center rounded-full max-lg:hidden">
