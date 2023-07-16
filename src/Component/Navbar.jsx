@@ -6,7 +6,7 @@ import ShopingCart1 from '../Assets/shoppingCart1.svg'
 import Person from '../Assets/Person.svg'
 import { useNavigate } from 'react-router-dom'
 
-const Navbar = ({ logo, style, user, signup, carts }) => {
+const Navbar = ({ logo, style, user, signup, inputStyle }) => {
 
   const navigate = useNavigate();
   const [open, setOpen] = useState(true);
@@ -67,9 +67,9 @@ const Navbar = ({ logo, style, user, signup, carts }) => {
             </div>
           </div>
           <div className='flex gap-9 items-center'>
-            <div className='flex text-[#757575] w-[435px] py-4 px-6 gap-4 items-center bg-[#F6F6F6] rounded-[32px]'>
+            <div className={`flex text-[#757575] w-[435px] py-4 px-6 gap-4 items-center bg-[#F6F6F6] rounded-[32px] ${inputStyle}`}>
               <MdSearch className='text-[24px]' />
-              <input type="text" className='outline-none w-[400px] bg-[#F6F6F6]' />
+              <input type="text" className={`outline-none w-[400px] bg-[#F6F6F6] `} />
               <button onClick={handleShowUpload}>
                 <MdCenterFocusWeak className='text-[24px]' />
               </button>
