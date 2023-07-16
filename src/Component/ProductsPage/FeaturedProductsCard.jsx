@@ -7,7 +7,7 @@ const FeaturedProductsCard = ({ data }) => {
 
     const navigate = useNavigate();
     const navigateToDetailPage = () => {
-        navigate('/detail', { state: { data } });
+        navigate('/DetailPage/:title', { state: { data } });
       };
 
 
@@ -57,7 +57,7 @@ const FeaturedProductsCard = ({ data }) => {
                 <img src={data.image} alt="" />
                 {/* <img src="../../Assets/cabinet.png" alt="" /> */}
             </div>
-            <div className="title flex flex-col gap-3 rounded-md">
+            <div onClick={navigateToDetailPage} className="title flex flex-col gap-3 rounded-md cursor-pointer">
                 <div className="flex flex-row justify-between text-[#031C32] font-bold text-2xl text-ellipsis">
                     <h1>{data.title}</h1>
                     <h1>{data.price}</h1>

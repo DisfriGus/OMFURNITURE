@@ -1,11 +1,18 @@
 import React, { useState,useEffect } from 'react'
 import Navbar from '../Component/Navbar'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import Profile from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
 import Logo from '../Assets/logo2.svg'
 import Delivery from '../Assets/Local_shipping.svg'
 import Box from '../Assets/box.svg'
 const DetailPage = () => {
+
+
+
+    const location = useLocation();
+    const { data } = location.state;
+    console.log(data);
+
     const [place, setPlace] = useState(null)
     const {title} = useParams()
     const navigate = useNavigate()

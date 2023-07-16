@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Layout from '../Component/Layout'
 import Navbar from '../Component/Navbar'
 import Banner from '../Component/ProductsPage/Banner'
@@ -10,34 +10,65 @@ import FeaturedProductsSlider from '../Component/ProductsPage/FeaturedProductsSl
 import Footer from '../Component/Footer'
 import Services from '../Component/ProductsPage/Services'
 import TourBanner from '../Component/ProductsPage/TourBanner'
-import Logo from '../Assets/logo2.svg' 
+import Logo from '../Assets/logo2.svg'
 import FurnituresSlider from '../Component/ProductsPage/FurnituresSlider'
 import InspirationSets from '../Component/ProductsPage/InspirationSets'
+import Skeleton from '../Component/ProductsPage/Skeleton'
 
-const Products = () => (
-    <>
-        <Navbar logo={Logo} signup={'text-white'}  />
-        <Layout>
-            {/* banner */}
-            <Banner />
-            {/* banner */}
-            <TopPickSlider />
-            <FeaturedProductsSlider />
-            <InspirationSets />
-            <FurnituresSlider />
-            <Services />
-            <TourBanner />
+const Products = () => {
 
-        </Layout>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
 
-        <Footer />
+    const [loading, setLoading] = useState(false);
 
-    </>
-)
+    useEffect(() => {
+        setLoading(true);
+      
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 800);
+      
+        return () => {
+          clearTimeout(timer);
+        };
+      }, []);
+
+
+      if (loading) {
+        return <Skeleton />
+      }
+
+
+
+    return (
+        <>
+            <Navbar logo={Logo} signup={'text-white'} />
+            <Layout>
+                {/* banner */}
+                <Banner />
+                {/* banner */}
+                <TopPickSlider />
+                <FeaturedProductsSlider />
+                <InspirationSets />
+                <FurnituresSlider />
+                <Services />
+                <TourBanner />
+
+            </Layout>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <Footer />
+
+        </>
+
+
+    )
+}
+
+
+
 
 export default Products
