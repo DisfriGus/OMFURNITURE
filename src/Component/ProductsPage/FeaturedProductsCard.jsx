@@ -1,8 +1,14 @@
 import React from 'react';
 import furniture2 from '../../Assets/furniture2.png';
 import cabinet from '../../Assets/cabinet.png'
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedProductsCard = ({ data }) => {
+
+    const navigate = useNavigate();
+    const navigateToDetailPage = () => {
+        navigate('/detail', { state: { data } });
+      };
 
 
     console.log(data);
