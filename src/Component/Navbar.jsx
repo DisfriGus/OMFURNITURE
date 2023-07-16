@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdMenu, MdClose } from 'react-icons/md';
+import { MdMenu, MdClose, MdSearch, MdCenterFocusWeak } from 'react-icons/md';
 import ShopingCart from '../Assets/shoppingCart.svg'
+import ShopingCart1 from '../Assets/shoppingCart1.svg'
 import Person from '../Assets/Person.svg'
 
-const Navbar = ({ logo, style, user, signup }) => {
+const Navbar = ({ logo, style, user, signup, carts }) => {
   const [open, setOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
   
@@ -55,16 +56,21 @@ const Navbar = ({ logo, style, user, signup }) => {
             </div>
           </div>
           <div className='flex gap-9 items-center'>
-            <input type="text" />
-            <div className='flex gap-4 items-center'>
-              <NavLink to='/cart'>
-                <img src={ShopingCart} alt="" /> 
+            <div className='flex text-[#757575] w-[435px] py-4 px-6 gap-4 items-center bg-[#F6F6F6] rounded-[32px]'>
+              <MdSearch className='text-[24px]'/>
+              <input type="text" className='outline-none w-[400px] bg-[#F6F6F6]'/>
+              <button>
+                <MdCenterFocusWeak className='text-[24px]'/>
+              </button>
+            </div>
+            <div className={`flex gap-4 items-center`}>
+              <NavLink to='/cart' >
+                <img className='' src={ShopingCart} alt="" />
               </NavLink>
               <NavLink className={`bg-[#F2F2F2] p-2 rounded-full`}>
-                <img src={Person} alt="" />
+                <img onClick={handleLogout} src={Person} alt="" />
               </NavLink>
             </div>
-            {/* <button onClick={handleLogout}>Logout</button> */}
           </div>
         </div>
       ) : (
