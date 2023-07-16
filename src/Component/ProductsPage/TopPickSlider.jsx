@@ -24,12 +24,16 @@ const TopPickSlider = () => {
             spaceBetween: 30,
         },
         1200: {
-            slidesPerView: 5,
-            spaceBetween: 30,
+            slidesPerView: 4,
+            spaceBetween: 24,
         },
         1500: {
+            slidesPerView: 5,
+            spaceBetween: 24,
+        },
+        1800: {
             slidesPerView: 6,
-            spaceBetween: 30,
+            spaceBetween: 24,
         },
     };
 

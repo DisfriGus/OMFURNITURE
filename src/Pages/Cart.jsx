@@ -1,25 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../Component/Layout'
 import Navbar from '../Component/Navbar'
 import Logo from '../Assets/logo2.svg'
 import CartItem from '../Component/CartPage/CartItem'
-
+import Skeleton from '../Component/ProductsPage/Skeleton'
+import {
+  useNavigate,
+} from 'react-router-dom';
 
 
 const Cart = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1)
+  };
+  const [cartData, setCartData] = useState([]);
 
 
+  console.log(cartData);
 
-
-
-
-
+  useEffect(() => {
+    // Retrieve cart data from localStorage
+    const existingCartData = localStorage.getItem('cartData');
+    if (existingCartData) {
+      setCartData(JSON.parse(existingCartData));
+    }
+  }, []);
 
   return (
     <>
       <Navbar logo={Logo} signup={'text-white'} />
       <Layout>
-        <div className='flex flex-row py-20 gap-1'>
+        <div onClick={handleGoBack} className='flex flex-row pt-9 gap-1 cursor-pointer'>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <mask id="mask0_197_117" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
               <rect width="24" height="24" fill="#D9D9D9" />
@@ -30,12 +43,17 @@ const Cart = () => {
           </svg>
           <h1 className='font-normal font-inter text-[#757575]'>Back</h1>
         </div>
-        <CartItem />
+        <div className='text-[#031C32 font-inter text-3xl font-medium] py-10'>
+          <h1>Cart</h1>
+        </div>
+        {cartData.map((item, index) => {
+          return (
+            <div key={index}>
+              <CartItem data={item} />
+            </div>
+          )
+        })}
       </Layout>
-
-
-
-
     </>
   )
 }

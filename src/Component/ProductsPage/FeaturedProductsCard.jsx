@@ -2,7 +2,7 @@ import React from 'react';
 import furniture2 from '../../Assets/furniture2.png';
 import cabinet from '../../Assets/cabinet.png'
 
-const FeaturedProductsCard = ({data}) => {
+const FeaturedProductsCard = ({ data }) => {
 
 
     console.log(data);
@@ -22,8 +22,31 @@ const FeaturedProductsCard = ({data}) => {
 
     const stars = Array.from({ length: 5 }, (v, i) => i + 1);
 
+
+
+    // const addToCart = () => {
+    //     const existingCartData = localStorage.getItem('cartData');
+    //     const cartData = existingCartData ? JSON.parse(existingCartData) : [];
+    //     cartData.push(data);
+    //     localStorage.setItem('cartData', JSON.stringify(cartData));
+    // };
+
+    const addToCart = () => {
+        const existingCartData = localStorage.getItem('cartData');
+        let cartData = existingCartData ? JSON.parse(existingCartData) : [];
+    
+        const existingItem = cartData.find(item => item.id === data.id);
+        if (existingItem) {
+            existingItem.quantity = (existingItem.quantity || 1) + 1;
+        } else {
+            cartData.push({ ...data, quantity: 1 });
+        }
+    
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+    };
+
     return (
-        <div className="bg-white w-[336px] h-full max-sm:mx-auto font-satoshi">
+        <div className="bg-white w-[336px] h-full max-md:mx-auto font-satoshi">
             <div className="image rounded-md">
                 <img src={data.image} alt="" />
                 {/* <img src="../../Assets/cabinet.png" alt="" /> */}
@@ -46,7 +69,7 @@ const FeaturedProductsCard = ({data}) => {
                         <h1>{data.sold}</h1>
                     </div>
                 </div>
-                <button className="w-fit py-[12px] px-[36px] rounded-[27px] border-slate-400 border-[1px] hover:border-none text-black hover:bg-[#031C32] hover:text-white text-lg">
+                <button onClick={addToCart} className="w-fit py-[12px] px-[36px] rounded-[27px] border-slate-400 border-[1px] hover:border-none text-black hover:bg-[#031C32] hover:text-white text-lg">
                     Add to Cart
                 </button>
             </div>

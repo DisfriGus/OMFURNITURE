@@ -14,6 +14,7 @@ import wayne from '../Assets/waynelamps.png'
 
 export const featuredProducts = [
     {
+        id: 1,
         title: 'Naomi Cabinet',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -21,6 +22,7 @@ export const featuredProducts = [
         image: cabinet
     },
     {
+        id: 2,
         title: 'Standing Desk Ivory',
         price: '$ 1,389',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -28,6 +30,7 @@ export const featuredProducts = [
         image: standing
     },
     {
+        id: 3,
         title: 'Caracole Nite Bed',
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -35,6 +38,7 @@ export const featuredProducts = [
         image: bed
     },
     {
+        id: 4,
         title: 'Caspian Coffee Table',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -42,6 +46,7 @@ export const featuredProducts = [
         image: caspian
     },
     {
+        id: 5,
         title: 'Naomi Cabinet',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -49,6 +54,7 @@ export const featuredProducts = [
         image: cabinet
     },
     {
+        id: 6,
         title: 'Outdoor Sofa',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -56,6 +62,7 @@ export const featuredProducts = [
         image: outdoor
     },
     {
+        id: 7,
         title: 'Standing Desk Ivory',
         price: '$ $ 1,389',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -63,6 +70,7 @@ export const featuredProducts = [
         image: standing
     },
     {
+        id: 8,
         title: 'Caracole Nite Bed',
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -70,6 +78,7 @@ export const featuredProducts = [
         image: bed
     },
     {
+        id: 9,
         title: 'Caspian Coffee Table',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -77,6 +86,7 @@ export const featuredProducts = [
         image: caspian
     },
     {
+        id: 10,
         title: 'Outdoor Sofa',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -84,6 +94,7 @@ export const featuredProducts = [
         image: outdoor
     },
     {
+        id: 11,
         title: 'Dining Table',
         price: '$ 8,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -91,6 +102,7 @@ export const featuredProducts = [
         image: dining
     },
     {
+        id: 12,
         title: 'Wayne Lamps',
         price: '$ 879',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -98,6 +110,7 @@ export const featuredProducts = [
         image: wayne
     },
     {
+        id: 13,
         title: 'Caracole Nite Bed',
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -105,6 +118,7 @@ export const featuredProducts = [
         image: bed
     },
     {
+        id: 14,
         title: 'Caspian Coffee Table',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -112,6 +126,7 @@ export const featuredProducts = [
         image: caspian
     },
     {
+        id: 15,
         title: 'Outdoor Sofa',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -119,6 +134,7 @@ export const featuredProducts = [
         image: outdoor
     },
     {
+        id: 16,
         title: 'Naomi Cabinet',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -126,6 +142,7 @@ export const featuredProducts = [
         image: cabinet
     },
     {
+        id: 17,
         title: 'Standing Desk Ivory',
         price: '$ ss1,389',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -133,6 +150,7 @@ export const featuredProducts = [
         image: standing
     },
     {
+        id: 18,
         title: 'Caracole Nite Bed',
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -140,6 +158,7 @@ export const featuredProducts = [
         image: bed
     },
     {
+        id: 19,
         title: 'Caspian Coffee Table',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
@@ -147,15 +166,15 @@ export const featuredProducts = [
         image: caspian
     },
     {
+        id: 20,
         title: 'Outdoor Sofa',
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
         image: outdoor
-    },
-   
-    
-]
+    }
+];
+
 
 
 export const cardData = [
