@@ -7,6 +7,7 @@ import Skeleton from '../Component/ProductsPage/Skeleton'
 import {
   useNavigate,
 } from 'react-router-dom';
+import Footer from '../Component/Footer'
 
 
 const Cart = () => {
@@ -46,14 +47,45 @@ const Cart = () => {
         <div className='text-[#031C32 font-inter text-3xl font-medium] py-10'>
           <h1>Cart</h1>
         </div>
-        {cartData.map((item, index) => {
-          return (
-            <div key={index}>
-              <CartItem data={item} />
+        <div className='grid grid-cols-1 lg:grid-cols-6 gap-7'>
+          <div className='col-span-4'>
+            {cartData.map((item, index) => {
+              return (
+                <div key={index}>
+                  <CartItem data={item} />
+                </div>
+              )
+            })}
+          </div>
+
+          <div className='col-span-2 w-[412px] flex flex-col h-[316px] rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px]'>
+            <h1 className='text-[#031C32] font-satoshi font-medium text-2xl'>Shopping summary</h1>
+            <div className='flex flex-col gap-3 mt-5'>
+              <div className='flex flex-row justify-between'>
+                <p className='font-inter text-lg'>Subtotal</p>
+                <p className='font-inter text-lg text-[#031C32]'>$ 615,00</p>
+              </div>
+              <div className='flex flex-row justify-between'>
+                <p className='font-inter text-lg'>Shipping Cost</p>
+                <p className='font-inter text-lg text-[#031C32]'>$ 615,00</p>
+              </div>
+              <div className='border-2 w-full'></div>
+              <div className='flex flex-row justify-between'>
+                <p className='font-inter text-lg'>Total</p>
+                <p className='font-inter text-lg text-[#031C32]'>$ 615,00</p>
+              </div>
             </div>
-          )
-        })}
+            <button className='text-white bg-[#1659E6] text-lg font-medium font-inter max-w-[348px] max-h-[60px] py-[16px] px-[50px] rounded-[12px] mt-5'>
+              Proceed to payment
+            </button>
+          </div>
+
+        </div>
+
       </Layout>
+      <div className='absolute w-full md:bottom-0'>
+        <Footer />
+      </div>
     </>
   )
 }
