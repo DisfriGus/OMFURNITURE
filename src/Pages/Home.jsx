@@ -5,10 +5,10 @@ import { MdSearch, MdArrowBack, MdArrowForward, MdChat, MdEmail } from 'react-ic
 import FurnitureImage1 from '../Assets/no-revisions-p0MoUugYbvk-unsplash.jpg'
 import Logo1 from '../Assets/logo1.svg'
 import Logo2 from '../Assets/logo2.svg'
-import Recomendations from '../Data/Recomendation.json'
-import Recomendation from '../Component/Recomendation'
+import Data from '../Data/Products'
 import Footer from '../Component/Footer'
 import {MdCall} from 'react-icons/md'
+import PopularSlider from '../Component/PopularSlider'
 const Home = () => {
     
   return (
@@ -33,33 +33,8 @@ const Home = () => {
                 </div>
             </div>
             <div  className='mt-[52px] px-5 lg:px-[80px] 2xl:px-[240px] '>
-                <div className='mb-[42px] flex items-center justify-between '>
-                    <div>
-                        <h3 className='text-[18px] text-[#1659E6]'>Popular Choice</h3>
-                        <h1 className='text-[30px] font-medium'>Best Property Just For You</h1>
-                    </div>
-                    <div className='flex items-center gap-4 max-md:hidden'>
-                        <button className='text-[26px]'>
-                            <MdArrowBack/>
-                        </button>
-                        <button className='text-[26px]'>
-                            <MdArrowForward/>
-                        </button>
-                    </div>
-                </div>
-                <div className='whitespace-nowrap overflow-x-auto flex gap-[32px] h-[350px] mb-[100px]'>
-                    {Recomendations.recomendation.map((val)=>(
-                        <Recomendation 
-                            key={val.id}
-                            src={val.image.url}
-                            price={val.price}
-                            title={val.title}
-                            place={val.place}
-                            luas={val.luas}
-                            bed={val.bed}
-                            bath={val.bath}
-                        />
-                    ))}
+                <div className='mb-8 lg:mb-[100px]'>
+                    <PopularSlider/>
                 </div>
                 <div className='flex mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
                     <div className=''>
