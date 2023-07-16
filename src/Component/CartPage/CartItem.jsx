@@ -6,7 +6,7 @@ import sofa from '../../Assets/sofa.png'
 
 const CartItem = ({ data }) => {
 
-    const [counter, setCounter] = useState(data.quantity || 0)
+    const [counter, setCounter] = useState(data.quantity || 1)
 
     console.log(data);
 
@@ -37,22 +37,22 @@ const CartItem = ({ data }) => {
 
     const handleDecreaseQuantity = () => {
         const localStorageData = JSON.parse(localStorage.getItem('cartData')) || [];
-        const updatedData = localStorageData.filter((item) => {
-            if (item.id === data.id) {
-                if ((item.quantity || 0) > 1) {
-                    item.quantity = (item.quantity || 1) - 1;
-                    return true;
-                } else {
-                    window.location.reload();
-                    return false;
-                }
+        const updatedData = localStorageData.map((item) => {
+          if (item.id === data.id) {
+            if ((item.quantity || 0) > 1) {
+              item.quantity = (item.quantity || 0) - 1;
             }
-            return true;
+          }
+          return item;
         });
-        localStorage.setItem('cartData', JSON.stringify(updatedData));
+      
+        if (counter > 1) {
+          localStorage.setItem('cartData', JSON.stringify(updatedData));
+          setCounter((prevCounter) => prevCounter - 1);
+        } 
 
-        setCounter((prevCounter) => Math.max(prevCounter - 1, 0));
-    };
+      };
+      
 
     const Button = () => {
         return (
