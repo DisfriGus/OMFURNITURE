@@ -1,6 +1,6 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import Navbar from '../Component/Navbar'
-import { useNavigate, useParams, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Profile from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
 import Logo from '../Assets/logo2.svg'
 import Delivery from '../Assets/Local_shipping.svg'
@@ -15,9 +15,6 @@ const DetailPage = () => {
     const location = useLocation();
     const { data } = location.state;
     console.log(data);
-
-    const [place, setPlace] = useState(null)
-    const {title} = useParams()
     const navigate = useNavigate()
     const [count, setCount] = useState(0)
     const [expand,setExpand] = useState(false)
@@ -27,6 +24,10 @@ const DetailPage = () => {
         }
         
     }
+    const slidePrice = (price) => {
+        const extractedNumber = price.replace(/[^0-9,]/g, ''); // Remove all non-digit and non-comma characters
+        return extractedNumber;
+    };
   return (
     <div className='relative'>
       <Navbar logo={Logo} />
@@ -39,28 +40,28 @@ const DetailPage = () => {
             </div>
                 <div className="flex items-center gap-3 w-full mb-10">
                 <img className='w-[42px] h-[42px] rounded-full' src={Profile} alt="" />  {/*PP seller */}
-                <h3> Ganjo</h3> {/*Nama Seller  */}
+                <h3>Marco</h3> {/*Nama Seller  */}
             </div>
             <div className='flex flex-col gap-[29px]'>
-                <img className='w-[720px] h-[400px]' src={Profile} alt="" />
+                <img className='w-[345px] lg:w-[720px] h-[400px] object-cover object-center' src={data.image} alt="" />
                 <div>
-                    <img className='w-[100px] h-[100px] lg:w-[224px] lg:h-[120px] object-cover object-center' src={Profile} alt="" />
+                    <img className='w-[100px] h-[100px] lg:w-[224px] lg:h-[120px] object-cover object-center' src={data.image} alt="" />
                 </div>
             </div>
         </div>
         <div className='max-lg:w-full max-lg:px-4' >
-            <h1 className='font-satoshi text-[36px] font-bold'>Nama Barang</h1>
-            <p className='mb-[50px]'>Description</p>
-            <h3 className='text-[24px]'><span className='text-[#1659E6] font-bold'>$</span> Harga</h3>
-            <h3 className='mb-[50px]'>teuing teu apal</h3>
-            <div className='flex mb-[26px]'>
+            <h1 className='font-satoshi text-[36px] font-bold'>{data.title}</h1>
+            <p className='mb-[50px]'>{data.subtitle}</p>
+            <h3 className='text-[24px] font-bold'><span className='text-[#1659E6] font-bold'>$</span> {slidePrice(data.price)}</h3>
+            <h3 className='mb-[50px] text-[#425379] font-medium'>Suggested payments with secure payment system.</h3>
+            <div className='flex mb-[26px] gap-7'>
                 <div className='flex bg-[#F2F2F2] w-fit gap-[9px] rounded-3xl text-[16px]'>
                     <button onClick={pengurangan} className='hover:hover:bg-slate-200 flex pl-[18px] pr-[9px] py-3 rounded-bl-3xl rounded-tl-3xl '>-</button>
                     <p className='py-3'>{count}</p>
                     <button onClick={()=>setCount(count + 1)} className='hover:bg-gray-200 pr-[18px] pl-[9px] py-3 rounded-br-3xl rounded-tr-3xl '>+</button>
                 </div>
                 <div>
-                    <p>Only ... left Dont mess it</p>
+                    <p>Only {data.stock} left!<br/>Dont mess it</p>
                 </div>
             </div>
             <div className='flex gap-[18px] mb-[50px]'>

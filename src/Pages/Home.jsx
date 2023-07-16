@@ -45,7 +45,7 @@ const Home = () => {
                         <h1 className='text-[36px] sm:text-[48px] max-sm:text-center font-bold font-satoshi sm:leading-[56px] sm:tracking-[-0.96px] sm:mb-8'>Comfort is our Top<br/>priority for you<span className='text-[#E67D31]'>.</span> </h1>
                         <div className='flex flex-col w-full xl:w-[720px] 2xl:w-[560px] gap-5'>
                             <p className='text-[#425379] text-[16px] font-normal leading-[28px] max-sm:text-center'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
-                            <ul className='list-disc marker:text-[#1659E6] grid sm:grid-cols-2 pl-6 text-[18px] font-normal tracking-[-0.09px]'>
+                            <ul className='list-disc marker:text-[#1659E6] grid grid-cols-2 pl-6 text-[14px] max-sm:gap-x-[33px] md:text-[18px] font-normal tracking-[-0.09px]'>
                                 <li>Premium Quality Only</li>
                                 <li>No obligation valuations</li>
                                 <li>Managed Properties</li>

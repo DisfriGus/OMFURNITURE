@@ -19,6 +19,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(80)',
+        stock: '10',
         image: cabinet
     },
     {
@@ -27,6 +28,7 @@ export const featuredProducts = [
         price: '$ 1,389',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(10)',
+        stock:'10',
         image: standing
     },
     {
@@ -35,6 +37,7 @@ export const featuredProducts = [
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(1220)',
+        stock:'10',
         image: bed
     },
     {
@@ -43,6 +46,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(57)',
+        stock:'10',
         image: caspian
     },
     {
@@ -51,6 +55,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: cabinet
     },
     {
@@ -59,14 +64,16 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: outdoor
     },
     {
         id: 7,
         title: 'Standing Desk Ivory',
-        price: '$ $ 1,389',
+        price: '$ 1,389',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: standing
     },
     {
@@ -75,6 +82,7 @@ export const featuredProducts = [
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: bed
     },
     {
@@ -83,6 +91,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: caspian
     },
     {
@@ -91,6 +100,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: outdoor
     },
     {
@@ -99,6 +109,7 @@ export const featuredProducts = [
         price: '$ 8,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(92)',
+        stock:'10',
         image: dining
     },
     {
@@ -107,6 +118,7 @@ export const featuredProducts = [
         price: '$ 879',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(442)',
+        stock:'10',
         image: wayne
     },
     {
@@ -115,6 +127,7 @@ export const featuredProducts = [
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: bed
     },
     {
@@ -123,6 +136,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: caspian
     },
     {
@@ -131,6 +145,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: outdoor
     },
     {
@@ -139,6 +154,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: cabinet
     },
     {
@@ -147,6 +163,7 @@ export const featuredProducts = [
         price: '$ ss1,389',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: standing
     },
     {
@@ -155,6 +172,7 @@ export const featuredProducts = [
         price: '$ 3,589',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: bed
     },
     {
@@ -163,6 +181,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: caspian
     },
     {
@@ -171,6 +190,7 @@ export const featuredProducts = [
         price: '$ 3,789',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
+        stock:'10',
         image: outdoor
     }
 ];
