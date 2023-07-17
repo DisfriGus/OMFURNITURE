@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Component/Navbar'
 import BackgroundImage from "../Assets/Background2.jpg"
-import { MdSearch, MdArrowBack, MdArrowForward, MdChat, MdEmail } from 'react-icons/md'
+import { MdSearch, MdArrowBack, MdArrowForward, MdChat, MdEmail, MdCenterFocusWeak } from 'react-icons/md'
 import FurnitureImage1 from '../Assets/no-revisions-p0MoUugYbvk-unsplash.jpg'
 import FurnitureImage2 from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
 import Logo1 from '../Assets/logo1.svg'
@@ -20,15 +20,18 @@ const Home = () => {
                 <Navbar logo={Logo2} style={`lg:hidden`} />
                 <div className='flex justify-center pt-20 h-[280px] sm:h-[350px] lg:h-[425px]' >
                     <div className=''>
-                        <h1 className='text-center text-white text-[26px] font-satoshi  lg:text-[48px] font-bold md:leading-[56px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
-                        <div className='flex flex-row items-center justify-start bg-white sm:w-[512px] lg:w-[659px] lg:pl-6 lg:gap-3 rounded-xl  sm:mb-5'>
+                        <h1 className='text-center text-white text-[26px] font-satoshi  lg:text-[48px] font-bold xl:leading-[56px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
+                        <div className='flex flex-row items-center justify-start bg-white w-[345px]  lg:w-[659px] gap-3 px-3 lg:px-6 lg:gap-3 rounded-xl  sm:mb-5'>
                             <button className='text-[24px] dark'>
                                 <MdSearch/>
                             </button>
                             <input className='py-4 xl:py-[18px] w-full xl:text-[16px] text-[12px] outline-none bg-transparent' type="text" placeholder='Masukkan kata kunci atau Lokasi' />
+                            <button>
+                                <MdCenterFocusWeak className='text-[28px] dark'/>
+                            </button>
                         </div>
                         <div className='text-white max-sm:text-[12px] '>
-                            <p>Popular Search: </p>
+                            <p className='text-center text-[14px] max-md:hidden'>Trending searches: <u>Wardrobe</u>, <u>bed</u>, <u>Coffee Shop Table</u></p>
                         </div>
                     </div>
                 </div>

@@ -43,10 +43,10 @@ const PopularSlider = () => {
         <div className='furniture-slider'>
             <div className='header-pick-of-the-week flex flex-row justify-between my-8'>
                 <div className='flex flex-col gap-1 '>
-                    {/* <h3 className='text-[#1659E6] font-inter font-medium text-lg'>Featured Products</h3> */}
-                    <h1 className='text-[#031C32] font-inter font-semibold text-3xl '>Furnitures</h1>
+                    <h3 className='text-[#1659E6] font-inter font-medium text-lg'>Popular Choice</h3>
+                    <h1 className='text-[#031C32] font-inter font-semibold text-3xl max-md:text-[18px] '>We Pick the Best For You</h1>
                 </div>
-                <div className='navigation-arrow flex flex-row-reverse gap-2 items-end'>
+                <div className='navigation-arrow flex flex-row-reverse gap-2 items-end max-lg:hidden'>
 
                     <div onClick={() => swiperRef.current?.slideNext()} className="swiper-button-next">
                         <svg className='bg-slate-300 hover:bg-[#1659E6] rounded-full' xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">

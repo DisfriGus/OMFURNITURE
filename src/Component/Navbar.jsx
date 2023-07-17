@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdMenu, MdClose, MdSearch, MdCenterFocusWeak } from 'react-icons/md';
+import { MdMenu, MdClose, MdSearch, MdCenterFocusWeak, MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md';
 import ShopingCart from '../Assets/shoppingCart.svg'
 import ShopingCart1 from '../Assets/shoppingCart1.svg'
 import Person from '../Assets/Person.svg'
@@ -48,7 +48,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
         <img className='w-[157px] h-[29px] ' src={logo} alt="" />
       </NavLink>
       <div className={`flex pl-7 gap-[20px] text-[16px] ${user} font-normal max-lg:flex-col max-lg:hidden ${isLogin ? 'hidden' : ''}`} >
-        <NavLink to='/Category'>Category</NavLink>
+        <NavLink to='/Products' className={`flex items-center`}>Category<MdOutlineExpandMore className='text-[24px]'/></NavLink>
         <NavLink to="/Products">Products</NavLink>
         <NavLink to="/Rooms">Rooms</NavLink>
         <NavLink to="/Dormitory">Dormitory</NavLink>
@@ -60,7 +60,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
               <img className='w-[157px] h-[29px] ' src={logo} alt="" />
             </NavLink>
             <div className={`flex pl-7 gap-[20px] text-[16px] ${user} font-normal max-lg:flex-col max-lg:hidden`} >
-              <NavLink to='/Category'>Category</NavLink>
+              <NavLink to='/Products' className={`flex items-center`}>Category<MdOutlineExpandMore className='text-[24px]'/></NavLink>
               <NavLink to="/Products">Products</NavLink>
               <NavLink to="/Rooms">Rooms</NavLink>
               <NavLink to="/Dormitory">Dormitory</NavLink>

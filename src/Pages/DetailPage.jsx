@@ -6,7 +6,7 @@ import Logo from '../Assets/logo2.svg'
 
 import Delivery from '../Assets/Local_shipping.svg'
 import Box from '../Assets/box.svg'
-import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md'
+import { MdArrowBack, MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md'
 import { RiStarSFill } from 'react-icons/ri'
 import Footer from '../Component/Footer'
 const DetailPage = () => {
@@ -36,12 +36,12 @@ const DetailPage = () => {
         <div className="  lg:w-[720px]  max-sm:py-10 max-sm:px-6 ">
             <div className="flex flex-row w-full items-center gap-2 mb-4">
             <button onClick={() => navigate(-1)} className="bg-[#F7F8FB] w-[50px] h-[50px] flex items-center justify-center rounded-full max-lg:hidden">
-                <h5 className="subHeading">Back</h5>
+                <h5 className="flex items-center text-[#757575] gap-[6px] max-md:hidden"><MdArrowBack/> Back</h5>
             </button>
             </div>
                 <div className="flex items-center gap-3 w-full mb-10">
                 <img className='w-[42px] h-[42px] rounded-full' src={Profile} alt="" />  {/*PP seller */}
-                <h3>Marco</h3> {/*Nama Seller  */}
+                <h3 className='text-[18px] text-[#031C32] font-bold'>Noble House</h3> {/*Nama Seller  */}
             </div>
             <div className='flex flex-col gap-[29px]'>
                 <img className='w-[345px] lg:w-[720px] h-[400px] object-cover object-center' src={data.image} alt="" />
@@ -67,7 +67,7 @@ const DetailPage = () => {
             </div>
             <div className='flex gap-[18px] mb-[50px]'>
                 <button className='px-[56px] py-3 rounded-[27px] bg-[#031C32] text-white max-sm:text-[12px]'>Buy Now</button>
-                <button className='px-[56px] py-3 rounded-[27px] max-sm:text-[12px]'>Add Cart</button>
+                <button className='px-[56px] py-3 rounded-[27px] max-sm:text-[12px] border'>Add Cart</button>
             </div>
             <div>
                 <div className='border rounded-t-[12px] flex gap-3 px-[18px]  py-[14px] lg:w-[520px]'>
@@ -154,9 +154,9 @@ const DetailPage = () => {
             </div>
         </div>
         <div className={`border py-4 px-3 w-full lg:w-[680px]`} >
-            <div className={`justify-between ${expand? 'mb-[32px]': 'mb-0'} flex items-center`}>
+            <div className={`justify-between ${expand? 'mb-[32px]': 'mb-0'} flex items-center cursor-pointer`} onClick={()=> setExpand(!expand)}>
                 <h3 className='font-medium'>Reviews (173)</h3>
-                <button className='text-[28px]' onClick={()=> setExpand(!expand)}> 
+                <button className='text-[28px]' > 
                     {
                         expand ? <MdOutlineExpandLess/> : <MdOutlineExpandMore/>
                     }
@@ -211,6 +211,11 @@ const DetailPage = () => {
                             </div>
                         </div>
                         <p className='text-[#425379] tracking-tight'>Fits great looks great. Wish it was slightly more comfortable . But overall good shoe like a multi tool for any distance</p>
+                    </div>
+                    <div className='flex justify-center  '>
+                        <button className='border py-3 px-[56px] rounded-[26px] max-md:w-full'>
+                            Load More
+                        </button>
                     </div>
                 </div>
             ):(
