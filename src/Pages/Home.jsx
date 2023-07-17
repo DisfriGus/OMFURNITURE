@@ -39,7 +39,7 @@ const Home = () => {
                 </div>
                 <div className='flex mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
                     <div className=''>
-                        <img className='rounded-tr-[48px] rounded-tl-[6px] rounded-bl-[48px] rounded-br-[6px] md:rounded-tl-xl md:rounded-tr-[210px] md:rounded-bl-[210px] md:rounded-br-xl h-[140px] w-[345px] md:h-[420px] md:w-[720px] object-cover object-[0px_-44.179px]  ' src={FurnitureImage1} alt="" />
+                        <img className='rounded-tr-[48px] rounded-tl-[6px] rounded-bl-[48px] rounded-br-[6px] sm:rounded-tl-xl sm:rounded-tr-[210px] sm:rounded-bl-[210px] sm:rounded-br-xl h-[140px] w-[345px] sm:h-[420px] sm:w-[720px] object-cover object-[0px_-44.179px]  ' src={FurnitureImage1} alt="" />
                     </div>
                     <div className='2xl:w-[684px]'>
                         <h3 className='text-[18px] mb-2 text-[#1659E6]'>Our Values</h3>
@@ -53,11 +53,11 @@ const Home = () => {
                                 <li>Known in local area</li>
                             </ul>
                         </div>
-                    </div>
+                    </div>  
                 </div>
                 <div className='flex flex-row-reverse mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
                     <div className=''>
-                        <img className='rounded-tl-[48px] rounded-tr-[6px] rounded-br-[48px] rounded-bl-[6px] md:rounded-tr-xl md:rounded-tl-[210px] md:rounded-br-[210px] md:rounded-bl-xl h-[140px] w-[345px] sm:h-[420px] sm:w-[720px] object-cover object-[0px_-125.823px]' src={FurnitureImage2} alt="" />
+                        <img className='rounded-tl-[48px] rounded-tr-[6px] rounded-br-[48px] rounded-bl-[6px] sm:rounded-tr-xl sm:rounded-tl-[210px] sm:rounded-br-[210px] sm:rounded-bl-xl h-[140px] w-[345px] sm:h-[420px] sm:w-[720px] object-cover object-[0px_-125.823px]' src={FurnitureImage2} alt="" />
                     </div>
                     <div className='2xl:w-[684px]'>
                         <h3 className='text-[18px] mb-2 text-[#1659E6]'>Contact Us</h3>
@@ -96,9 +96,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='content h-[400px] flex flex-col items-center justify-center lg:py-16 rounded-bl-lg rounded-br-[210px] rounded-tl-[210px] rounded-tr-lg max-sm:rounded-lg text-white sm:bg-[length:100%_268%] sm:bg-[center_bottom_-10rem]  max-sm:bg-cover max-sm:bg-center'>
+                <div className='content h-[400px] flex flex-col items-center justify-center lg:py-16 rounded-bl-lg rounded-br-[210px] rounded-tl-[210px] rounded-tr-lg max-md:rounded-lg text-white sm:bg-[length:100%_268%] sm:bg-[center_bottom_-10rem]  max-sm:bg-cover max-sm:bg-center'>
                     <h4 className='font-satoshi text-[24px] font-normal mb-2'>Contact Us</h4>
-                    <h1 className='font-satoshi text-[48px] font-bold mb-6 max-xl:text-center max-sm:text-[28px]'>Get Started With Your New Furniture.</h1>
+                    <h1 className='font-satoshi text-[48px] font-bold mb-6 max-xl:text-center max-md:text-[28px]'>Get Started With Your New Furniture.</h1>
                     <p className=' font-inter font-normal sm:w-[560px] mb-[18px] text-center'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
                     <button className='bg-[#E67D31] py-[10px] px-9 rounded-[24px]'>
                         Get Started
