@@ -35,8 +35,8 @@ const DetailPage = () => {
       <div className='py-16 lg:py-11 lg:px-[240px] flex max-2xl:flex-col  gap-11 items-center font-inter'>
         <div className="  lg:w-[720px]  max-sm:py-10 max-sm:px-6 ">
             <div className="flex flex-row w-full items-center gap-2 mb-4">
-            <button onClick={() => navigate(-1)} className="bg-[#F7F8FB] w-[50px] h-[50px] flex items-center justify-center rounded-full max-lg:hidden">
-                <h5 className="flex items-center text-[#757575] gap-[6px] max-md:hidden"><MdArrowBack/> Back</h5>
+            <button onClick={() => navigate(-1)} className="max-lg:hidden">
+                <h5 className="flex items-center text-[#757575] gap-[6px] "><MdArrowBack/> Back</h5>
             </button>
             </div>
                 <div className="flex items-center gap-3 w-full mb-10">
