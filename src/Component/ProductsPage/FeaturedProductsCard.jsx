@@ -52,13 +52,13 @@ const FeaturedProductsCard = ({ data }) => {
     };
 
     return (
-        <div className="bg-white w-[336px] h-full max-md:mx-auto font-satoshi">
+        <div className="bg-white w-[320px] h-full max-md:mx-auto font-satoshi">
             <div onClick={navigateToDetailPage}  className="image rounded-md cursor-pointer">
                 <img src={data.image} alt="" />
                 {/* <img src="../../Assets/cabinet.png" alt="" /> */}
             </div>
-            <div className="title flex flex-col gap-3 rounded-md">
-                <div className="flex flex-row justify-between text-[#031C32] font-bold text-2xl text-ellipsis cursor-pointer">
+            <div className="title flex flex-col gap-3 rounded-md w-[320px]">
+                <div className="flex flex-row justify-between text-[#031C32] font-bold text-xl text-ellipsis cursor-pointer">
                     <h1 onClick={navigateToDetailPage} >{data.title}</h1>
                     <h1>{data.price}</h1>
                 </div>

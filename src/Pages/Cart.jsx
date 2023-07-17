@@ -17,6 +17,7 @@ const Cart = () => {
     navigate(-1)
   };
   const [cartData, setCartData] = useState([]);
+  const [subTotal, setSubTotal] = useState(0);
 
 
   console.log(cartData);
@@ -52,7 +53,7 @@ const Cart = () => {
             {cartData.map((item, index) => {
               return (
                 <div key={index}>
-                  <CartItem data={item} />
+                  <CartItem data={item} setSubtotal={setSubTotal} subTotal={subTotal} />
                 </div>
               )
             })}
@@ -63,16 +64,16 @@ const Cart = () => {
             <div className='flex flex-col gap-3 mt-5'>
               <div className='flex flex-row justify-between'>
                 <p className='font-inter text-lg'>Subtotal</p>
-                <p className='font-inter text-lg text-[#031C32]'>$ 615,00</p>
+                <p className='font-inter text-lg text-[#031C32]'>$ {subTotal}</p>
               </div>
               <div className='flex flex-row justify-between'>
                 <p className='font-inter text-lg'>Shipping Cost</p>
-                <p className='font-inter text-lg text-[#031C32]'>$ 615,00</p>
+                <p className='font-inter text-lg text-[#031C32]'>$ 25,00</p>
               </div>
               <div className='border-2 w-full'></div>
               <div className='flex flex-row justify-between'>
                 <p className='font-inter text-lg'>Total</p>
-                <p className='font-inter text-lg text-[#031C32]'>$ 615,00</p>
+                <p className='font-inter text-lg text-[#031C32]'>$ {subTotal}</p>
               </div>
             </div>
             <button className='text-white bg-[#1659E6] text-lg font-medium font-inter max-w-[348px] max-h-[60px] py-[16px] px-[50px] rounded-[12px] mt-5'>

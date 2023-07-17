@@ -50,8 +50,8 @@ const FurnituresSlider = () => {
                 </div>
                 <div className='navigation-arrow flex flex-row-reverse gap-2 items-end'>
 
-                    <div onClick={() => swiperRef.current?.slideNext()} className="swiper-button-next">
-                        <svg className='bg-[#1659E6] rounded-full' xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <div onClick={() => swiperRef.current?.slideNext()} className="swiper-button-next">
+                        <svg className='bg-slate-300 hover:bg-[#1659E6] rounded-full' xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                             <circle cx="18" cy="18" r="18" />
                             <mask id="mask0_165_713" maskUnits="userSpaceOnUse" x="6" y="6" width="24" height="24">
                                 <rect x="6" y="6" width="24" height="24" fill="#D9D9D9" />

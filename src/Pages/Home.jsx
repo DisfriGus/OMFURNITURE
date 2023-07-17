@@ -25,7 +25,7 @@ const Home = () => {
                             <button className='text-[24px] dark'>
                                 <MdSearch/>
                             </button>
-                            <input className='py-4 xl:py-[18px] w-full xl:text-[16px] text-[12px] outline-none bg-transparent' type="text" placeholder='Masukkan kata kunci atau Lokasi' />
+                            <input className='py-4 xl:py-[18px] w-full xl:text-[16px] text-[12px] outline-none bg-transparent' type="text" placeholder='Search product...' />
                             <button>
                                 <MdCenterFocusWeak className='text-[28px] dark'/>
                             </button>

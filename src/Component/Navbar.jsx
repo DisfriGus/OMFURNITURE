@@ -5,6 +5,7 @@ import ShopingCart from '../Assets/shoppingCart.svg'
 import ShopingCart1 from '../Assets/shoppingCart1.svg'
 import Person from '../Assets/Person.svg'
 import { useNavigate } from 'react-router-dom'
+import LoginDialog from './Auth/LoginDialog';
 
 const Navbar = ({ logo, style, user, signup, inputStyle }) => {
 
@@ -12,7 +13,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
   const [open, setOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
   const [showUploadDialog, setShowUploadDialog] = useState(false);
-
+  const [showLoginForm, setShowLoginForm] = useState(false);
   const handleSubmit = () => {
     navigate('/Products')
   }
@@ -30,8 +31,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
   }, []);
 
   const handleLogin = () => {
-    setIsLogin(true);
-    localStorage.setItem('isLogin', 'true');
+    setShowLoginForm(true)
   };
 
   const handleShowUpload = () => {
@@ -41,6 +41,11 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
   const handleCloseUpload = () => {
     setShowUploadDialog(false);
   };
+
+
+  const handleCloseLogin = () =>{
+    setShowLoginForm(false);
+  }
 
   return (
     <div className={`font-inter flex items-center  lg:px-[80px] 2xl:px-[240px] w-full py-3 xl:py-[26px] max-lg:fixed max-lg:w-full z-30 bg-white lg:bg-transparent ${style} ${isLogin ? 'py-0 max-lg:justify-between' : 'justify-between'}`}>
@@ -85,9 +90,9 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
           </div>
         </div>
       ) : (
-        <div className={`flex gap-3 font-normal max-lg:hidden ${user} items-center`}>
+        <div className={`flex gap-6 font-inter text-semibold max-lg:hidden ${user} items-center `}>
           <button onClick={handleLogin}>Login</button>
-          <NavLink className={`py-2 px-6 bg-[#1659E6] rounded-md ${signup}`}>Sign Up</NavLink>
+          <NavLink className={`py-2 px-6 bg-[#1659E6] rounded-md text-white ${signup}`}>Sign Up</NavLink>
         </div>
       )}
       <div className={`lg:hidden text-black text-[18px] font-medium flex flex-col gap-10 pt-2  absolute top-[68px] duration-200 bg-white h-[2000px] z-20 items-center w-[100%] ${open ? 'translate-x-full' : 'translate-x-0'}`}>
@@ -103,7 +108,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
         ) : (
           <div className='flex gap-4'>
             <button onClick={handleLogin}>Login</button>
-            <NavLink className={`py-2 px-6 bg-[#1659E6] rounded-md ${signup}`}>Sign Up</NavLink>
+            <NavLink className={`py-2 px-6 bg-[#1659E6] rounded-md text-white ${signup}`}>Sign Up</NavLink>
           </div>
         )}
       </div>
@@ -112,7 +117,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
           setOpen(!open);
         }}>{open ? <MdMenu /> : <MdClose />}</button>
       </div>
-
+      {showLoginForm && <LoginDialog handleCloseLogin={handleCloseLogin} />}
       {showUploadDialog && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="fixed inset-0 bg-black opacity-60"></div>
