@@ -102,10 +102,15 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='content h-[400px] flex flex-col items-center justify-center lg:py-16 rounded-bl-lg rounded-br-[210px] rounded-tl-[210px] rounded-tr-lg max-md:rounded-lg text-white sm:bg-[length:100%_268%] sm:bg-[center_bottom_-10rem]  max-sm:bg-cover max-sm:bg-center'>
-                    <h4 className='font-satoshi text-[24px] font-normal mb-2'>Contact Us</h4>
-                    <h1 className='font-satoshi text-[48px] font-bold mb-6 max-xl:text-center max-md:text-[28px]'>Get Started With Your New Furniture.</h1>
-                    <p className=' font-inter font-normal sm:w-[560px] mb-[18px] text-center'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
+                <div>
+                    <div className='md:hidden max-md:mx-auto content max-md:w-[345px] max-md:h-[140px]  max-sm:bg-no-repeat max-sm:bg-[length:100%_268%] max-md:bg-[center_bottom_-5rem] rounded-tr-[48px] rounded-tl-[6px] rounded-bl-[48px] rounded-br-[6px]'>
+                        
+                    </div>
+                </div>
+                <div className='content max-md:bg-none max-md:text- h-[400px] flex flex-col items-center justify-center lg:py-16 rounded-bl-lg rounded-br-[210px] rounded-tl-[210px] rounded-tr-lg max-md:rounded-lg text-white sm:bg-[length:100%_268%] sm:bg-[center_bottom_-10rem]  max-sm:bg-cover max-sm:bg-center'>
+                    <h4 className='font-satoshi text-[24px] font-medium mb-2 max-md:text-[#031C32]'>Let’s get started</h4>
+                    <h1 className='font-satoshi text-[48px] font-bold mb-6 max-xl:text-center max-md:tracking-tight max-md:text-[28px] max-md:text-[#031C32]'>Get Started With Your New Furniture.</h1>
+                    <p className=' font-inter font-normal sm:w-[560px] mb-[18px] text-center max-md:text-[#425379] max-md:tracking-[-0.08px]'>Lorem ipsum dolor sit amet consectetur. Urna nunc netus dictum tortor tincidunt imperdiet porttitor eget. Vel purus metus donec orci amet donec leo vel. Mi nullam cursus malesuada velit purus.</p>
                     <button className='bg-[#E67D31] py-[10px] px-9 rounded-[24px]'>
                         Get Started
                     </button>

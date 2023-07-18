@@ -18,7 +18,7 @@ const DeliveryInformation = () => {
 
 
     return (
-        <div className='delivery-information h-fit  bg-white rounded-[18px] border-[1px] border-[#E7E7E7] px-[32px] py-[24px] mt-5'>
+        <div className='delivery-information h-fit  bg-white rounded-[18px] border-[1px] border-[#E7E7E7] px-[32px] py-[24px] mt-5 font-inter'>
             <div className='flex flex-col gap-[24px]'>
                 <div className='heading mb-[18px] text-[#031C32] font-satoshi text-[24px] font-medium'>
                     Delivery Information

@@ -15,7 +15,11 @@ import Subnavbar from '../Component/Subnavbar'
 
 const Cart = () => {
   const navigate = useNavigate();
+  const [selectedPayment, setSelectedPayment] = useState(null);
 
+  const handlePaymentChange = (e) => {
+    setSelectedPayment(e.target.value);
+  };
   const handleGoBack = () => {
     navigate(-1)
   };
@@ -40,9 +44,9 @@ const Cart = () => {
   return (
     <>
       <Subnavbar />
-      <Navbar logo={Logo} signup={'text-white'} cart={ShoppingCart}/>
+      <Navbar logo={Logo} signup={'text-white'} cart={ShoppingCart} />
       <Layout>
-        <div onClick={handleGoBack} className='flex flex-row pt-9 gap-1 cursor-pointer'>
+        <div onClick={handleGoBack} className='flex flex-row  gap-1 cursor-pointer'>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <mask id="mask0_197_117" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
               <rect width="24" height="24" fill="#D9D9D9" />
@@ -53,7 +57,7 @@ const Cart = () => {
           </svg>
           <h1 className='font-normal font-inter text-[#757575]'>Back</h1>
         </div>
-        <div className='text-[#031C32 font-inter text-3xl font-medium] py-10'>
+        <div className='text-[#031C32 font-inter text-3xl font-medium py-10'>
           <h1>Cart</h1>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-6 gap-7 max-md:mb-[60px]'>
@@ -71,29 +75,50 @@ const Cart = () => {
             <DeliveryInformation />
           </div>
 
-          <div className='col-span-2 w-[332px] md:w-[412px] flex flex-col gap-3 rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px]   '>
+          <div className='col-span-2 w-[332px] md:w-[412px] flex flex-col gap-3 rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px]  font-inter  '>
             <div>
               <h1 className='text-[#031C32] font-satoshi font-medium text-2xl mb-[18px]'>Shopping summary</h1>
               <div className='flex flex-col gap-3 md:flex-row mb-6'>
-                <input type="text" className='py-[12px] md:py-[18px] outline-none border pl-3 md:pl-6 rounded-3xl md:w-[220px]' placeholder='Enter coupon code...' />
-                <button className='py-3 md:py-[18px] md:px-[38px] bg-[#031C32] text-white rounded-3xl '>
+                <input type="text" className='py-[12px] md:py-[18px] outline-none pl-3 md:pl-6 rounded-3xl md:rounded-[32px] md:w-[220px] bg-[#F6F6F6] ' placeholder='Enter coupon code...' />
+                <button className='py-3 md:py-[18px] md:px-[38px] bg-[#031C32] text-white rounded-3xl md:rounded-[32px]'>
                   Apply
                 </button>
               </div>
             </div>
-            <div className='flex flex-col gap-3'>
+            <div className="flex flex-col gap-3">
               <h2>Payment Details</h2>
-              <div className='flex gap-[18px]'>
-                <input type="radio" name="Pay2Go" id="Pay2Go" />
-                <p>Pay2Go</p>
+              <div className="flex gap-[18px]">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="Pay2Go"
+                  value="Pay2Go"
+                  checked={selectedPayment === "Pay2Go"}
+                  onChange={handlePaymentChange}
+                />
+                <label htmlFor="Pay2Go">Pay2Go</label>
               </div>
-              <div className='flex gap-[18px]'>
-                <input type="radio" name="Paypal" id="Paypal" />
-                <p>Paypal</p>
+              <div className="flex gap-[18px]">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="Paypal"
+                  value="Paypal"
+                  checked={selectedPayment === "Paypal"}
+                  onChange={handlePaymentChange}
+                />
+                <label htmlFor="Paypal">Paypal</label>
               </div>
-              <div className='flex gap-[18px]'>
-                <input type="radio" name="Credit or Debit" id="Credit or Debit" />
-                <p>Credit or Debit Card</p>
+              <div className="flex gap-[18px]">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="CreditOrDebit"
+                  value="Credit or Debit Card"
+                  checked={selectedPayment === "Credit or Debit Card"}
+                  onChange={handlePaymentChange}
+                />
+                <label htmlFor="CreditOrDebit">Credit or Debit Card</label>
               </div>
             </div>
             <div className='w-full flex flex-col gap-[12px]'>
@@ -123,11 +148,11 @@ const Cart = () => {
               </div>
               <div className='w-full flex flex-col gap-[12px]'>
                 <h1 className='font-inter text-[#031C32] text-[16px] font-medium'>CVC</h1>
-                <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'> 
+                <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'>
                   <input type="text" placeholder='Enter here...' className='outline-none bg-transparent w-full' />
                 </div>
               </div>
-              
+
             </div>
             <div className='flex flex-col gap-3 mt-5'>
               <div className='flex flex-col md:flex-row justify-between'>
