@@ -1,9 +1,18 @@
 import React from 'react'
 import inspiration1 from '../../Assets/inspiration1.png'
 import inspiration2 from '../../Assets/inspiration2.png'
+import { useNavigate } from 'react-router-dom'
 
 
 const InspirationSets = () => {
+
+
+    const navigate = useNavigate();
+
+
+    const handleNavigate = () => {
+        navigate('/article')
+    }
 
     const data = [
         {
@@ -30,7 +39,7 @@ const InspirationSets = () => {
                         <h1 className='font-inter text-[#031C32] font-medium text-3xl overflow-ellipsis mt-[24px]'>{data.title}</h1>
                         <h1 className='text-[#425379] font-inter font-normal text-lg overflow-ellipsis'>Our experts will guide you through the process, sharing expert tips on selecting the finest materials and incorporating stylish accents.</h1>
                     </div>
-                    <div className='flex flex-row gap-1 mt-[18px] cursor-pointer'>
+                    <div onClick={handleNavigate} className='flex flex-row gap-1 mt-[18px] cursor-pointer'>
                         <h1 className='text-[#031C32] font-inter underline'>See inspiration</h1>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <mask id="mask0_280_911" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">

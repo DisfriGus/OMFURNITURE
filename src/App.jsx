@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import DetailPage from "./Pages/DetailPage";
 import Products from "./Pages/Products";
 import Cart from "./Pages/Cart";
+import Article from "./Pages/Article";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Dormitory" element={<Products/>}/>
         <Route path="/DetailPage/:title" element={<DetailPage/>}/>
         <Route path="/cart" element={<Cart />}/>
+        <Route path="/article" element={<Article />}/>
 
         
 
