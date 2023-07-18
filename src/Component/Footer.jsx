@@ -10,8 +10,8 @@ const Footer = () => {
         </div>
         <div className='flex pl-7 gap-[20px] text-[16px] text-white font-normal max-lg:hidden'>
           <NavLink to='/Products' className={`flex items-center`}>Category<MdOutlineExpandMore className='text-[24px]'/></NavLink>
-          <NavLink to="/Products">Rent</NavLink>
-          <NavLink to="/Products">Sell</NavLink>
+          <NavLink to="/Products">Products</NavLink>
+          <NavLink to="/Products">Rooms</NavLink>
           <NavLink to="/Products">Find Broker</NavLink>
         </div>
     </div>
