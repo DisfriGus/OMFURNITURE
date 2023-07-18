@@ -62,13 +62,11 @@ const Cart = () => {
                 </div>
               )
             })}
-
-
             {/* delivery information component */}
             <DeliveryInformation />
           </div>
 
-          <div className='col-span-2 w-[412px] flex flex-col h-[316px] rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px] mx-auto'>
+          <div className='col-span-2 w-[412px] flex flex-col h-[316px] rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px] max-md:mx-auto max-md:mb-10'>
             <h1 className='text-[#031C32] font-satoshi font-medium text-2xl'>Shopping summary</h1>
             <div className='flex flex-col gap-3 mt-5'>
               <div className='flex flex-row justify-between'>
