@@ -160,7 +160,7 @@ export const featuredProducts = [
     {
         id: 17,
         title: 'Standing Desk Ivory',
-        price: '$ ss1,389',
+        price: '$ 1,389',
         subtitle: 'Smoke and accented finishing cabinet',
         sold: '(120)',
         stock:'10',

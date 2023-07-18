@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import sofa from '../../Assets/sofa.png';
 
-const CartItem = ({ data, setSubtotal, subTotal }) => {
+const CartItem = ({ data, setTotalPisan }) => {
     const [counter, setCounter] = useState(data.quantity || 1);
     const [isChecked, setIsChecked] = useState(false);
     const [buttonTrue, setButtonTrue] = useState(false);
     const [buttonFalse, setButtonFalse] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
 
-
-    console.log(totalPrice)
+    const [subtotal, setSubtotal] = useState(null);
+    console.log(subtotal)
 
     const slidePrice = (price) => {
         const extractedNumber = price.replace(/[^0-9,]/g, '');
@@ -29,13 +29,16 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
         const updatedData = localStorageData.map((item) => {
             if (item.id === data.id) {
                 item.quantity = (item.quantity || 0) + 1;
+                item.totalItemPrice = (parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.quantity).toFixed(2);
+                setTotalPisan((prev) => parseFloat(prev) + parseFloat(item.totalItemPrice));
             }
             return item;
         });
         localStorage.setItem('cartData', JSON.stringify(updatedData));
         setCounter((prevCounter) => prevCounter + 1);
-        setButtonTrue(false);
+
     };
+
 
     const handleDecreaseQuantity = () => {
         setButtonFalse(true);
@@ -44,8 +47,11 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
             if (item.id === data.id) {
                 if ((item.quantity || 0) > 1) {
                     item.quantity = (item.quantity || 0) - 1;
+                    item.totalItemPrice = (parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.quantity).toFixed(2);
+                    setTotalPisan((prev) => parseFloat(prev) - parseFloat(item.totalItemPrice));
                 }
             }
+
             return item;
 
         });
@@ -56,10 +62,33 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
             setCounter((prevCounter) => prevCounter - 1);
         }
         setButtonFalse(false);
+        const check = localStorageData.map((item) => {
+            if (item.id === data.id) {
+                if (item.checked) {
+                    console.log('tes')
+                }
+            }
+            return item;
+        });
+
     };
 
     const handleCheckboxChange = () => {
         setIsChecked((prevChecked) => !prevChecked);
+
+        const localStorageData = JSON.parse(localStorage.getItem("cartData")) || [];
+        const updatedData = localStorageData.map((item) => {
+            if (item.id === data.id) {
+                item.checked = !item.checked;
+                if (item.checked) {
+                    console.log('bismilah juara')
+                }
+            }
+            return item;
+        });
+        localStorage.setItem("cartData", JSON.stringify(updatedData));
+
+        // setSubtotal(calculateSubtotal(updatedData));
     };
 
     const calculateTotalPrice = () => {
@@ -97,6 +126,21 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
 
     }, [counter, isChecked])
 
+    const calculateSubtotal = (cartData) => {
+        let subtotal = 0;
+        cartData.forEach((item) => {
+            subtotal += parseFloat(item.totalItemPrice);
+        });
+        return subtotal.toFixed(2);
+    };
+
+    //   useEffect(() => {
+    //     const localStorageData = JSON.parse(localStorage.getItem("cartData")) || [];
+    //     setTotalPisan(calculateSubtotal(localStorageData));
+    //   }, []);
+
+
+
 
 
 
@@ -133,7 +177,7 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
     };
 
     return (
-        <div className='flex flex-row justify-between pl-[18px] py-[24px] col-span-3'>
+        <div className='flex flex-col sm:flex-row justify-between pl-[18px] py-[24px] col-span-3 gap-5 sm:gap-0'>
             <div className='left flex flex-row items-start justify-start gap-4'>
                 <input className='accent-[#1659E6] w-6 h-6 rounded-lg' type='checkbox' onChange={handleCheckboxChange}></input>
                 <img className='w-[108px] rounded-[8px]' src={data.image} alt='' />
@@ -146,7 +190,7 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
                     <p className='font-inter text-sm text-[#757575] font-normal'>Total package weight: 25.01 kg</p>
                 </div>
             </div>
-            <div className='right flex flex-row gap-2 h-fit items-center'>
+            <div className='right flex flex-row gap-2 h-fit items-center justify-end sm:justify-start'>
                 <svg
                     className='cursor-pointer'
                     onClick={handleDelete}

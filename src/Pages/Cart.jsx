@@ -8,6 +8,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import Footer from '../Component/Footer'
+import DeliveryInformation from '../Component/CartPage/DeliveryInformation'
 
 
 const Cart = () => {
@@ -16,11 +17,15 @@ const Cart = () => {
   const handleGoBack = () => {
     navigate(-1)
   };
+
   const [cartData, setCartData] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
 
+  console.log(subTotal)
+
 
   console.log(cartData);
+  // console.log(subTotal)
 
   useEffect(() => {
     // Retrieve cart data from localStorage
@@ -53,16 +58,17 @@ const Cart = () => {
             {cartData.map((item, index) => {
               return (
                 <div key={index}>
-                  <CartItem data={item} setSubtotal={setSubTotal} subTotal={subTotal} />
+                  <CartItem data={item} setTotalPisan={setSubTotal}  />
                 </div>
               )
             })}
-            <div className='h-[610px] bg-white rounded-[18px] border-[1px] border-[#E7E7E7]'>
-              kocak
-            </div>
+
+
+            {/* delivery information component */}
+            <DeliveryInformation />
           </div>
 
-          <div className='col-span-2 w-[412px] flex flex-col h-[316px] rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px]'>
+          <div className='col-span-2 w-[412px] flex flex-col h-[316px] rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px] mx-auto'>
             <h1 className='text-[#031C32] font-satoshi font-medium text-2xl'>Shopping summary</h1>
             <div className='flex flex-col gap-3 mt-5'>
               <div className='flex flex-row justify-between'>

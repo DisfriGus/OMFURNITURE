@@ -10,10 +10,18 @@ import { MdArrowBack, MdOutlineExpandLess, MdOutlineExpandMore } from 'react-ico
 import { RiStarSFill } from 'react-icons/ri'
 import Footer from '../Component/Footer'
 import { featuredProducts } from '../Data/Products'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const DetailPage = () => {
    
     const navigate = useNavigate()
+
+    const navigateToCart = () => {
+        navigate('/cart')
+    }
+
+
     const [count, setCount] = useState(0)
     const [expand, setExpand] = useState(false)
     function pengurangan() {
@@ -247,10 +255,40 @@ const DetailPage = () => {
     //     </div>
     // }
 
+    const addToCart = () => {
+        const existingCartData = localStorage.getItem('cartData');
+        let cartData = existingCartData ? JSON.parse(existingCartData) : [];
+
+        const existingItem = cartData.find(item => item.id === data.id);
+        if (existingItem) {
+            existingItem.quantity = (existingItem.quantity || 1) + 1;
+        } else {
+            cartData.push({ ...data, quantity: 1 });
+        }
+
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+        toast.success('Product added', {
+            position: "top-center",
+            autoClose: 700,
+            });
+    };
+
 
     return (
         <div>
             <Navbar logo={Logo} />
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className='py-16 lg:py-11 lg:px-[240px] flex max-2xl:flex-col  gap-11 items-center font-inter'>
                 <div className="  lg:w-[720px]  max-sm:py-10 max-sm:px-6 ">
                     <div className="flex flex-row w-full items-center gap-2 mb-4">
@@ -285,8 +323,8 @@ const DetailPage = () => {
                         </div>
                     </div>
                     <div className='flex gap-[18px] mb-[50px]'>
-                        <button className='px-[56px] py-3 rounded-[27px] bg-[#031C32] text-white max-sm:text-[12px]'>Buy Now</button>
-                        <button className='px-[56px] py-3 rounded-[27px] max-sm:text-[12px] border'>Add Cart</button>
+                        <button onClick={navigateToCart} className='px-[56px] py-3 rounded-[27px] bg-[#031C32] text-white max-sm:text-[12px]'>Buy Now</button>
+                        <button onClick={addToCart} className='px-[56px] py-3 rounded-[27px] max-sm:text-[12px] border'>Add Cart</button>
                     </div>
                     <div>
                         <div className='border rounded-t-[12px] flex gap-3 px-[18px]  py-[14px] lg:w-[520px]'>

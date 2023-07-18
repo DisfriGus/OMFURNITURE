@@ -14,6 +14,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
   const [isLogin, setIsLogin] = useState(false);
   const [showUploadDialog, setShowUploadDialog] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
+  const [uploadedImageFile, setUploadedImageFile] = useState(null);
   const handleSubmit = () => {
     navigate('/Products')
   }
@@ -43,7 +44,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
   };
 
 
-  const handleCloseLogin = () =>{
+  const handleCloseLogin = () => {
     setShowLoginForm(false);
   }
 
@@ -53,7 +54,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
         <img className='w-[157px] h-[29px] ' src={logo} alt="" />
       </NavLink>
       <div className={`flex pl-7 gap-[20px] text-[16px] ${user} font-normal max-lg:flex-col max-lg:hidden ${isLogin ? 'hidden' : ''}`} >
-        <NavLink to='/Products' className={`flex items-center`}>Category<MdOutlineExpandMore className='text-[24px]'/></NavLink>
+        <NavLink to='/Products' className={`flex items-center`}>Category<MdOutlineExpandMore className='text-[24px]' /></NavLink>
         <NavLink to="/Products">Products</NavLink>
         <NavLink to="/Rooms">Rooms</NavLink>
         <NavLink to="/Dormitory">Dormitory</NavLink>
@@ -65,7 +66,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
               <img className='w-[157px] h-[29px] ' src={logo} alt="" />
             </NavLink>
             <div className={`flex pl-7 gap-[20px] text-[16px] ${user} font-normal max-lg:flex-col max-lg:hidden`} >
-              <NavLink to='/Products' className={`flex items-center`}>Category<MdOutlineExpandMore className='text-[24px]'/></NavLink>
+              <NavLink to='/Products' className={`flex items-center`}>Category<MdOutlineExpandMore className='text-[24px]' /></NavLink>
               <NavLink to="/Products">Products</NavLink>
               <NavLink to="/Rooms">Rooms</NavLink>
               <NavLink to="/Dormitory">Dormitory</NavLink>
@@ -143,8 +144,8 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
                       <div className="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
                         <img
                           className="has-mask h-36 object-center"
-                          src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
-                          alt="freepik image"
+                          src={uploadedImageFile ? URL.createObjectURL(uploadedImageFile) : "https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"}
+                          alt="image"
                         />
                       </div>
                       <p className="pointer-none text-gray-500">
@@ -155,7 +156,11 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
                         from your computer
                       </p>
                     </div>
-                    <input type="file" className="hidden" />
+                    <input
+                      type="file"
+                      className="hidden"
+                      onChange={(e) => setUploadedImageFile(e.target.files[0])}
+                    />
                   </label>
                 </div>
               </div>
