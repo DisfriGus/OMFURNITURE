@@ -7,7 +7,7 @@ import Person from '../Assets/Person.svg'
 import { useNavigate } from 'react-router-dom'
 import LoginDialog from './Auth/LoginDialog';
 
-const Navbar = ({ logo, style, user, signup, inputStyle }) => {
+const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
 
   const navigate = useNavigate();
   const [open, setOpen] = useState(true);
@@ -82,7 +82,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle }) => {
             </div>
             <div className={`flex gap-4 items-center`}>
               <NavLink to='/cart' >
-                <img className='' src={ShopingCart} alt="" />
+                <img className='' src={cart} alt="" />
               </NavLink>
               <NavLink className={`bg-[#F2F2F2] p-2 rounded-full`}>
                 <img onClick={handleLogout} src={Person} alt="" />

@@ -7,8 +7,10 @@ import Skeleton from '../Component/ProductsPage/Skeleton'
 import {
   useNavigate,
 } from 'react-router-dom';
+import ShoppingCart from '../Assets/shoppingCart.svg'
 import Footer from '../Component/Footer'
 import DeliveryInformation from '../Component/CartPage/DeliveryInformation'
+import Subnavbar from '../Component/Subnavbar'
 
 
 const Cart = () => {
@@ -37,7 +39,8 @@ const Cart = () => {
 
   return (
     <>
-      <Navbar logo={Logo} signup={'text-white'} />
+      <Subnavbar />
+      <Navbar logo={Logo} signup={'text-white'} cart={ShoppingCart}/>
       <Layout>
         <div onClick={handleGoBack} className='flex flex-row pt-9 gap-1 cursor-pointer'>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -53,12 +56,12 @@ const Cart = () => {
         <div className='text-[#031C32 font-inter text-3xl font-medium] py-10'>
           <h1>Cart</h1>
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-6 gap-7'>
+        <div className='grid grid-cols-1 lg:grid-cols-6 gap-7 max-md:mb-[60px]'>
           <div className='col-span-4 mb-10'>
             {cartData.map((item, index) => {
               return (
                 <div key={index}>
-                  <CartItem data={item} setTotalPisan={setSubTotal}  />
+                  <CartItem data={item} setTotalPisan={setSubTotal} />
                 </div>
               )
             })}
@@ -66,24 +69,80 @@ const Cart = () => {
             <DeliveryInformation />
           </div>
 
-          <div className='col-span-2 w-[412px] flex flex-col h-[316px] rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px] max-md:mx-auto max-md:mb-10'>
-            <h1 className='text-[#031C32] font-satoshi font-medium text-2xl'>Shopping summary</h1>
+          <div className='col-span-2 w-[332px] md:w-[412px] flex flex-col gap-3 rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px]   '>
+            <div>
+              <h1 className='text-[#031C32] font-satoshi font-medium text-2xl mb-[18px]'>Shopping summary</h1>
+              <div className='flex flex-col gap-3 md:flex-row mb-6'>
+                <input type="text" className='py-[12px] md:py-[18px] outline-none border pl-3 md:pl-6 rounded-3xl md:w-[220px]' placeholder='Enter coupon code...' />
+                <button className='py-3 md:py-[18px] md:px-[38px] bg-[#031C32] text-white rounded-3xl '>
+                  Apply
+                </button>
+              </div>
+            </div>
+            <div className='flex flex-col gap-3'>
+              <h2>Payment Details</h2>
+              <div className='flex gap-[18px]'>
+                <input type="radio" name="Pay2Go" id="Pay2Go" />
+                <p>Pay2Go</p>
+              </div>
+              <div className='flex gap-[18px]'>
+                <input type="radio" name="Paypal" id="Paypal" />
+                <p>Paypal</p>
+              </div>
+              <div className='flex gap-[18px]'>
+                <input type="radio" name="Credit or Debit" id="Credit or Debit" />
+                <p>Credit or Debit Card</p>
+              </div>
+            </div>
+            <div className='w-full flex flex-col gap-[12px]'>
+              <h1 className='font-inter text-[#031C32] text-[16px] font-medium'>Email</h1>
+              <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'>
+                <input type="text" placeholder='Enter here...' className='outline-none bg-transparent w-full' />
+              </div>
+            </div>
+            <div className='w-full flex flex-col gap-[12px]'>
+              <h1 className='font-inter text-[#031C32] text-[16px] font-medium'>Card Holder Name</h1>
+              <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'>
+                <input type="text" placeholder='Enter here...' className='outline-none bg-transparent w-full' />
+              </div>
+            </div>
+            <div className='w-full flex flex-col gap-[12px]'>
+              <h1 className='font-inter text-[#031C32] text-[16px] font-medium'>Card Number</h1>
+              <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'>
+                <input type="text" placeholder='0000-0000-0000-0000' className='outline-none bg-transparent w-full' />
+              </div>
+            </div>
+            <div className='flex max-sm:flex-col gap-4'>
+              <div className='w-full flex flex-col gap-[12px]'>
+                <h1 className='font-inter text-[#031C32] text-[16px] font-medium'>Expiry</h1>
+                <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'>
+                  <input type="text" placeholder='DD/MM/YY' className='outline-none bg-transparent w-full' />
+                </div>
+              </div>
+              <div className='w-full flex flex-col gap-[12px]'>
+                <h1 className='font-inter text-[#031C32] text-[16px] font-medium'>CVC</h1>
+                <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'> 
+                  <input type="text" placeholder='Enter here...' className='outline-none bg-transparent w-full' />
+                </div>
+              </div>
+              
+            </div>
             <div className='flex flex-col gap-3 mt-5'>
-              <div className='flex flex-row justify-between'>
+              <div className='flex flex-col md:flex-row justify-between'>
                 <p className='font-inter text-lg'>Subtotal</p>
                 <p className='font-inter text-lg text-[#031C32]'>$ {subTotal}</p>
               </div>
-              <div className='flex flex-row justify-between'>
+              <div className='flex flex-col md:flex-row justify-between'>
                 <p className='font-inter text-lg'>Shipping Cost</p>
                 <p className='font-inter text-lg text-[#031C32]'>Free</p>
               </div>
               <div className='border-2 w-full'></div>
-              <div className='flex flex-row justify-between'>
+              <div className='flex flex-col md:flex-row justify-between'>
                 <p className='font-inter text-lg'>Total</p>
                 <p className='font-inter text-lg text-[#031C32]'>$ {subTotal}</p>
               </div>
             </div>
-            <button className='text-white bg-[#1659E6] text-lg font-medium font-inter max-w-[348px] max-h-[60px] py-[16px] px-[50px] rounded-[12px] mt-5'>
+            <button className='text-white bg-[#1659E6] text-lg font-medium font-inter max-w-[348px] max-h-[60px] py-[16px] md:px-[50px] rounded-[12px] mt-5 max-md:w-[270px] '>
               Proceed to payment
             </button>
           </div>
@@ -91,7 +150,7 @@ const Cart = () => {
         </div>
 
       </Layout>
-      <div className='absolute w-full'>
+      <div className='w-full mt-[40px] md:mt-[87px] '>
         <Footer />
       </div>
     </>

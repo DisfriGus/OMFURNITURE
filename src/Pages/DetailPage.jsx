@@ -9,8 +9,10 @@ import Box from '../Assets/box.svg'
 import { MdArrowBack, MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md'
 import { RiStarSFill } from 'react-icons/ri'
 import Footer from '../Component/Footer'
+import ShoppingCart from '../Assets/shoppingCart.svg'
 import { featuredProducts } from '../Data/Products'
 import { ToastContainer, toast } from 'react-toastify';
+import Subnavbar from '../Component/Subnavbar'
 
 
 const DetailPage = () => {
@@ -276,7 +278,8 @@ const DetailPage = () => {
 
     return (
         <div>
-            <Navbar logo={Logo} />
+            <Subnavbar/>
+            <Navbar logo={Logo} cart={ShoppingCart} />
             <ToastContainer
                 position="top-center"
                 autoClose={5000}
