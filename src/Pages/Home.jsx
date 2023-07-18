@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from '../Component/Navbar'
 import BackgroundImage from "../Assets/Background2.jpg"
 import { MdSearch, MdArrowBack, MdArrowForward, MdChat, MdEmail, MdCenterFocusWeak } from 'react-icons/md'
@@ -11,10 +11,22 @@ import ShopingCart1 from '../Assets/shoppingCart1.svg'
 import Footer from '../Component/Footer'
 import {MdCall} from 'react-icons/md'
 import PopularSlider from '../Component/PopularSlider'
+import LoginDialog from '../Component/Auth/LoginDialog'
 const Home = () => {
     
+    const [showDialog, setShowDialog] = useState(false)
+
+    const handleShowDialog = () => {
+        setShowDialog(!showDialog)
+    }
+
+
+
+
+
   return (
     <div>
+        {showDialog && (<LoginDialog handleShowDialog={handleShowDialog} />)}
         <div className='font-inter '>
             <div className='hero xl:bg-[length:100%_338.824%] xl:bg-[center_bottom_-20rem]  max-2xl:bg-cover max-2xl:bg-center  '>
                 <Navbar logo={Logo1} style={`max-lg:hidden`} inputStyle={'hidden'} user={'text-white'} cart={ShopingCart1}/>
@@ -41,7 +53,7 @@ const Home = () => {
             </div>
             <div  className='mt-[52px] px-5 lg:px-[80px] 2xl:px-[240px] '>
                 <div className='mb-8 lg:mb-[100px]'>
-                    <PopularSlider/>
+                    <PopularSlider handleShowDialog={handleShowDialog} />
                 </div>
                 <div className='flex mb-[100px] max-2xl:flex-col items-center gap-3 sm:gap-9 sm:gap-y-16 '>
                     <div className=''>

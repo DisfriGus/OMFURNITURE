@@ -11,6 +11,7 @@ import ShoppingCart from '../Assets/shoppingCart.svg'
 import Footer from '../Component/Footer'
 import DeliveryInformation from '../Component/CartPage/DeliveryInformation'
 import Subnavbar from '../Component/Subnavbar'
+import PaymentSuccessDialog from '../Component/CartPage/PaymentSuccessDialog'
 
 
 const Cart = () => {
@@ -19,7 +20,7 @@ const Cart = () => {
   const handleGoBack = () => {
     navigate(-1)
   };
-
+  const [showDialog, setShowDialog] = useState(false);
   const [cartData, setCartData] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
 
@@ -37,10 +38,20 @@ const Cart = () => {
     }
   }, []);
 
+
+
+  const handleDialog = () => {
+    setShowDialog(!showDialog);
+  }
+
+  // console.log(showDialog)
+
+
   return (
     <>
+      {showDialog && (<PaymentSuccessDialog handleDialog={handleDialog} />)}
       <Subnavbar />
-      <Navbar logo={Logo} signup={'text-white'} cart={ShoppingCart}/>
+      <Navbar logo={Logo} signup={'text-white'} cart={ShoppingCart} />
       <Layout>
         <div onClick={handleGoBack} className='flex flex-row pt-9 gap-1 cursor-pointer'>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -121,11 +132,11 @@ const Cart = () => {
               </div>
               <div className='w-full flex flex-col gap-[12px]'>
                 <h1 className='font-inter text-[#031C32] text-[16px] font-medium'>CVC</h1>
-                <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'> 
+                <div className='bg-white px-[24px] py-[16px] rounded-[8px]  border-[1px] border-[#F2F2F2]'>
                   <input type="text" placeholder='Enter here...' className='outline-none bg-transparent w-full' />
                 </div>
               </div>
-              
+
             </div>
             <div className='flex flex-col gap-3 mt-5'>
               <div className='flex flex-col md:flex-row justify-between'>
@@ -142,7 +153,7 @@ const Cart = () => {
                 <p className='font-inter text-lg text-[#031C32]'>$ {subTotal}</p>
               </div>
             </div>
-            <button className='text-white bg-[#1659E6] text-lg font-medium font-inter max-w-[348px] max-h-[60px] py-[16px] md:px-[50px] rounded-[12px] mt-5 max-md:w-[270px] '>
+            <button onClick={handleDialog} className='text-white bg-[#1659E6] text-lg font-medium font-inter max-w-[348px] max-h-[60px] py-[16px] md:px-[50px] rounded-[12px] mt-5 max-md:w-[270px] '>
               Proceed to payment
             </button>
           </div>

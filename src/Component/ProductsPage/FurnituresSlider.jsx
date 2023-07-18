@@ -7,7 +7,7 @@ import 'swiper/css/grid';
 import 'swiper/css/pagination';
 import FeaturedProductsCard from './FeaturedProductsCard';
 
-const FurnituresSlider = () => {
+const FurnituresSlider = ({handleShowDialog}) => {
 
     const swiperRef = useRef();
 
@@ -90,7 +90,7 @@ const FurnituresSlider = () => {
                     {featuredProducts.map((product, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <FeaturedProductsCard data={product} />
+                                <FeaturedProductsCard data={product} handleShowDialog={handleShowDialog} />
                                 {/* <h1>tes</h1> */}
                             </SwiperSlide>
                         )

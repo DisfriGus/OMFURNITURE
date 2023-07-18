@@ -1,12 +1,13 @@
 import React from 'react'
 
-const LoginDialog = ({ handleCloseLogin }) => {
+const LoginDialog = ({ handleCloseLogin, handleShowDialog }) => {
 
 
     const handleLogin = () => {
         localStorage.setItem('isLogin', 'true');
     }
 
+    
 
     return (
         <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -14,7 +15,7 @@ const LoginDialog = ({ handleCloseLogin }) => {
             <div className="relative sm:max-w-lg w-full p-10 bg-white rounded-xl py-16 font-inter">
                 <button
                     className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 focus:outline-none"
-                    onClick={handleCloseLogin}
+                    onClick={handleShowDialog ? handleShowDialog : handleCloseLogin}
                 >
                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path

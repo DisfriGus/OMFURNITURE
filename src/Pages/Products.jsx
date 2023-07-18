@@ -17,11 +17,19 @@ import InspirationSets from '../Component/ProductsPage/InspirationSets'
 import Skeleton from '../Component/ProductsPage/Skeleton'
 import { ToastContainer, toast } from 'react-toastify';
 import Subnavbar from '../Component/Subnavbar'
+import LoginDialog from '../Component/Auth/LoginDialog'
 
 const Products = () => {
 
 
     const [loading, setLoading] = useState(false);
+    const [showDialog, setShowDialog] = useState(false)
+
+    const handleShowDialog = () => {
+        setShowDialog(!showDialog)
+    }
+
+
 
     useEffect(() => {
         setLoading(true);
@@ -44,6 +52,7 @@ const Products = () => {
 
     return (
         <>
+        {showDialog && (<LoginDialog handleShowDialog={handleShowDialog} />)}
             <Subnavbar/>
             <Navbar logo={Logo} signup={'text-white'} cart={ShoppingCart} />
              <ToastContainer
@@ -63,9 +72,9 @@ const Products = () => {
                 <Banner />
                 {/* banner */}
                 <TopPickSlider />
-                <FeaturedProductsSlider />
+                <FeaturedProductsSlider handleShowDialog={handleShowDialog} />
                 <InspirationSets />
-                <FurnituresSlider />
+                <FurnituresSlider handleShowDialog={handleShowDialog} />
                 <Services />
                 <TourBanner />
 

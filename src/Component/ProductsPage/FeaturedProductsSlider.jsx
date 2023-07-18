@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import FeaturedProductsCard from './FeaturedProductsCard';
 
 
-const FeaturedProductsSlider = () => {
+const FeaturedProductsSlider = ({handleShowDialog}) => {
 
     const swiperRef = useRef();
 
@@ -113,7 +113,7 @@ const FeaturedProductsSlider = () => {
                     {featuredProducts.map((product, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <FeaturedProductsCard data={product} />
+                                <FeaturedProductsCard data={product} handleShowDialog={handleShowDialog} />
                                 {/* <h1>tes</h1> */}
                             </SwiperSlide>
                         )

@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import furniture2 from '../../Assets/furniture2.png';
 import cabinet from '../../Assets/cabinet.png'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LoginDialog from '../Auth/LoginDialog';
 
-const FeaturedProductsCard = ({ data, landingPage }) => {
+const FeaturedProductsCard = ({ data, landingPage, handleShowDialog }) => {
 
     const navigate = useNavigate();
     const navigateToDetailPage = () => {
         navigate(`/DetailPage/${data.id}`, { state: { data } });
     };
 
+
+    
 
     console.log(data);
 
@@ -39,54 +42,62 @@ const FeaturedProductsCard = ({ data, landingPage }) => {
     // };
 
     const addToCart = () => {
-        const existingCartData = localStorage.getItem('cartData');
-        let cartData = existingCartData ? JSON.parse(existingCartData) : [];
+        const user = localStorage.getItem('isLogin');
+        if (user) {
+            const existingCartData = localStorage.getItem('cartData');
+            let cartData = existingCartData ? JSON.parse(existingCartData) : [];
 
-        const existingItem = cartData.find(item => item.id === data.id);
-        if (existingItem) {
-            existingItem.quantity = (existingItem.quantity || 1) + 1;
+            const existingItem = cartData.find(item => item.id === data.id);
+            if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                cartData.push({ ...data, quantity: 1 });
+            }
+
+            localStorage.setItem('cartData', JSON.stringify(cartData));
+            toast.success('Product added', {
+                position: "top-center",
+                autoClose: 700,
+            });
         } else {
-            cartData.push({ ...data, quantity: 1 });
+            handleShowDialog();
         }
 
-        localStorage.setItem('cartData', JSON.stringify(cartData));
-        toast.success('Product added', {
-            position: "top-center",
-            autoClose: 700,
-            });
     };
 
     return (
-        <div className="bg-white w-[320px] h-full max-md:mx-auto font-satoshi">
-            <div onClick={navigateToDetailPage} className="image rounded-md cursor-pointer">
-                <img src={data.image} alt="" />
-                {/* <img src="../../Assets/cabinet.png" alt="" /> */}
-            </div>
-            <div className="title flex flex-col gap-3 rounded-md w-[320px]">
-                <div className="flex flex-row justify-between text-[#031C32] font-bold text-xl text-ellipsis cursor-pointer">
-                    <h1 onClick={navigateToDetailPage} >{data.title}</h1>
-                    <h1>{data.price}</h1>
+        <>
+            <div className="bg-white w-[320px] h-full max-md:mx-auto font-satoshi">
+                <div onClick={navigateToDetailPage} className="image rounded-md cursor-pointer">
+                    <img src={data.image} alt="" />
+                    {/* <img src="../../Assets/cabinet.png" alt="" /> */}
                 </div>
-                <div className="subtitle font-inter text-xl font-medium text-[#425379]">
-                    <h1>{data.subtitle}</h1>
-                </div>
-                <div className='flex flex-row justify-start items-center gap-1 mb-[14px]'>
-                    <div className="star flex flex-row justify-start items-center">
-                        {stars.map((index) => (
-                            <div key={index}>{starSvg}</div>
-                        ))}
+                <div className="title flex flex-col gap-3 rounded-md w-[320px]">
+                    <div className="flex flex-row justify-between text-[#031C32] font-bold text-xl text-ellipsis cursor-pointer">
+                        <h1 onClick={navigateToDetailPage} >{data.title}</h1>
+                        <h1>{data.price}</h1>
                     </div>
-                    <div>
-                        <h1>{data.sold}</h1>
+                    <div className="subtitle font-inter text-xl font-medium text-[#425379]">
+                        <h1>{data.subtitle}</h1>
                     </div>
+                    <div className='flex flex-row justify-start items-center gap-1 mb-[14px]'>
+                        <div className="star flex flex-row justify-start items-center">
+                            {stars.map((index) => (
+                                <div key={index}>{starSvg}</div>
+                            ))}
+                        </div>
+                        <div>
+                            <h1>{data.sold}</h1>
+                        </div>
+                    </div>
+                    <button onClick={addToCart} className="w-fit py-[12px] px-[36px] rounded-[27px] border-slate-400 border-[1px] hover:border-none text-black hover:bg-[#031C32] hover:text-white text-lg">
+                        {landingPage ? 'Buy now' : 'Add to Cart'}
+                    </button>
+
                 </div>
-                <button onClick={addToCart} className="w-fit py-[12px] px-[36px] rounded-[27px] border-slate-400 border-[1px] hover:border-none text-black hover:bg-[#031C32] hover:text-white text-lg">
-                    {landingPage ? 'Buy now' : 'Add to Cart' }
-                </button>
-               
+
             </div>
-           
-        </div>
+        </>
     );
 };
 
