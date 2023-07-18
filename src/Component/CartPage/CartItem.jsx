@@ -182,8 +182,8 @@ const CartItem = ({ data, setTotalPisan }) => {
                 <input className='accent-[#1659E6] w-6 h-6 rounded-lg' type='checkbox' onChange={handleCheckboxChange}></input>
                 <img className='w-[108px] rounded-[8px]' src={data.image} alt='' />
                 <div className='flex flex-col'>
-                    <h1 className='font-inter text-[#031C32] text-lg font-medium'>{data.title}</h1>
-                    <h1 className='font-satoshi text-[22px] font-bold'>
+                    <h1 className='font-inter text-[#031C32] text-lg font-medium  leading-6'>{data.title}</h1>
+                    <h1 className='font-satoshi text-[24px] font-bold mb-2'>
                         <span className='text-[#1659E6]'>$</span> {totalPrice}
                     </h1>
                     <p className='font-inter text-sm text-[#757575] font-normal'>Package weight: 25.01 kg</p>

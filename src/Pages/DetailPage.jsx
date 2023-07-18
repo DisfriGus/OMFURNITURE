@@ -292,16 +292,16 @@ const DetailPage = () => {
                 pauseOnHover
                 theme="light"
             />
-            <div className='py-16 lg:py-11 lg:px-[240px] flex max-2xl:flex-col  gap-11 items-center font-inter'>
+            <div className='lg:px-[240px] flex max-2xl:flex-col  gap-11 items-center font-inter'>
                 <div className="  lg:w-[720px]  max-sm:py-10 max-sm:px-6 ">
                     <div className="flex flex-row w-full items-center gap-2 mb-4">
                         <button onClick={() => navigate(-1)} className="max-lg:hidden">
                             <h5 className="flex items-center text-[#757575] gap-[6px] "><MdArrowBack /> Back</h5>
                         </button>
                     </div>
-                    <div className="flex items-center gap-3 w-full mb-10">
+                    <div className="flex items-center gap-3 w-full mb-6">
                         <img className='w-[42px] h-[42px] rounded-full' src={Profile} alt="" />  {/*PP seller */}
-                        <h3 className='text-[18px] text-[#031C32] font-bold'>Noble House</h3> {/*Nama Seller  */}
+                        <h3 className='text-[18px] text-[#031C32] font-bold font-satoshi'>Noble House</h3> {/*Nama Seller  */}
                     </div>
                     <div className='flex flex-col gap-[29px]'>
                         <img className='w-[345px] lg:w-[720px] h-[400px] object-cover object-center' src={data.image} alt="" />
@@ -312,8 +312,9 @@ const DetailPage = () => {
                 </div>
                 <div className='max-lg:w-full max-lg:px-4' >
                     <h1 className='font-satoshi text-[36px] font-bold'>{data.title}</h1>
-                    <p className='mb-[50px]'>{data.subtitle}</p>
-                    <h3 className='text-[24px] font-bold'><span className='text-[#1659E6] font-bold'>$</span> {slidePrice(data.price)}</h3>
+                    <p className=''>{data.subtitle}</p>
+                    <hr className='my-6'/>
+                    <h3 className='text-[32px] font-bold font-satoshi'><span className='text-[#1659E6] font-bold'>$</span> {slidePrice(data.price)}</h3>
                     <h3 className='mb-[50px] text-[#425379] font-medium'>Suggested payments with secure payment system.</h3>
                     <div className='flex mb-[26px] gap-7'>
                         <div className='flex bg-[#F2F2F2] w-fit gap-[9px] rounded-3xl text-[16px]'>
@@ -325,10 +326,11 @@ const DetailPage = () => {
                             <p>Only {data.stock} left!<br />Dont mess it</p>
                         </div>
                     </div>
-                    <div className='flex gap-[18px] mb-[50px]'>
+                    <div className='flex gap-[18px] '>
                         <button onClick={navigateToCart} className='px-[56px] py-3 rounded-[27px] bg-[#031C32] text-white max-sm:text-[12px]'>Buy Now</button>
                         <button onClick={addToCart} className='px-[56px] py-3 rounded-[27px] max-sm:text-[12px] border'>Add Cart</button>
                     </div>
+                    <hr className='my-6'/>
                     <div>
                         <div className='border rounded-t-[12px] flex gap-3 px-[18px]  py-[14px] lg:w-[520px]'>
                             <div className='w-[24px] h-[24px]'>
