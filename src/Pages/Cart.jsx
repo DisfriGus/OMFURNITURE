@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import Footer from '../Component/Footer'
 import DeliveryInformation from '../Component/CartPage/DeliveryInformation'
+import Subnavbar from '../Component/Subnavbar'
 
 
 const Cart = () => {
@@ -37,6 +38,7 @@ const Cart = () => {
 
   return (
     <>
+      <Subnavbar/>
       <Navbar logo={Logo} signup={'text-white'} />
       <Layout>
         <div onClick={handleGoBack} className='flex flex-row pt-9 gap-1 cursor-pointer'>

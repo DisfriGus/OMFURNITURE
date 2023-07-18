@@ -7,6 +7,7 @@ import TopPickSlider from '../Component/ProductsPage/TopPickSlider'
 import SliderComponent from '../Component/ProductsPage/SliderComp'
 import FeaturedProductsCard from '../Component/ProductsPage/FeaturedProductsCard'
 import FeaturedProductsSlider from '../Component/ProductsPage/FeaturedProductsSlider'
+import ShoppingCart from '../Assets/shoppingCart.svg'
 import Footer from '../Component/Footer'
 import Services from '../Component/ProductsPage/Services'
 import TourBanner from '../Component/ProductsPage/TourBanner'
@@ -15,6 +16,7 @@ import FurnituresSlider from '../Component/ProductsPage/FurnituresSlider'
 import InspirationSets from '../Component/ProductsPage/InspirationSets'
 import Skeleton from '../Component/ProductsPage/Skeleton'
 import { ToastContainer, toast } from 'react-toastify';
+import Subnavbar from '../Component/Subnavbar'
 
 const Products = () => {
 
@@ -42,7 +44,8 @@ const Products = () => {
 
     return (
         <>
-            <Navbar logo={Logo} signup={'text-white'} />
+            <Subnavbar/>
+            <Navbar logo={Logo} signup={'text-white'} cart={ShoppingCart} />
              <ToastContainer
                 position="top-center"
                 autoClose={5000}

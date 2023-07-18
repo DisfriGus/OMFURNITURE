@@ -7,6 +7,7 @@ import FurnitureImage2 from '../Assets/kam-idris-_HqHX3LBN18-unsplash.jpg'
 import Logo1 from '../Assets/logo1.svg'
 import Logo2 from '../Assets/logo2.svg'
 import Data from '../Data/Products'
+import ShopingCart1 from '../Assets/shoppingCart1.svg'
 import Footer from '../Component/Footer'
 import {MdCall} from 'react-icons/md'
 import PopularSlider from '../Component/PopularSlider'
@@ -16,11 +17,13 @@ const Home = () => {
     <div>
         <div className='font-inter '>
             <div className='hero xl:bg-[length:100%_338.824%] xl:bg-[center_bottom_-20rem]  max-2xl:bg-cover max-2xl:bg-center  '>
-                <Navbar logo={Logo1} style={`max-lg:hidden`} inputStyle={'hidden'} user={'text-white'}/>
+                <Navbar logo={Logo1} style={`max-lg:hidden`} inputStyle={'hidden'} user={'text-white'} cart={ShopingCart1}/>
                 <Navbar logo={Logo2} style={`lg:hidden`} />
-                <div className='flex justify-center pt-20 h-[280px] sm:h-[350px] lg:h-[425px]' >
+                <div className='flex justify-center pt-20 h-[280px] sm:h-[350px] lg:h-[425px] relative' >
                     <div className=''>
-                        <h1 className='text-center text-white text-[26px] font-satoshi  lg:text-[48px] font-bold xl:leading-[56px] mb-8 '>Seek and Find<br/> your Ideal property</h1>
+                        <div className='p-[21px] rounded-full bg-[#6B9AF4] absolute right-[775px] top-[75px]  max-2xl:hidden'> </div>
+                        <div className='p-[12px] rounded-full bg-[#1659E6] absolute left-[725px] top-[145px]  max-2xl:hidden'></div>
+                        <h1 className='text-center text-white text-[26px] font-satoshi  lg:text-[48px] font-bold xl:leading-[56px] mb-8 relative z-10 '>Seek and Find<br/> your Ideal property<span className='text-[#E67D31]'>.</span></h1>
                         <div className='flex flex-row items-center justify-start bg-white w-[345px]  lg:w-[659px] gap-3 px-3 lg:px-6 lg:gap-3 rounded-xl  sm:mb-5'>
                             <button className='text-[24px] dark'>
                                 <MdSearch/>
