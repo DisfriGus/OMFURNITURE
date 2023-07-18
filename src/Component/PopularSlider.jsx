@@ -88,7 +88,7 @@ const PopularSlider = () => {
                     {featuredProducts.map((product, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <FeaturedProductsCard data={product} />
+                                <FeaturedProductsCard data={product} landingPage={true} />
                                 {/* <h1>tes</h1> */}
                             </SwiperSlide>
                         )

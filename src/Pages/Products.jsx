@@ -14,6 +14,7 @@ import Logo from '../Assets/logo2.svg'
 import FurnituresSlider from '../Component/ProductsPage/FurnituresSlider'
 import InspirationSets from '../Component/ProductsPage/InspirationSets'
 import Skeleton from '../Component/ProductsPage/Skeleton'
+import { ToastContainer, toast } from 'react-toastify';
 
 const Products = () => {
 
@@ -42,6 +43,18 @@ const Products = () => {
     return (
         <>
             <Navbar logo={Logo} signup={'text-white'} />
+             <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <Layout>
                 {/* banner */}
                 <Banner />

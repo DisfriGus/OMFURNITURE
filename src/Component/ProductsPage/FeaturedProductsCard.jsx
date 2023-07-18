@@ -2,13 +2,15 @@ import React from 'react';
 import furniture2 from '../../Assets/furniture2.png';
 import cabinet from '../../Assets/cabinet.png'
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const FeaturedProductsCard = ({ data }) => {
+const FeaturedProductsCard = ({ data, landingPage }) => {
 
     const navigate = useNavigate();
     const navigateToDetailPage = () => {
-        navigate(`/DetailPage/${data.title}`, { state: { data } });
-      };
+        navigate(`/DetailPage/${data.id}`, { state: { data } });
+    };
 
 
     console.log(data);
@@ -29,7 +31,6 @@ const FeaturedProductsCard = ({ data }) => {
     const stars = Array.from({ length: 5 }, (v, i) => i + 1);
 
 
-
     // const addToCart = () => {
     //     const existingCartData = localStorage.getItem('cartData');
     //     const cartData = existingCartData ? JSON.parse(existingCartData) : [];
@@ -40,20 +41,24 @@ const FeaturedProductsCard = ({ data }) => {
     const addToCart = () => {
         const existingCartData = localStorage.getItem('cartData');
         let cartData = existingCartData ? JSON.parse(existingCartData) : [];
-    
+
         const existingItem = cartData.find(item => item.id === data.id);
         if (existingItem) {
             existingItem.quantity = (existingItem.quantity || 1) + 1;
         } else {
             cartData.push({ ...data, quantity: 1 });
         }
-    
+
         localStorage.setItem('cartData', JSON.stringify(cartData));
+        toast.success('Product added', {
+            position: "top-center",
+            autoClose: 700,
+            });
     };
 
     return (
         <div className="bg-white w-[320px] h-full max-md:mx-auto font-satoshi">
-            <div onClick={navigateToDetailPage}  className="image rounded-md cursor-pointer">
+            <div onClick={navigateToDetailPage} className="image rounded-md cursor-pointer">
                 <img src={data.image} alt="" />
                 {/* <img src="../../Assets/cabinet.png" alt="" /> */}
             </div>
@@ -65,7 +70,7 @@ const FeaturedProductsCard = ({ data }) => {
                 <div className="subtitle font-inter text-xl font-medium text-[#425379]">
                     <h1>{data.subtitle}</h1>
                 </div>
-                <div className='flex flex-row justify-start items-center gap-1'>
+                <div className='flex flex-row justify-start items-center gap-1 mb-[14px]'>
                     <div className="star flex flex-row justify-start items-center">
                         {stars.map((index) => (
                             <div key={index}>{starSvg}</div>
@@ -76,9 +81,11 @@ const FeaturedProductsCard = ({ data }) => {
                     </div>
                 </div>
                 <button onClick={addToCart} className="w-fit py-[12px] px-[36px] rounded-[27px] border-slate-400 border-[1px] hover:border-none text-black hover:bg-[#031C32] hover:text-white text-lg">
-                    Add to Cart
+                    {landingPage ? 'Buy now' : 'Add to Cart' }
                 </button>
+               
             </div>
+           
         </div>
     );
 };

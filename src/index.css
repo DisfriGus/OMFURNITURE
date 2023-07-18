@@ -28,4 +28,19 @@
   }
 }
 
+/* Custom styles for checklist */
+.Toastify__toast--success .Toastify__progress-bar {
+  background-color: white; /* Customize the progress bar color */
+}
+
+.Toastify__toast--success .Toastify__close-button svg {
+  fill: #031C32; /* Customize the close button color */
+}
+
+/* Custom styles for progress bar */
+.custom-progress-bar .Toastify__toast-body .Toastify__checklist {
+  color: red; /* Customize the checklist color */
+}
+
+
 

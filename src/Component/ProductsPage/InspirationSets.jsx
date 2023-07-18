@@ -26,9 +26,11 @@ const InspirationSets = () => {
                     <img className='bg-cover w-full' src={data.image} alt="" />
                 </div>
                 <div className='flex flex-col'>
-                    <h1 className='font-inter text-[#031C32] font-medium text-3xl overflow-ellipsis py-4'>{data.title}</h1>
-                    <h1 className='text-[#425379] font-inter font-normal text-lg overflow-ellipsis'>Our experts will guide you through the process, sharing expert tips on selecting the finest materials and incorporating stylish accents.</h1>
-                    <div className='flex flex-row gap-1 mt-8 cursor-pointer'>
+                    <div className='flex flex-col gap-[12px]'>
+                        <h1 className='font-inter text-[#031C32] font-medium text-3xl overflow-ellipsis mt-[24px]'>{data.title}</h1>
+                        <h1 className='text-[#425379] font-inter font-normal text-lg overflow-ellipsis'>Our experts will guide you through the process, sharing expert tips on selecting the finest materials and incorporating stylish accents.</h1>
+                    </div>
+                    <div className='flex flex-row gap-1 mt-[18px] cursor-pointer'>
                         <h1 className='text-[#031C32] font-inter underline'>See inspiration</h1>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <mask id="mask0_280_911" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -42,13 +44,13 @@ const InspirationSets = () => {
                 </div>
             </div>
         )
-    } 
+    }
 
 
     return (
         <div className='inspiration-sets'>
-            <div className='header-pick-of-the-week flex flex-row justify-between my-8'>
-                <div className='flex flex-col gap-1 '>
+            <div className='header-pick-of-the-week flex flex-row justify-between mt-[48px] mb-[18px]'>
+                <div className='flex flex-col gap-2 '>
                     <h3 className='text-[#1659E6] font-inter font-medium text-lg'>Inspiration sets</h3>
                     <h1 className='text-[#031C32] font-inter font-semibold text-3xl '>More Ideas For Your Room</h1>
                 </div>
@@ -62,7 +64,7 @@ const InspirationSets = () => {
                     )
                 })}
             </div>
-            
+
         </div>
     )
 }

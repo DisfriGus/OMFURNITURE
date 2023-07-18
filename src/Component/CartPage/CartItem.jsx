@@ -6,12 +6,10 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [buttonTrue, setButtonTrue] = useState(false);
     const [buttonFalse, setButtonFalse] = useState(false);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    useEffect(() => {
-        console.log(buttonFalse)
-        console.log(buttonTrue)
-    }, [buttonFalse, buttonTrue])
 
+    console.log(totalPrice)
 
     const slidePrice = (price) => {
         const extractedNumber = price.replace(/[^0-9,]/g, '');
@@ -27,7 +25,6 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
 
     const handleIncreaseQuantity = () => {
         setButtonTrue(true);
-        setButtonFalse(false);
         const localStorageData = JSON.parse(localStorage.getItem('cartData')) || [];
         const updatedData = localStorageData.map((item) => {
             if (item.id === data.id) {
@@ -37,11 +34,11 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
         });
         localStorage.setItem('cartData', JSON.stringify(updatedData));
         setCounter((prevCounter) => prevCounter + 1);
+        setButtonTrue(false);
     };
 
     const handleDecreaseQuantity = () => {
         setButtonFalse(true);
-        setButtonTrue(false);
         const localStorageData = JSON.parse(localStorage.getItem('cartData')) || [];
         const updatedData = localStorageData.map((item) => {
             if (item.id === data.id) {
@@ -58,7 +55,7 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
             localStorage.setItem('cartData', JSON.stringify(updatedData));
             setCounter((prevCounter) => prevCounter - 1);
         }
-
+        setButtonFalse(false);
     };
 
     const handleCheckboxChange = () => {
@@ -68,33 +65,39 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
     const calculateTotalPrice = () => {
         const price = slidePrice(data.price).replace(/,/g, '');
         const totalPrice = parseFloat(price) * counter;
+        setTotalPrice(totalPrice);
+        setSubtotal(totalPrice)
+        // setSubTotalPrice(totalPrice.toFixed(2));
         return totalPrice.toFixed(2);
     };
 
     useEffect(() => {
-        const priceEach = slidePrice(data.price).replace(/,/g, '');
-        const price = isChecked ? parseFloat(priceEach) : parseFloat(calculateTotalPrice());
+        const calculateTotalPrice = () => {
+            const price = slidePrice(data.price).replace(/,/g, '');
+            const totalPrice = parseFloat(price) * counter;
+            setTotalPrice(totalPrice);
+            setSubtotal(0)
+            // setSubTotalPrice(totalPrice.toFixed(2));
+            return totalPrice.toFixed(2);
+        };
+        const calculateTotalPrice2 = () => {
+            const price = slidePrice(data.price).replace(/,/g, '');
+            const totalPrice = parseFloat(price) * counter;
+            setTotalPrice(totalPrice);
+            setSubtotal(totalPrice)
+            // setSubTotalPrice(totalPrice.toFixed(2));
+            return totalPrice.toFixed(2);
+        };
 
-        if (isChecked && buttonTrue) {
-            setSubtotal((prevSubtotal) => prevSubtotal + parseFloat(priceEach));
-            console.log('mantap');
+        if (isChecked) {
+            calculateTotalPrice2();
+        } else {
+            calculateTotalPrice()
         }
-        else if (isChecked && buttonFalse) {
-            setSubtotal((prevSubtotal) => prevSubtotal - parseFloat(priceEach));
-            console.log('mantap');
-        }
-        else if (isChecked && !buttonTrue) {
-            setSubtotal((prevSubtotal) => prevSubtotal + parseFloat(calculateTotalPrice()));
-            console.log('mantap');
-        } else if (isChecked && !buttonFalse) {
-            setSubtotal((prevSubtotal) => Math.max(0, prevSubtotal - parseFloat(calculateTotalPrice())));
-            console.log('mantap');
-        }
-        else {
-            setSubtotal((prevSubtotal) => Math.max(0, prevSubtotal - price));
-            console.log('mantap');
-        }
-    }, [isChecked, counter, buttonTrue, buttonFalse, setSubtotal]);
+
+    }, [counter, isChecked])
+
+
 
 
 
@@ -137,7 +140,7 @@ const CartItem = ({ data, setSubtotal, subTotal }) => {
                 <div className='flex flex-col'>
                     <h1 className='font-inter text-[#031C32] text-lg font-medium'>{data.title}</h1>
                     <h1 className='font-satoshi text-[22px] font-bold'>
-                        <span className='text-[#1659E6]'>$</span> {calculateTotalPrice()}
+                        <span className='text-[#1659E6]'>$</span> {totalPrice}
                     </h1>
                     <p className='font-inter text-sm text-[#757575] font-normal'>Package weight: 25.01 kg</p>
                     <p className='font-inter text-sm text-[#757575] font-normal'>Total package weight: 25.01 kg</p>

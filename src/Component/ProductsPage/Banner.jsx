@@ -6,7 +6,7 @@ const Banner = () => {
 
   const Button = () => {
     return (
-      <button className='text-black font-inter font-semibold rounded-[26px] bg-[#FFC900] text-xs px-[10px] py-[5px] md:px-[28px] md:py-[12px] flex flex-row justify-center items-center w-fit'>
+      <button className='text-black font-inter font-semibold rounded-[26px] bg-[#FFC900] text-lg px-[10px] py-[5px] md:px-[28px] md:py-[12px] flex flex-row justify-center items-center w-fit'>
         Learn More
         <svg className='w-[20px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"  >
           <mask id="mask0_161_695" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -26,7 +26,7 @@ const Banner = () => {
   return (
     <div className='w-full h-fit max-lg:pt-32 bg-gradient-to-r from-blue-600 to-blue-900 flex flex-col-reverse max-sm:gap-5 md:flex-row justify-between px-16 py-12 rounded-lg'>
       <div className='left flex flex-col items-center text-center md:text-left md:items-start justify-center gap-3 md:gap-10'>
-        <div className='banner-heading text-white font-bold text-3xl sm:text-3xl md:text-5xl'>
+        <div className='banner-heading text-white font-bold text-3xl sm:text-3xl md:text-5xl font-satoshi'>
           <h1>Furniture <br />
             Wonderland Awaits
           </h1>

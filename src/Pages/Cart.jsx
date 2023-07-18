@@ -49,7 +49,7 @@ const Cart = () => {
           <h1>Cart</h1>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-6 gap-7'>
-          <div className='col-span-4'>
+          <div className='col-span-4 mb-10'>
             {cartData.map((item, index) => {
               return (
                 <div key={index}>
@@ -57,6 +57,9 @@ const Cart = () => {
                 </div>
               )
             })}
+            <div className='h-[610px] bg-white rounded-[18px] border-[1px] border-[#E7E7E7]'>
+              kocak
+            </div>
           </div>
 
           <div className='col-span-2 w-[412px] flex flex-col h-[316px] rounded-[16px] bg-white border-2 border-[#E7E7E7] py-[24px] px-[32px]'>
@@ -68,7 +71,7 @@ const Cart = () => {
               </div>
               <div className='flex flex-row justify-between'>
                 <p className='font-inter text-lg'>Shipping Cost</p>
-                <p className='font-inter text-lg text-[#031C32]'>$ 25,00</p>
+                <p className='font-inter text-lg text-[#031C32]'>Free</p>
               </div>
               <div className='border-2 w-full'></div>
               <div className='flex flex-row justify-between'>
@@ -84,7 +87,7 @@ const Cart = () => {
         </div>
 
       </Layout>
-      <div className='absolute w-full md:bottom-0'>
+      <div className='absolute w-full'>
         <Footer />
       </div>
     </>
