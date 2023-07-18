@@ -6,7 +6,7 @@ const PaymentSuccessDialog = ({ handleDialog }) => {
     return (
         <div className="fixed inset-0 flex items-center justify-center z-50">
             <div className="fixed inset-0 bg-black opacity-60"></div>
-            <div className="relative sm:w-[800px] h-fit w-full p-10 bg-white rounded-[16px] font-inter px-[140px] py-[42px]">
+            <div className="relative sm:w-[800px] h-fit w-full max-sm:w-[400px] p-10 bg-white rounded-[16px] font-inter max-sm:px-[10px] px-[140px] py-[42px]">
                 <button
                     className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 focus:outline-none"
                     onClick={handleDialog}
@@ -37,42 +37,42 @@ const PaymentSuccessDialog = ({ handleDialog }) => {
                         <h1 className='text-[#031C32] font-satoshi font-bold text-[24px]'>Payment Success!</h1>
                     </div>
                     <div className='w-[520px] h-[2px] bg-[#F8F8F8] rounded-[7px] mt-[24px] text-center mb-[18px]'></div>
-                    <div className='flex flex-row justify-between w-full mb-[18px] text-[#031C32] font-inter font-normal text-[16px]'>
+                    <div className='flex flex-row justify-between w-full mb-[18px] text-[#031C32] font-inter font-normal text-[16px] max-sm:hidden'>
                         <h1>Best Deal Sofa of the Year</h1>
                         <h1>x1</h1>
                     </div>
-                    <div className='flex flex-row justify-between w-full mb-[18px] text-[#031C32] font-inter font-normal text-[16px]'>
+                    <div className='flex flex-row justify-between w-full mb-[18px] text-[#031C32] font-inter font-normal text-[16px] max-sm:hidden'>
                         <h1>Best Deal Sofa of the Year</h1>
                         <h1>x1</h1>
                     </div>
-                    <div className='w-[520px] h-[2px] bg-[#F8F8F8] rounded-[7px] text-center mb-[18px]'></div>
-                    <div className='flex flex-row justify-between items-center w-full mb-[18px]'>
+                    <div className='w-[520px] h-[2px] bg-[#F8F8F8] rounded-[7px] text-center mb-[18px] max-sm:hidden'></div>
+                    <div className='flex flex-row justify-between items-center w-full mb-[18px] max-sm:hidden'>
                         <h1 className='text-[#8F8F8F] font-inter text-[16px] font-medium'>Payment Time</h1>
                         <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32]'>18-07-2023, 16:44 PM</h1>
                     </div>
-                    <div className='flex flex-row justify-between items-center w-full mb-[18px]'>
+                    <div className='flex flex-row justify-between items-center w-full mb-[18px] max-sm:hidden'>
                         <h1 className='text-[#8F8F8F] font-inter text-[16px] font-medium'>Payment Method</h1>
                         <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32]'>Bank Transfer</h1>
                     </div>
-                    <div className='flex flex-row justify-between items-center w-full mb-[18px]'>
+                    <div className='flex flex-row justify-between items-center w-full mb-[18px] max-sm:hidden'>
                         <h1 className='text-[#8F8F8F] font-inter text-[16px] font-medium'>Ref Number</h1>
                         <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32]'>1644-1807-2023</h1>
                     </div>
-                    <div className='w-[520px] h-[2px] bg-[#F8F8F8] rounded-[7px] text-center mb-[18px]'></div>
+                    <div className='w-[520px] h-[2px] bg-[#F8F8F8] rounded-[7px] text-center mb-[18px] max-sm:hidden'></div>
                     <div className='flex flex-row justify-between items-center w-full mb-[18px]'>
-                        <h1 className='text-[#8F8F8F] font-inter text-[16px] font-medium'>Amount</h1>
-                        <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32]'>$640,00</h1>
+                        <h1 className='text-[#8F8F8F] font-inter text-[16px] font-medium max-sm:hidden'>Amount</h1>
+                        <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32] max-sm:hidden'>$640,00</h1>
                     </div>
-                    <div className='flex flex-row justify-between items-center w-full mb-[18px]'>
+                    <div className='flex flex-row justify-between items-center w-full mb-[18px] max-sm:hidden'>
                         <h1 className='text-[#8F8F8F] font-inter text-[16px] font-medium'>Fee (2.8%)</h1>
                         <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32]'>$25,00</h1>
                     </div>
-                    <div className='flex flex-row justify-between items-center w-full mb-[18px]'>
+                    <div className='flex flex-row justify-between items-center w-full mb-[18px] max-sm:hidden'>
                         <h1 className='text-[#8F8F8F] font-inter text-[16px] font-medium'>Total</h1>
-                        <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32]'>$665,00</h1>
+                        <h1 className='font-inter text-right text-[16px] font-medium text-[#031C32] max-sm:hidden'>$665,00</h1>
                     </div>
                     <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download="transaction_receipt.pdf">
-                        <div className='flex flex-row w-full items-center justify-center gap-[8px] cursor-pointer'>
+                        <div className='flex flex-row w-full items-center justify-center gap-[8px] cursor-pointer max-sm:hidden'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <mask id="mask0_528_585" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
                                     <rect width="20" height="20" fill="#D9D9D9" />
