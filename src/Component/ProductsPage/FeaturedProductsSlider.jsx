@@ -17,7 +17,7 @@ const FeaturedProductsSlider = ({handleShowDialog}) => {
     const sliderSettings = {
         150: {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 20,
             grid: {
                 rows: 2,
                 fill: "row"
