@@ -30,7 +30,7 @@ const CartItem = ({ data, setTotalPisan }) => {
             if (item.id === data.id) {
                 item.quantity = (item.quantity || 0) + 1;
                 item.totalItemPrice = (parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.quantity).toFixed(2);
-                setTotalPisan((prev) => parseFloat(prev) + parseFloat(item.totalItemPrice));
+                setTotalPisan((prev) => parseFloat(prev) + (parseFloat(item.totalItemPrice)));
             }
             return item;
         });
@@ -126,18 +126,8 @@ const CartItem = ({ data, setTotalPisan }) => {
 
     }, [counter, isChecked])
 
-    const calculateSubtotal = (cartData) => {
-        let subtotal = 0;
-        cartData.forEach((item) => {
-            subtotal += parseFloat(item.totalItemPrice);
-        });
-        return subtotal.toFixed(2);
-    };
+  
 
-    //   useEffect(() => {
-    //     const localStorageData = JSON.parse(localStorage.getItem("cartData")) || [];
-    //     setTotalPisan(calculateSubtotal(localStorageData));
-    //   }, []);
 
 
 

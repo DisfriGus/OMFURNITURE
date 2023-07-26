@@ -6,14 +6,17 @@ import ShopingCart1 from '../Assets/shoppingCart1.svg'
 import Person from '../Assets/Person.svg'
 import { useNavigate } from 'react-router-dom'
 import LoginDialog from './Auth/LoginDialog';
+import SignUpDialog from './Auth/SignUpDialog';
 
 const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
 
   const navigate = useNavigate();
   const [open, setOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
   const [showUploadDialog, setShowUploadDialog] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showSignUpForm, setShowSignUpForm] = useState(false);
   const [uploadedImageFile, setUploadedImageFile] = useState(null);
   const handleSubmit = () => {
     navigate('/Products')
@@ -30,10 +33,20 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
       setIsLogin(true);
     }
   }, []);
+  useEffect(() => {
+    const storedSignUpStatus = localStorage.getItem('isSignUp');
+    if (storedSignUpStatus === 'false') {
+      setIsSignUp(true);
+    }
+  }, []);
 
   const handleLogin = () => {
     setShowLoginForm(true)
   };
+
+  const handleSignUp = () => {
+    setShowSignUpForm(true)
+  }
 
   const handleShowUpload = () => {
     setShowUploadDialog(true);
@@ -46,6 +59,9 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
 
   const handleCloseLogin = () => {
     setShowLoginForm(false);
+  }
+  const handleCloseSignUpDialog = () => {
+    setShowSignUpForm(false);
   }
 
   return (
@@ -93,7 +109,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
       ) : (
         <div className={`flex gap-6 font-inter text-semibold max-lg:hidden ${user} items-center `}>
           <button onClick={handleLogin}>Login</button>
-          <NavLink className={`py-2 px-6 bg-[#1659E6] rounded-md text-white ${signup}`}>Sign Up</NavLink>
+          <button onClick={handleSignUp} className={`py-2 px-6 bg-[#1659E6] rounded-md text-white ${signup}`}>Sign Up</button>
         </div>
       )}
       <div className={`lg:hidden text-black text-[18px] font-medium flex flex-col gap-10 pt-2  absolute top-[68px] duration-200 bg-white h-[2000px] z-20 items-center w-[100%] ${open ? 'translate-x-full' : 'translate-x-0'}`}>
@@ -109,7 +125,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
         ) : (
           <div className='flex gap-4'>
             <button onClick={handleLogin}>Login</button>
-            <NavLink className={`py-2 px-6 bg-[#1659E6] rounded-md text-white ${signup}`}>Sign Up</NavLink>
+            <button onClick={handleSignUp} className={`py-2 px-6 bg-[#1659E6] rounded-md text-white ${signup}`}>Sign Up</button>
           </div>
         )}
       </div>
@@ -119,6 +135,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
         }}>{open ? <MdMenu /> : <MdClose />}</button>
       </div>
       {showLoginForm && <LoginDialog handleCloseLogin={handleCloseLogin} />}
+      {showSignUpForm && <SignUpDialog handleCloseSignUpDialog={handleCloseSignUpDialog} />}
       {showUploadDialog && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="fixed inset-0 bg-black opacity-60"></div>
