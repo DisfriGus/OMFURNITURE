@@ -53,7 +53,7 @@ class SignUpDialog extends Component {
                         />
                     </svg>
           </button>
-          <h1>Register Page</h1>
+          <h1 className='font-bold text-[#031C32] text-4xl'>Register Page</h1>
           <div>
             <input
               placeholder="Email"
