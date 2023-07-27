@@ -31,7 +31,7 @@ class LoginDialog extends Component {
                         </svg>
                     </button>
                     <div className='flex flex-col gap-3'>
-                        <h1 className='font-bold text-[#031C32] text-4xl'>Welcome {this.props.userName}</h1>
+                        <h1 className='font-bold text-[#031C32] text-4xl'>Welcome</h1>
                         <p className='font-normal text-slate-500'>Welcome, Please enter your details</p>
                     </div>
                     <form className="mt-8 space-y-3" action="#" onSubmit={handleLogin}>
@@ -72,12 +72,6 @@ class LoginDialog extends Component {
                             </button>
                         </div>
                     </form>
-                    <button
-                        onClick={this.changeUser}
-                        className="my-5 w-full flex justify-center bg-[#031C32] text-gray-100 p-4 rounded-lg tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-[#07325a] cursor-pointer transition ease-in duration-300"
-                    >
-                        Change User
-                    </button>
                     {/* <div className='text-center'>
                         <h1 className='font-light'>Don't have an account? <span className='text-[#031C32] font-semibold'> Sign up for free</span></h1>
                     </div> */}

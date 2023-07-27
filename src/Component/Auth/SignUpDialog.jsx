@@ -23,14 +23,14 @@ class SignUpDialog extends Component {
   };
 
   handleSubmit = () => {
-    
+
     const { email, password } = this.state;
-    this.props.registerAPI({auth: this.auth , email: email, password: password})
+    this.props.registerAPI({ auth: this.auth, email: email, password: password })
     this.setState({
       email: '',
-      password:''
+      password: ''
     })
-    
+
   };
 
   render() {
@@ -44,34 +44,46 @@ class SignUpDialog extends Component {
             className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 focus:outline-none"
             onClick={handleSignUpDialog ? handleSignUpDialog : handleCloseSignUpDialog}
           >
-             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </button>
           <h1 className='font-bold text-[#031C32] text-4xl'>Register Page</h1>
           <div>
-            <input
-              placeholder="Email"
-              id="email"
-              type="text"
-              value={this.state.email}
-              onChange={this.handleChangeText}
-            />
-            <input
-              placeholder="Password"
-              id="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChangeText}
-            />
+            <div className='flex flex-col gap-2'>
+              <h1 className='font-semibold text-[#031C32]'>Email</h1>
+              <div className='w-full border-[2px] border-slate-200 px-4 py-3 rounded-lg'>
+                <input
+                  className='outline-none'
+                  placeholder="Email"
+                  id="email"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.handleChangeText}
+                />
+              </div>
+              <div className='flex flex-col gap-2'>
+                <h1 className='font-semibold text-[#031C32]' >Password</h1>
+                <div className='w-full border-[2px] border-slate-200 px-4 py-3 rounded-lg'>
+                  <input
+                    className='outline-none'
+                    placeholder="Password"
+                    id="password"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleChangeText}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <Button onClick={this.handleSubmit} title="Register" loading={this.props.isLoading}/>
-          
+          <Button onClick={this.handleSubmit} title="Register" loading={this.props.isLoading} />
+
         </div>
       </div>
     );
@@ -79,7 +91,7 @@ class SignUpDialog extends Component {
 }
 
 const reduxState = (state) => ({
-  isLoading : state.isLoading
+  isLoading: state.isLoading
 })
 
 const reduxDispatch = (dispatch) => ({
