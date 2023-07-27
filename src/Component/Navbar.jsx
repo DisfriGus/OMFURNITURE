@@ -7,9 +7,13 @@ import Person from '../Assets/Person.svg'
 import { useNavigate } from 'react-router-dom'
 import LoginDialog from './Auth/LoginDialog';
 import SignUpDialog from './Auth/SignUpDialog';
+import { loginUserAPI } from './Config/Redux/Action';
+import { connect, useDispatch } from 'react-redux';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from './Config/Firebase';
 
 const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
-
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const [open, setOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
@@ -22,22 +26,29 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
     navigate('/Products')
   }
 
-  const handleLogout = () => {
-    setIsLogin(false);
-    localStorage.removeItem('isLogin');
-  };
+  
 
+  const handleLogout = () => {
+    signOut(auth).then(()=>{
+      console.log("Log Out sukses")
+    })
+    .catch(err =>console.log(err))
+  };
+  
+  
   useEffect(() => {
-    const storedLoginStatus = localStorage.getItem('isLogin');
-    if (storedLoginStatus === 'true') {
-      setIsLogin(true);
-    }
-  }, []);
-  useEffect(() => {
-    const storedSignUpStatus = localStorage.getItem('isSignUp');
-    if (storedSignUpStatus === 'false') {
-      setIsSignUp(true);
-    }
+    const storedSignUpStatus = onAuthStateChanged(auth, (user)=>{
+      if(user){
+        console.log(user)
+        setIsLogin(true)
+      }else{
+        setIsLogin(false)
+      }
+      return () =>{
+        storedSignUpStatus()
+      }
+    })
+    
   }, []);
 
   const handleLogin = () => {
@@ -201,4 +212,13 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
   );
 };
 
-export default Navbar;
+const reduxState = (state) => ({
+  isLogin: state.isLogin 
+})
+
+const reduxDispatch = (dispatch) => ({
+  testLogin: () => dispatch({type: "CHANGE_ISLOGIN", value: true })
+})
+
+
+export default connect(reduxState,reduxDispatch) (Navbar);

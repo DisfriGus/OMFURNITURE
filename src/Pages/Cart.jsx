@@ -48,6 +48,7 @@ const Cart = () => {
     setShowDialog(!showDialog);
   }
 
+  
   // console.log(showDialog)
 
 
@@ -175,7 +176,9 @@ const Cart = () => {
               <div className='border-2 w-full'></div>
               <div className='flex flex-col md:flex-row justify-between'>
                 <p className='font-inter text-lg'>Total</p>
-                <p className='font-inter text-lg text-[#031C32]'>$ {subTotal}</p>
+                <p className='font-inter text-lg text-[#031C32]'>$
+                  
+                </p>
               </div>
             </div>
             <button onClick={handleDialog} className='text-white bg-[#1659E6] text-lg font-medium font-inter max-w-[348px] max-h-[60px] py-[16px] md:px-[50px] rounded-[12px] mt-5 max-md:w-[270px] '>
