@@ -41,6 +41,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
       if(user){
         console.log(user)
         setIsLogin(true)
+        setShowLoginForm(false)
       }else{
         setIsLogin(false)
       }

@@ -77,6 +77,11 @@ class LoginDialog extends Component {
                       type="text"
                       value={this.state.email}
                       onChange={this.handleChangeText}
+                      onKeyDown={(e)=>{
+                        if (e.key === 'Enter'){
+                          this.handleSubmit()
+                        }
+                      }} 
                     />
                   </div>
                   <div className='flex flex-col gap-2'>
@@ -89,12 +94,20 @@ class LoginDialog extends Component {
                         type="password"
                         value={this.state.password}
                         onChange={this.handleChangeText}
+                        onKeyDown={(e)=>{
+                          if (e.key === 'Enter'){
+                            this.handleSubmit()
+                          }
+                        }} 
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <Button onClick={this.handleSubmit} title="Login" loading={this.props.isLoading} />
+              <Button 
+              onClick={this.handleSubmit} 
+              title="Login" 
+              loading={this.props.isLoading} />
     
             </div>
           </div>

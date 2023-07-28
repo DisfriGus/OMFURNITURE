@@ -1,12 +1,14 @@
 import React from 'react'
 
-const Button = ({onClick, title,loading}) => {
+const Button = ({onKeyDown,onClick, title,loading}) => {
     if(loading === true){
         return<button onClick={onClick}>Loading</button>
         
     }
   return (
-    <button onClick={onClick}>{title}</button>
+    <button 
+    onClick={onClick}
+    >{title}</button>
   )
 }
 
