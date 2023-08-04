@@ -162,7 +162,7 @@ const Home = () => {
             
             {nameUser && showPopup && (
                 <div className="fixed top-4 right-1 bg-white p-4 rounded-lg shadow-lg text-black">
-                    Welcome {nameUser.email}
+                    Welcome {nameUser.displayName}
                 </div>
             )}
 

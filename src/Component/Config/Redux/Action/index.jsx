@@ -15,6 +15,7 @@ export const registerUserAPI = (data) => (dispatch) => {
         createUserWithEmailAndPassword(data.auth, data.email, data.password)
             .then((userCredential) => {
                 console.log('sukses: ', userCredential)
+                userCredential.user.displayName= data.name
                 dispatch({ type: 'CHANGE_LOADING', value: false })
             })
             .catch((error) => {

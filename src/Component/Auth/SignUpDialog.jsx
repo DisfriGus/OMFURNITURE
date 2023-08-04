@@ -12,6 +12,7 @@ class SignUpDialog extends Component {
     this.state = {
       email: '',
       password: '',
+      name:'',
       isLoading: false
     };
     this.auth = getAuth(fireConfig)
@@ -24,11 +25,12 @@ class SignUpDialog extends Component {
 
   handleSubmit = () => {
 
-    const { email, password } = this.state;
-    this.props.registerAPI({ auth: this.auth, email: email, password: password })
+    const { email, password, name } = this.state;
+    this.props.registerAPI({ auth: this.auth,name:name, email: email, password: password })
     this.setState({
       email: '',
-      password: ''
+      password: '',
+      name:''
     })
 
   };
@@ -56,6 +58,17 @@ class SignUpDialog extends Component {
           <h1 className='font-bold text-[#031C32] text-4xl'>Register Page</h1>
           <div>
             <div className='flex flex-col gap-2'>
+              <h1 className='font-semibold text-[#031C32]'>Name</h1>
+              <div className='w-full border-[2px] border-slate-200 px-4 py-3 rounded-lg'>
+                <input
+                  className='outline-none'
+                  placeholder="Name"
+                  id="name"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChangeText}
+                />
+              </div>
               <h1 className='font-semibold text-[#031C32]'>Email</h1>
               <div className='w-full border-[2px] border-slate-200 px-4 py-3 rounded-lg'>
                 <input
