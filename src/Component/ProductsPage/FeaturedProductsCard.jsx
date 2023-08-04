@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
-import furniture2 from '../../Assets/furniture2.png';
-import cabinet from '../../Assets/cabinet.png'
+import React  from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import LoginDialog from '../Auth/LoginDialog';
+import { auth } from '../Config/Firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const FeaturedProductsCard = ({ data, landingPage, handleShowDialog }) => {
 
@@ -12,10 +11,6 @@ const FeaturedProductsCard = ({ data, landingPage, handleShowDialog }) => {
     const navigateToDetailPage = () => {
         navigate(`/DetailPage/${data.id}`, { state: { data } });
     };
-
-
-    
-
     console.log(data);
 
     const starSvg = (
@@ -30,40 +25,31 @@ const FeaturedProductsCard = ({ data, landingPage, handleShowDialog }) => {
             </defs>
         </svg>
     );
-
     const stars = Array.from({ length: 5 }, (v, i) => i + 1);
-
-
-    // const addToCart = () => {
-    //     const existingCartData = localStorage.getItem('cartData');
-    //     const cartData = existingCartData ? JSON.parse(existingCartData) : [];
-    //     cartData.push(data);
-    //     localStorage.setItem('cartData', JSON.stringify(cartData));
-    // };
-
     const addToCart = () => {
-        const user = localStorage.getItem('isLogin');
-        if (user) {
-            const existingCartData = localStorage.getItem('cartData');
-            let cartData = existingCartData ? JSON.parse(existingCartData) : [];
-
-            const existingItem = cartData.find(item => item.id === data.id);
-            if (existingItem) {
-                existingItem.quantity = (existingItem.quantity || 1) + 1;
+        const user = onAuthStateChanged(auth, (userAuth)=>{
+            if (userAuth) {
+                const existingCartData = localStorage.getItem('cartData');
+                let cartData = existingCartData ? JSON.parse(existingCartData) : [];
+    
+                const existingItem = cartData.find(item => item.id === data.id);
+                if (existingItem) {
+                    existingItem.quantity = (existingItem.quantity || 1) + 1;
+                } else {
+                    cartData.push({ ...data, quantity: 1 });
+                }
+    
+                localStorage.setItem('cartData', JSON.stringify(cartData));
+                toast.success('Product added', {
+                    position: "top-center",
+                    autoClose: 700,
+                });
             } else {
-                cartData.push({ ...data, quantity: 1 });
+                handleShowDialog();
             }
-
-            localStorage.setItem('cartData', JSON.stringify(cartData));
-            toast.success('Product added', {
-                position: "top-center",
-                autoClose: 700,
-            });
-        } else {
-            handleShowDialog();
-        }
-
-    };
+    
+            }
+        )};
 
     return (
         <>

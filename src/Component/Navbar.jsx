@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdMenu, MdClose, MdSearch, MdCenterFocusWeak, MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md';
-import ShopingCart from '../Assets/shoppingCart.svg'
-import ShopingCart1 from '../Assets/shoppingCart1.svg'
+import { MdMenu, MdClose, MdSearch, MdCenterFocusWeak,  MdOutlineExpandMore } from 'react-icons/md';
 import Person from '../Assets/Person.svg'
 import { useNavigate } from 'react-router-dom'
 import LoginDialog from './Auth/LoginDialog';
 import SignUpDialog from './Auth/SignUpDialog';
-import { loginUserAPI } from './Config/Redux/Action';
-import { connect, useDispatch } from 'react-redux';
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { connect } from 'react-redux';
+import {  onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './Config/Firebase';
 
-const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
-  const dispatch = useDispatch()
+const Navbar = ({ logo, style,signup,user, inputStyle, cart }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
-  const [isSignUp, setIsSignUp] = useState(false);
   const [showUploadDialog, setShowUploadDialog] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSignUpForm, setShowSignUpForm] = useState(false);
@@ -25,31 +20,27 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
   const handleSubmit = () => {
     navigate('/Products')
   }
-
-  
-
   const handleLogout = () => {
-    signOut(auth).then(()=>{
+    signOut(auth).then(() => {
       console.log("Log Out sukses")
     })
-    .catch(err =>console.log(err))
+      .catch(err => console.log(err))
   };
-  
-  
   useEffect(() => {
-    const storedSignUpStatus = onAuthStateChanged(auth, (user)=>{
-      if(user){
+    const storedSignUpStatus = onAuthStateChanged(auth, (user) => {
+      if (user) {
         console.log(user)
         setIsLogin(true)
         setShowLoginForm(false)
-      }else{
+        
+      } else {
         setIsLogin(false)
       }
-      return () =>{
+      return () => {
         storedSignUpStatus()
       }
     })
-    
+
   }, []);
 
   const handleLogin = () => {
@@ -88,6 +79,7 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
         <NavLink to="/Dormitory">Dormitory</NavLink>
       </div>
       {isLogin ? (
+
         <div className={`flex justify-between w-full gap-3 font-normal max-lg:hidden ${user} items-center py-[6px] `}>
           <div className='flex'>
             <NavLink to="/" className={`px-2 ${isLogin ? 'hidden' : ''}`}>
@@ -214,12 +206,12 @@ const Navbar = ({ logo, style, user, signup, inputStyle, cart }) => {
 };
 
 const reduxState = (state) => ({
-  isLogin: state.isLogin 
+  isLogin: state.isLogin
 })
 
 const reduxDispatch = (dispatch) => ({
-  testLogin: () => dispatch({type: "CHANGE_ISLOGIN", value: true })
+  testLogin: () => dispatch({ type: "CHANGE_ISLOGIN", value: true })
 })
 
 
-export default connect(reduxState,reduxDispatch) (Navbar);
+export default connect(reduxState, reduxDispatch)(Navbar);

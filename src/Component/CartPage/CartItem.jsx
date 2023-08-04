@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import sofa from '../../Assets/sofa.png';
 
 const CartItem = ({ data, setTotalPisan }) => {
     const [counter, setCounter] = useState(data.quantity || 1);
@@ -29,8 +28,8 @@ const CartItem = ({ data, setTotalPisan }) => {
         const updatedData = localStorageData.map((item) => {
             if (item.id === data.id) {
                 item.quantity = (item.quantity || 0) + 1;
-                item.totalItemPrice = (parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.quantity).toFixed(2);
-                setTotalPisan((prev) => parseFloat(prev) + (parseFloat(item.totalItemPrice)));
+                item.totalItemPrice = (parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.quantity);
+                setTotalPisan(()=>item.totalItemPrice);
             }
             return item;
         });
@@ -45,10 +44,13 @@ const CartItem = ({ data, setTotalPisan }) => {
         const localStorageData = JSON.parse(localStorage.getItem('cartData')) || [];
         const updatedData = localStorageData.map((item) => {
             if (item.id === data.id) {
-                if ((item.quantity || 0) > 1) {
+                if ((item.quantity  > 1) && (parseInt(item.totalItemPrice)  > 0)) {
                     item.quantity = (item.quantity || 0) - 1;
-                    item.totalItemPrice = (parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.quantity).toFixed(2);
-                    setTotalPisan((prev) => parseFloat(prev) - parseFloat(item.totalItemPrice));
+                    item.totalItemPrice = (parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.quantity);
+                    setTotalPisan(()=>(item.totalItemPrice));
+                }else{
+                    item.totalItemPrice = parseFloat(item.price.replace(/[^0-9.]/g, ''))
+                    setTotalPisan(()=> item.totalItemPrice)
                 }
             }
 
@@ -89,15 +91,6 @@ const CartItem = ({ data, setTotalPisan }) => {
         localStorage.setItem("cartData", JSON.stringify(updatedData));
 
         // setSubtotal(calculateSubtotal(updatedData));
-    };
-
-    const calculateTotalPrice = () => {
-        const price = slidePrice(data.price).replace(/,/g, '');
-        const totalPrice = parseFloat(price) * counter;
-        setTotalPrice(totalPrice);
-        setSubtotal(totalPrice)
-        // setSubTotalPrice(totalPrice.toFixed(2));
-        return totalPrice.toFixed(2);
     };
 
     useEffect(() => {

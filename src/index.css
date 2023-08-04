@@ -18,7 +18,7 @@
     
     background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.25) 2%, rgba(0, 0, 0, 0.55) 100%),
-    url('../src/Assets/hero.jpg'),
+    url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'),
     lightgray 0px -754.096px / 100% 338.824%;
     @apply bg-cover bg-no-repeat 
   }
