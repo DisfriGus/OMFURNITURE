@@ -1,4 +1,7 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { firestore, collection } from "firebase/firestore"
+
+import fireConfig from "../../Firebase"
 
 export const actionUserName = () => (dispatch) => {
     setTimeout(() => {
@@ -15,7 +18,7 @@ export const registerUserAPI = (data) => (dispatch) => {
         createUserWithEmailAndPassword(data.auth, data.email, data.password)
             .then((userCredential) => {
                 console.log('sukses: ', userCredential)
-                userCredential.user.displayName= data.name
+                collection('users').docs(userCredential.user.uid).set(data.displayName)
                 dispatch({ type: 'CHANGE_LOADING', value: false })
             })
             .catch((error) => {
@@ -35,6 +38,7 @@ export const loginUserAPI = (data) => (dispatch) => {
             .then((userCredential) => {
                 console.log('sukses: ', userCredential)
                 const dataUser = {
+                    displayName: userCredential.user.displayName,
                     email: userCredential.user.email,
                     uID: userCredential.user.uid,
                     emailVerified: userCredential.user.emailVerified
